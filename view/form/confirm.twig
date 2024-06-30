@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/src/css/form/bootstrap.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+<!-- ヘッダー -->
+{% include 'header/small.twig' %}
+<div class="container" style="margin-top:10%;">
+  <form method="POST">
+    <input type="hidden" name="token" value="{{ token }}">
+    <div id="entryForBase" class="confirm edit">
+        <div class="title">お問い合わせフォーム ｜確認画面</div>
+        <div class="contentUnit">
+          <table class="table table-bordered">
+           <tbody>
+              {# 姓名 #}
+              <tr class="name">
+                <th class="item">
+                  <span class="text">姓名
+                  </span class="text">
+                  </th>
+                  <td class="data">
+
+                      <div class="form_frameWORK">
+
+                        <div class="input">
+                          <div class="item2">
+                            <p>姓</p>
+                            <p>名</p>
+                          </div>
+                          <div class="data2">
+                            <input type="hidden" name="sei" value="{{ post.sei }}">
+                            <p>{{ post.sei }}</p>
+                            <input type="hidden" name="mei" value="{{ post.mei }}">
+                            <p>{{ post.mei }}</p>
+                          </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="input">
+                          <div class="item2">
+                            <p>セイ</p>
+                            <p>メイ</p>
+                          </div>
+                          <div class="data2">
+                            <input type="hidden" name="seiKana" value="{{ post.seiKana }}">
+                              <p>{{ post.seiKana }}</p>
+                              <input type="hidden" name="meiKana" value="{{ post.meiKana }}">
+                              <p>{{ post.meiKana }}</p>
+                            </div>
+                            <div class="clear">
+                            </div>
+                          </div>
+
+                      </div>
+
+                  </td>
+              </tr>
+
+              {# Email #}
+              <tr class="email">
+                <th class="item">
+                  <span class="text">Email</span>
+                </th>
+                <td class="data">
+                <div class="form_frameWORK">
+                  <div class="input">
+                    <input type="hidden" name="email" value="{{ post.email }}">
+                    <div class="">
+                      <p>{{ post.email }}</p>
+                    </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 生年月日 #}
+              <tr class="birth">
+                <th class="item">
+                  <span class="text">生年月日</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                  <div class="input">
+                    <div class="">
+                      <input type="hidden" name="birthDay" value="{{ post.birthDay }}">
+                      <p class="flet right2">{{ post.birthDay }}</p>
+                      <div class="clear">
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 性別 #}
+              <tr class="mw">
+                <th class="item">
+                  <span class="text">性別</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+                      <input type="hidden" name="sex" value="{{ post.sex }}" id="sex{{ post.sex }}">
+                      <p class="flet">{{ post.sexView }}</p>
+                      <div class="clear">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 現住所 #}
+              <tr class="adress">
+                <th  class="item">
+                  <span class="text">現住所</span>
+                </th>
+                <td  class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+                      <span class="label  adress2">〒</span>
+                      <input type="hidden" name="zipCode" value="{{ post.zipCode }}" class="imeOff">
+                      <p class="adress2">{{ post.zipCode }}</p>
+                      <div class="clear">
+                      </div>
+                      </div>
+                      <div class="input">
+                      <input type="hidden" name="pref" value="{{ post.pref }}" class="imeOff" id="zip">
+                      <p class="flet right2">{{ post.prefView }}</p>
+                      <input type="hidden" name="municipalities" value="{{ post.municipalities }}" class="imeOff" id="zip">
+                      <p class="flet right2">{{ post.municipalities }}</p>
+                      <input type="hidden" name="otherAdd" value="{{ post.otherAdd }}" class="imeOff" id="zip">
+                      <p class="flet rigth2">{{ post.otherAdd }}</p>
+                      <div class="clear">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 携帯電話番号 #}
+              <tr class="phoneNum">
+                <th class="item">
+                  <span class="text">携帯電話番号</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                  <div class="input wid">
+                    <input type="hidden" name="tel" value="{{ post.tel }}" placeholder="例）080XXXXXXXX" class="imeOff " id="phone">
+                    <p>{{ post.tel }}</p>
+                  </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 最終学歴 #}
+              <tr class="school">
+                <th class="item">
+                  <span class="text">最終学歴</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+                      <input type="hidden" name="schoolDivision" value="{{ post.schoolDivision }}">
+                      <p>{{ post.schoolDivisionView }}</p>
+
+                      <input type="hidden" name="graduatingSchool" value="{{ post.graduatingSchool }}" class="ui-autocomplete-input " id="txtSchool">
+                      <p class="top">{{ post.graduatingSchool }}</p>
+
+                        {#  #}
+                      <input type="hidden" name="graduatingSchoolDepartment" value="{{ post.graduatingSchoolDepartment }}"class="">
+                      <p class="top">{{ post.graduatingSchoolDepartment }}</p>
+
+                      {# 卒業年早見表 #}
+                      <input type="hidden" name="graduationYear" value="{{ post.graduationYear }}">
+                      <p class="top flet">卒業年早見表：　{{ post.graduationYearView }}</p>
+                      <div class="clear">
+                      </div>
+                      </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 現在（直近）職種 #}
+              <tr class="experience js_workTr">
+                <th class="item">
+                <span class="text">現在（直近）職種</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+
+                        <input type="hidden" name="currentJob" value="{{ post.currentJob }}">
+                        <p>{{ post.currentJobView }}</p>
+
+                        <input type="hidden" name="experienceYear" value="{{ post.experienceYear }}">
+                        <p class="top">{{ post.experienceYearView }}</p>
+
+                        <input type="hidden" name="joinedCompanyName" value="{{ post.joinedCompanyName }}" id="txtCompany" class="js_blurSuggest">
+                        <p class="top">直近の企業名：　{{ post.joinedCompanyName }}</p>
+
+                        <input type="hidden" name="employmentYear" value="{{ post.employmentYear }}">
+                        <p  class="top bottom">入社年：　{{ post.employmentYear }}</p>
+
+                        <span class="middle">～</span>
+
+                        <input type="hidden" name="retirementYear" value="{{ post.retirementYear }}">
+                            <p  class="top">退社年：　{{ post.retirementYear }}</p>
+
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 転職経験 #}
+              <tr class="changeTimes js_workTr">
+                <th class="item">
+                  <span class="text">転職経験</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+                      <input type="hidden" name="jobChange" value="{{ post.jobChange }}">
+                      <p>{{ post.jobChangeView }}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 直近の年収 #}
+              <tr class="income js_workTr">
+                <th class="item">
+                  <span class="text">直近の年収</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+                      <input type="hidden" name="annualSalary" value="{{ post.annualSalary }}">
+                      <p>{{ post.annualSalaryView }}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 就業状況 #}
+              <tr class="condition js_workTr">
+                <th class="item">
+                  <span class="text">就業状況</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+                        <input type="hidden" name="cond" value="{{ post.cond }}" id="condition_001" class="">
+                        <p>{{ post.condView }}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 既婚／未婚 #}
+              <tr class="condition js_workTr">
+                <th class="item">
+                  <span class="text">既婚／未婚</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                    <div class="input">
+                        <input type="hidden" name="marry_now" value="{{ post.marry_now }}" id="condition_001" class="">
+                        <p>{{ post.marry_nowView }}</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              {# 取得資格 #}
+              <tr class="Shikaku js_workTr">
+                <th class="item">
+                  <span class="text about">取得資格</span>
+                </th>
+                <td class="data">
+                  <div class="form_frameWORK">
+                      <div class="input">
+                        <div class="marginauto01">
+                          <div class="Shikaku">
+                            <input type="hidden" name="Shikaku" value="{{ post.Shikaku }}">
+                              <p class="">{{ post.Shikaku }}</p>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  </td>
+              </tr>
+             </tbody>
+           </table>
+         </div>
+       <div class="contentUnit2">
+         <div class="btnUnit">
+           <button class="btn" value="back">戻る</button>
+           <button id="submit" class="btn" value="send">送信する</button>
+         </div>
+       </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!--div class="container">
+    <button id="submit" class="btn btn-primary">送信する</button>
+</div-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/src/js/busines-header/busines-hover.js"></script>
+<script>
+ $(".btn").on("click",function(){
+        var val = $(this).val();
+        if(val == "back") {
+            var url = "../form/";
+        } else {
+            var url = "../form/thanks.php";
+        }
+        $("form").attr("action",url);
+        $("form").submit();
+    });
+</script>
+</body>
+</html>

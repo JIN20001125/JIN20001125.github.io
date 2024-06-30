@@ -1,0 +1,131 @@
+<div class="container-1">
+    <div class="section">
+        <h2>事業情報</h2>
+        <button class="toggle-button-1" id="toggle-button-1">+</button>
+    </div>
+    <div class="section-content-1" id="section-content-01">
+        <details>
+            <summary><a href="/business/electric-safety/index.php">電気安全調査</a></summary>
+        </details>
+        <details>
+            <summary><a href="/business/home-engineer/index.php">ホームエンジニア</a></summary>
+        </details>
+        <details>
+            <summary><a href="/business/gas-engineer/index.php">ガスエンジニア</a></summary>
+        </details>
+        <details>
+            <summary><a href="/business/ev-charger/index.php">EV充電器設置</a></summary>
+        </details>
+    </div>
+    <div class="section">
+        <h2>企業情報</h2>
+        <button class="toggle-button-2" id="toggle-button-2">+</button>
+    </div>
+    <div class="section-content-1" id="section-content-02">
+        <details>
+            <summary><a href="/company/firm/index.php">会社概要・アクセス</a></summary>
+        </details>
+        <details>
+            <summary><a href="/company/CEO/index.php">CEOメッセージ</a></summary>
+        </details>
+        <details>
+            <summary><a href="/company/member/index.php">経営メンバー</a></summary>
+        </details>
+        <details>
+            <summary><a href="/company/vision/index.php">企業理念</a></summary>
+        </details>
+    </div>
+
+    <div class="section">
+        <h2>採用情報</h2>
+        <button class="toggle-button-3" id="toggle-button-3">+</button>
+    </div>
+    <div class="section-content-1" id="section-content-03">
+        <details>
+            <summary><a href="/recruit/技術系採用/index.php">技術系</a></summary>
+        </details>
+        <details>
+            <summary><a href="/recruit/事務系採用/index.php">事務系</a></summary>
+        </details>
+    </div>
+
+    <div class="section">
+        <h2>電気安全点検に関するお問い合わせ</h2>
+        <button class="toggle-button-4" id="toggle-button-4">+</button>
+    </div>
+    <div class="section-content-1" id="section-content-04">
+        <details>
+            <summary><a href="/電気点検お問い合わせ/index.php">電気点検</a></summary>
+        </details>
+    </div>
+
+    <div class="section">
+        <h2>ニュース</h2>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.container-1 .toggle-button-1').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const sectionContent2 = document.getElementById('section-content-01');
+    
+            if (sectionContent2.classList.contains('show2')) {
+                sectionContent2.classList.remove('show2');
+                sectionContent2.style.maxHeight = null;
+            } else {
+                sectionContent2.classList.add('show2');
+                sectionContent2.style.maxHeight = sectionContent.scrollHeight + "px";
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.container-1 .toggle-button-2').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const sectionContent2 = document.getElementById('section-content-02');
+    
+            if (sectionContent2.classList.contains('show2')) {
+                sectionContent2.classList.remove('show2');
+                sectionContent2.style.maxHeight = null;
+            } else {
+                sectionContent2.classList.add('show2');
+                sectionContent2.style.maxHeight = sectionContent.scrollHeight + "px";
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.container-1 .toggle-button-3').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const sectionContent2 = document.getElementById('section-content-03');
+    
+            if (sectionContent2.classList.contains('show2')) {
+                sectionContent2.classList.remove('show2');
+                sectionContent2.style.maxHeight = null;
+            } else {
+                sectionContent2.classList.add('show2');
+                sectionContent2.style.maxHeight = sectionContent.scrollHeight + "px";
+            }
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.container-1 .toggle-button-4').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const sectionContent2 = document.getElementById('section-content-04');
+    
+            if (sectionContent2.classList.contains('show2')) {
+                sectionContent2.classList.remove('show2');
+                sectionContent2.style.maxHeight = null;
+            } else {
+                sectionContent2.classList.add('show2');
+                sectionContent2.style.maxHeight = sectionContent.scrollHeight + "px";
+            }
+        });
+    });
+});
+</script>

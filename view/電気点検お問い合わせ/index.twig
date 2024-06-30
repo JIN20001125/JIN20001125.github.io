@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電気点検に関するお問い合わせ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- スタイルシートのリンク -->
+    <link rel="stylesheet" href="/src/css/電気点検お問い合わせ.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <!-- ファビコンのリンク -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+<!-- ヘッダー -->
+<div class="header-container-1024">
+    {% include 'header/small.twig' %}
+</div>
+<div class="header-container-1023">
+    {% include 'header/confirm.twig' %}
+</div>
+
+<div class="sub-header">
+    <a href="/index.php">HOME</a>　＞　<a href="/電気点検お問い合わせ/index.php">電気点検お問い合わせ</a>
+</div>
+<!-- お問い合わせ情報セクション -->
+
+<div class="margin">
+</div>
+<div class="contact-info sp">
+    <h2>電気安全点検に関する</h2>
+    <h2>お問い合わせ</h2>
+    <p>フリーダイヤル: <a href="tel:0120-187-550">0120-187-550</a></p>
+    <p>携帯電話から: <a href="tel:03-5612-7550">03-5612-7550</a></p>
+</div>
+<div class="contact-info pc">
+    <h2>電気安全点検に関するお問い合わせ</h2>
+    <p>フリーダイヤル: <a href="tel:0120-187-550">0120-187-550</a></p>
+    <p>携帯電話から: <a href="tel:03-5612-7550">03-5612-7550</a></p>
+</div>
+<div class="margin">
+</div>
+    
+<!-- フッター -->
+<div class="header-container-1024">
+        {% include 'footer/footer.twig' %}
+</div>
+<div class="header-container-1023">
+        {% include 'footer/confirm.twig' %}
+</div>
+
+<!-- JavaScriptのリンク -->
+<script src="/src/js/busines-header/busines-hover.js"></script>
+</body>
+</html>

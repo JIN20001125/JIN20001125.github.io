@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEOメッセージ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- スタイルシートのリンク -->
+    <link rel="stylesheet" href="/src/css/ceo/ceo.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <!-- ファビコンのリンク -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+<!-- ヘッダー -->
+<div class="header-container-1024">
+    {% include 'header/small.twig' %}
+</div>
+<div class="header-container-1023">
+    {% include 'header/confirm.twig' %}
+</div>
+
+<div class="sub-header">
+    <a href="/index.php">HOME</a>　＞　<a href="/top/index.php#company-info">企業情報</a>　＞　<a href="/company/CEO/index.php">CEOメッセージ</a>
+</div>
+<!-- ヘッダー下 -->
+    <div class="ceo-message">
+        <h1>{{ メインタイトル }}</h1>
+    </div>
+    <div class="main-section">
+        <div class="ceo-image">
+            <img src="/浜田さん/CEO/jpg/1.jpg" alt="CEO写真">
+        </div>
+        <div class="message-section">
+            <h1>{{ サブタイトル }}</h2>
+            <div class="message-content">
+                <p>{{ 備考1 }}</p>
+            </div>
+            <div class="message-content">
+                <p>{{ 備考2 }}</p>
+            </div>
+            <div class="message-content">
+                <p>{{ 備考3 }}</p>
+            </div>
+            <div class="message-content">
+                <p>{{ 備考4 }}</p>
+                <p style="padding-top:2%;">{{ 備考5 }}</p>
+            </div>
+            <div class="margin">
+            </div>
+
+            <div class="ceo-info">
+                <p class="ceo-name">{{ 社長名 }}</p>
+                <img src="/浜田さん/CEO/jpg/2.jpg" alt="手書き写真" class="ceo-image-small">
+            </div>
+        </div>
+    </div>
+
+    <div class="margin">
+    </div>
+    
+<!--ナビゲーション-->
+     <!-- フッター -->
+    <div class="header-container-1024">
+         {% include 'footer/footer.twig' %}
+    </div>
+
+    <div class="header-container-1023">
+         {% include 'footer/confirm.twig' %}
+    </div>
+
+
+    <!-- JavaScriptのリンク -->
+    <script src="/src/js/busines-header/busines-hover.js"></script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/src/css/form/bootstrap.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+<!-- ヘッダー -->
+{% include 'header/small.twig' %}
+
+<div class="container">
+    <form method="POST" action="../../form/confirm.php">
+        <input type="hidden" name="token" value="{{ token }}">
+        <div id="entryForBase" class="confirm edit">
+            <div class="title">応募内容</div>
+            <div class="contentUnit">
+                <table class="table table-bordered">
+                    <tbody>        
+
+                        {# 姓名 #}
+                        <tr class="name">
+                            <th class="item">
+                                <span class="text">姓名 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                    <!--name属性の名前は必ずユニークになるように！ name="name"が複数あります-->
+                                    <input type="text" id="name" name="sei" value="{{ post.sei }}" placeholder="姓"class="input2">
+                                    <input type="text" name="mei" value="{{ post.mei }}" placeholder="名">
+                                    <p class="red">{{ err.sei }}</p>
+                                    <p class="red">{{ err.mei }}</p>
+                                </div>
+                                <div class="input">
+                                    <input type="text" name="seiKana" value="{{ post.seiKana }}" placeholder="セイ" class="input2">
+                                    <input type="text" name="meiKana" value="{{ post.meiKana }}" placeholder="メイ">
+                                    <p class="red">{{ err.seiKana }}</p>
+                                    <p class="red">{{ err.meiKana }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# メールアドレス #}
+                        <tr class="email">
+                            <th class="item">
+                                <span class="text">メールアドレス *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input wid">
+                                    <div class="suggestSet">
+                                        <div class="input">
+                                            <input type="text" name="email" value="{{ post.email }}" placeholder="メールアドレス"
+                                                   id="js_loginId" class="js_blurSuggest imeOff mailEntering">
+                                            <p class="red">{{ err.email }}</p>
+                                            <ul class="suggestList" id="mailSuggest">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 生年月日 #}
+                        <tr class="birth">
+                            <th class="item">
+                                <span class="text">生年月日 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                  <input type="date" name="birthDay" value="{{ post.birthDay }}">
+                                     <p class="red">{{ err.birthDay }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 性別 #}
+                        <tr class="mw">
+                            <th class="item">
+                                <span class="text">性別 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                    <!--
+
+                                        値保持のやり方
+                                        ① データを配列で予め登録しておく。 config.php
+                                        ② 値のやりとりはセキュリティや取り回しを考えても数字で行う
+                                            1だったら男 2だったら女
+                                        ③ 予め作成していたgenderデータをループで表示
+                                        ④ このとき、確認画面から戻ってきている値とキーを比較
+                                        ⑤ 初めの入力段階では値がないのでfalseになりどちらにもチェックは入らないが、
+                                        確認画面から戻ってきて値があれば条件にマッチして、マッチした方をチェックした状態にする。
+
+                                        以上
+
+                                    -->
+                                    {% for key,val in gender %}
+                                        {% if key == post.sex %}
+                                           <span class="radio">
+                                            <input type="radio" checked="checked" name="sex" value="{{ key }}" id="sex{{ key }}" style="width:10px;">
+                                            <label for="sex{{ key }}">{{ val }}</label>
+                                           </span>
+                                        {% else %}
+                                          <span class="radio">
+                                            <input type="radio" name="sex" value="{{ key }}" id="sex{{ key }}" class="width" style="width:10px;">
+                                            <label for="sex{{ key }}">{{ val }}</label>
+                                          </span>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <p  class="red">{{ err.sex }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 現住所 #}
+                        <tr class="adress">
+                            <th class="item">
+                                <span class="text">現住所 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                    <span class="label">〒</span>
+                                    <input type="text" name="zipCode" value="{{ post.zipCode }}" class="imeOff" id="zipCode">
+                                    <p class="red">{{ err.zipCode }}</p>
+                                </div>
+                                <div class="input">
+                                    <select name="pref">
+                                        <option value="">---</option>
+                                        {% for key,value in prefecture %}
+                                        {% if post.pref == key %}
+                                        <option value="{{ key }}" selected="selected">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                       {% endfor %}
+                                    </select>
+                                    {% for val in err.pref %}
+                                    <p class="red">{{ val }}</p>
+                                    {% endfor %}
+                                </div>
+                                <div class="input wid">
+                                    <input type="text" name="municipalities" value="{{ post.municipalities }}"
+                                           placeholder="市区町村 例）渋谷区、大阪市 など" class="" id="municipalities">
+                                    <p class="red">{{ err.municipalities }}</p>
+                                </div>
+                                <div class="input wid">
+                                  <input type="text" name="otherAdd" value="{{ post.otherAdd }}" placeholder="番地 マンション名など" class="" id="otherAdd">
+                                    <p class="red">{{ err.otherAdd }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 携帯電話番号 #}
+                        <tr class="phoneNum">
+                            <th class="item">
+                                <span class="text">携帯電話番号 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input wid">
+                                    <input type="tel" name="tel" value="{{ post.tel }}" placeholder="例）080XXXXXXXX"
+                                           class="imeOff " id="tel">
+                                  </div>
+                               <p class="red">{{ err.tel }}</p>
+                            </td>
+                        </tr>
+
+                        {# 最終学歴 #}
+                        <tr class="school">
+                            <th class="item">
+                                <span class="text">最終学歴 *</span>
+                            </th>
+                            <td class="data">
+                                {# 学校の種類 #}
+                                <div class="input">
+                                    <select name="schoolDivision">
+                                        <option value="">学校の種類を選択してください</option>
+                                        {% for key,value in school %}
+                                        {% if post.schoolDivision == key %}
+                                        <option value="{{ key }}" selected="selected">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                       {% endfor %}
+                                     </select>
+                                     {% for val in err.schoolDivision %}
+                                     <p class="red">{{ val }}</p>
+                                     {% endfor %}
+                                </div>
+
+                                {# 学校名 #}
+                                <div class="input wid">
+                                    <div class="suggestSet">
+                                        <div class="input">
+                                            <input type="text" name="graduatingSchool" value="{{ post.graduatingSchool }}"
+                                                   placeholder="学校名を入力してください" class="ui-autocomplete-input " id="txtSchool">
+                                               <p class="red">{{ err.graduatingSchool }}</p>
+                                        </div>
+                                        <ul class="suggestList" id="schoolSuggest" style="display:none;"></ul>
+                                    </div>
+                                </div>
+
+                                {# 学部 / 学科 #}
+                                <div class="input wid">
+                                    <input type="text" name="graduatingSchoolDepartment"
+                                           value="{{ post.graduatingSchoolDepartment }}" placeholder="学部 / 学科を入力してください" class="">
+                                    <p class="red">{{ err.graduatingSchoolDepartment }}</p>
+                                </div>
+                                
+                                {# 卒業年早見表 #}
+                                <div class="input">
+                                    <p>卒業年を選択してください</p>
+                                    <select name="graduationYear" class="js_selGradYear">
+                                        <option value="">---</option>
+                                        {% for key,value in graduate %}
+                                        {% if post.graduationYear == key %}
+                                        <option value="{{ key }}" selected="selected">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                       {% endfor %}
+                                    </select>
+                                    <span class="gradModal"></span>
+                                    <div class="clear"></div>
+                                    <p class="red">{{ err.graduationYear }}</p>
+                                </div>
+
+                            </td>
+                        </tr>
+
+                        {# 現在（直近）職種 #}
+                        <tr class="experience js_workTr">
+                            <th class="item">
+                                <span class="text">現在（直近）職種 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                    <select name="currentJob" class="js_selCurrentJob">
+                                        <option value="">現在（直近）の職種を選択してください</option>
+                                        {% for key,value in sales  %}
+                                        {% if post.currentJob == key %}
+                                        <option value="{{ key }}" selected="selected">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                       {% endfor %}
+                                     </select>
+                                  <p class="red">{{ err.currentJob }}</p>
+                                </div>
+                                <div class="input">
+                                    <select name="experienceYear" class="js_exYear">
+                                        <option value="">経験年数を選択してください</option>
+                                        {% for key,value in experiment  %}
+                                        {% if post.experienceYear == key %}
+                                        <option value="{{ key }}" selected="selected">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                       {% endfor %}
+                                     </select>
+                                   <p class="red">{{ err.experienceYear }}</p>
+                                </div>
+                                <div class="input wid">
+                                    <div class="suggestSet">
+                                        <label value="">直近の企業名:</label>
+                                        <input type="text" name="joinedCompanyName" value="{{ post.joinedCompanyName }}"
+                                            placeholder="例）株式会社昭栄電気産業" id="txtCompany" class="js_blurSuggest">
+                                       <p class="red">{{ err.joinedCompanyName }}</p>
+                                    </div>
+                                </div>
+                                 <div class="input">
+                                  <div class="Joing">
+                                    <label value="">入社年:</label>
+                                    <input type="date" name="employmentYear" value="{{ post.employmentYear }}">
+                                  </div>
+                                  <div class="leaving">
+                                    <label value="">退職年:</label>
+                                    <input type="date" name="retirementYear" value="{{ post.retirementYear }}">
+                                    <span class="holder" style="font-size:13px;">まで</span>
+                                  </div>
+                                </div>
+                                <p class="red">{{ err.employmentYear }}</p>
+                                <p class="red">{{ err.retirementYear }}</p>
+                            </td>
+                        </tr>
+
+                        {# 転職経験 #}
+                        <tr class="changeTimes js_workTr">
+                            <th class="item">
+                                <span class="text">転職経験 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                   <select name="jobChange" class="">
+                                      <option value="">転職経験を選択してください</option>
+                                      {% for key,value in change  %}
+                                      {% if post.jobChange == key %}
+                                      <option value="{{ key }}" selected="selected">{{ value }}</option>
+                                      {% else %}
+                                          <option value="{{ key }}">{{ value }}</option>
+                                      {% endif %}
+                                     {% endfor %}
+                                    </select>
+                                   <p class="red">{{ err.jobChange }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 直近の年収 #}
+                        <tr class="income js_workTr">
+                            <th class="item">
+                                <span class="text">直近の年収 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                    <select name="annualSalary" class="">
+                                        <option value="">直近の年収を選択してください</option>
+                                        {% for key,value in money  %}
+                                        {% if post.annualSalary == key %}
+                                        <option value="{{ key }}" selected="selected">{{ value }}</option>
+                                        {% else %}
+                                            <option value="{{ key }}">{{ value }}</option>
+                                        {% endif %}
+                                       {% endfor %}
+                                      </select>
+                                   <p class="red">{{ err.annualSalary }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 就業状況 #}
+                        <tr class="condition js_workTr">
+                            <th class="item">
+                                <span class="text">就業状況 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                  {% for key,val in job %}
+                                      {% if key == post.cond %}
+                                        <span class="radio"><!--spanは要素を囲うものではなく単体で使用するもの-->
+                                          <input type="radio" checked="checked" name="cond" value="{{ key }}" id="cond{{ key }}" style="width:10px;">
+                                          <label for="cond{{ key }}">{{ val }}</label>
+                                        </span>
+                                        {% else %}
+                                        <span class="radio"><!--spanは要素を囲うものではなく単体で使用するもの-->
+                                          <input type="radio" name="cond" value="{{ key }}" id="cond{{ key }}" style="width:10px;">
+                                          <label for="cond{{ key }}">{{ val }}</label>
+                                        </span>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <p class="red">{{ err.cond }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 既婚／未婚 #}
+                        <tr class="condition js_workTr">
+                            <th class="item">
+                                <span class="text">既婚／未婚 *</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                  {% for key,val in marry %}
+                                      {% if key == post.marry_now %}
+                                        <span class="radio"><!--spanは要素を囲うものではなく単体で使用するもの-->
+                                          <input type="radio" checked="checked" name="marry_now" value="{{ key }}" id="marry_now{{ key }}" style="width:10px;">
+                                          <label for="marry_now{{ key }}">{{ val }}</label>
+                                        </span>
+                                      {% else %}
+                                        <span class="radio"><!--spanは要素を囲うものではなく単体で使用するもの-->
+                                          <input type="radio" name="marry_now" value="{{ key }}" id="marry_now{{ key }}" style="width:10px;">
+                                          <label for="marry_now{{ key }}">{{ val }}</label>
+                                        </span>
+                                      {% endif %}
+                                    {% endfor %}
+                                    <p class="red">{{ err.marry_now }}</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                        {# 在籍期間
+                        <tr class="term js_workTr">
+                            <th class="item">
+                                <span class="text about">在籍期間</span>
+                                <span class="about">(入社年 *)</span>
+                            </th>
+                            <td class="data">
+                                <div class="input">
+                                  <div class="Joing">
+                                    <label value="">入社年</label>
+                                    <input type="date" name="employmentYear" value="{{ post.employmentYear }}">
+                                  </div>
+                                  <div class="leaving">
+                                    <label value="">退職年</label>
+                                    <input type="date" name="retirementYear" value="{{ post.retirementYear }}">
+                                    <span class="holder" style="font-size:13px;">まで</span>
+                                  </div>
+                                </div>
+                                <p class="red">{{ err.employmentYear }}</p>
+                                <p class="red">{{ err.retirementYear }}</p>
+                              </div>
+                            </td>
+                        </tr> #}
+
+                        {# 取得資格 #}
+                        <tr class="Shikaku js_workTr">
+                            <th class="item">
+                                <span class="text">取得資格</span>
+                            </th>
+                            <td class="data">
+                                <div class="input wid">
+                                    <div class="suggestSet">
+                                        <textarea style = " font-family: inherit; resize:none; padding-left:3px;padding-bottom: 20%; background: #fafafa; border: 1px solid #D8DBDE; border-image: none; border-radius: 4px;width: 100%; padding-top: 10px;" type="text" name="Shikaku" value="{{ post.Shikaku }}" placeholder="例）普通自動車運転免許、電気工事士2種など" id="txtCompany" class="js_blurSuggest"></textarea>
+                                       <p class="red">{{ err.Shikaku }}</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            {# 確認画面へ #}
+            <div class="contentUnit2">
+                <div class="btnUnit">
+                    <button id="submit" class="btn btn-primary">確認画面へ</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/src/js/busines-header/busines-hover.js"></script>
+<script>
+    $(".btn").on("click", function () {
+        var val = $(this).val();
+        $("form").attr("action", "../form/confirm.php");
+        $("form").submit();
+        });
+</script>
+</body>
+</html>

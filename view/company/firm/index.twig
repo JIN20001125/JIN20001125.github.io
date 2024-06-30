@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要・アクセス</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- スタイルシートのリンク -->
+    <link rel="stylesheet" href="/src/css/firm/firm.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <!-- ファビコンのリンク -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+<!-- ヘッダー -->
+<div class="header-container-1024">
+    {% include 'header/small.twig' %}
+</div>
+<div class="header-container-1023">
+    {% include 'header/confirm.twig' %}
+</div>
+
+<div class="sub-header">
+    <a href="/index.php">HOME</a>　＞　<a href="/top/index.php#company-info">企業情報</a>　＞　<a href="/company/firm/index.php">会社概要・アクセス</a>
+</div>
+
+<!-- ヘッダー下 -->
+    
+    <div class="background-image-section">
+        <!-- このセクションに背景画像が表示されます -->
+        <h1>{{ メインタイトル }}</h1>
+    </div>
+
+    <div class="margin">
+    </div>
+
+    <div class="company-overview pc">
+        <div class="company-details-content"> <!-- テキストコンテナを追加 -->
+            <div class="info-container1">
+                <p class="info-title">会社名</p>
+                <p class="info-title">所在地</p>
+                <p class="info-title">代表取締役社長</p>
+                <p class="info-title">売上収益</p>
+                <p class="info-title">社員数</p>
+                <p class="info-title">資本金</p>
+                <p class="info-title no-border">事業内容</p>
+            </div>
+            <div class="info-container2">
+                <p class="info-content">{{ 会社名 }}</p>
+                <p class="info-content">{{ 所在地 }}</p>
+                <p class="info-content">{{ 代表取締役社長 }}</p>
+                <p class="info-content">{{ 売上収益 }}</p>
+                <p class="info-content">{{ 社員数 }}</p>
+                <p class="info-content">{{ 資本金 }}</p>
+                <p class="info-content no-border">{{ 事業内容 }}</p>
+            </div>
+        </div>
+        <div class="company-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.2681670365832!2d139.87880131535792!3d35.74421298017973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601885c46e2fd783%3A0x2a3a1697542793a9!2z5pit5qCE6Zu75rCX55Sj5qWt!5e0!3m2!1sja!2sjp!4v1608531938316!5m2!1sja!2sjp"></iframe>
+        </div>
+    </div>
+
+    <div class="company-overview sp">
+        <div class="company-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.2681670365832!2d139.87880131535792!3d35.74421298017973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601885c46e2fd783%3A0x2a3a1697542793a9!2z5pit5qCE6Zu75rCX55Sj5qWt!5e0!3m2!1sja!2sjp!4v1608531938316!5m2!1sja!2sjp"></iframe>
+        </div>
+        <div class="company-details-content"> <!-- テキストコンテナを追加 -->
+            <div class="info-container1">
+                <p class="info-title">会社名</p>
+                <p class="info-title">所在地</p>
+                <p class="info-title">代表取締役社長</p>
+                <p class="info-title">売上収益</p>
+                <p class="info-title">社員数</p>
+                <p class="info-title">資本金</p>
+                <p class="info-title no-border">事業内容</p>
+            </div>
+            <div class="info-container2">
+                <p class="info-content">株式会社昭栄電気産業</p>
+                <p class="info-content">東京都葛飾区鎌倉3-58-2</p>
+                <p class="info-content">岩本　洋介</p>
+                <p class="info-content">連結33,581百万円(2023年3月期)</p>
+                <p class="info-content">312名</p>
+                <p class="info-content">2000万円</p>
+                <p class="info-content no-border">電気設備保安、点検及び計器交換工事</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="margin">
+    </div>
+
+    <!-- フッター -->
+    <div class="header-container-1024">
+         {% include 'footer/footer.twig' %}
+    </div>
+
+    <div class="header-container-1023">
+         {% include 'footer/confirm.twig' %}
+    </div>
+
+
+    <!-- JavaScriptのリンク -->
+    <script src="/src/js/busines-header/busines-hover.js"></script>
+</body>
+</html>

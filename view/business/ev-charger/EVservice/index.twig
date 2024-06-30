@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/ev-charger/ev-charger-common.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <title>QuickCharge工事サービス</title>
+
+    <style>
+         .bg-custom-orange {
+            background-color: #FFCCAA; /* こちらの値はお好みで調整できます */
+         }
+    
+        /* スマホ用CSS / */
+        @media screen and (min-width:0px) and (max-width:459px) {
+            .workflow .step {
+                display: block;
+                font-size: 25px;
+            }
+            .resonsive-pc {
+                display: none;
+            }
+            .underline-title {
+            display: inline-block;
+            border-bottom: 3px solid #000; /* 下線の色と太さを調整 */
+            padding-bottom: 5px; /* 下線とテキストの間隔 */
+            }
+            .smaller-image {
+            width: 200px;
+            height: auto;
+            vertical-align: bottom; /* 画像の底面を合わせる */
+            }
+            yellow1{
+                color:rgba(252, 211, 77, 1);
+            }
+            red{
+                color:#FFCCAA;
+            }
+            blue{
+                color:rgba(147, 197, 253, 1);
+            }
+        }
+        /* タブレット用CSS */
+        @media screen and (min-width:460px) and (max-width:899px) {
+            .resonsive-sp {
+                display: none;
+            }
+            .underline-title {
+            display: inline-block;
+            border-bottom: 3px solid #000; /* 下線の色と太さを調整 */
+            padding-bottom: 5px; /* 下線とテキストの間隔 */
+            }
+            .smaller-image {
+            width: 200px;
+            height: auto;
+            vertical-align: bottom; /* 画像の底面を合わせる */
+            }
+            yellow1{
+                color:rgba(252, 211, 77, 1);
+            }
+            red{
+                color:#FFCCAA;
+            }
+            blue{
+                color:rgba(147, 197, 253, 1);
+            }
+        }
+
+        /* PC用CSS */
+        @media screen and (min-width:899px) {
+            .resonsive-sp {
+                display: none;
+            }
+            .underline-title {
+            display: inline-block;
+            border-bottom: 2px solid #000;  /* 下線の色と太さを調整 */
+            padding-bottom: 5px; /* 下線とテキストの間隔 */
+            }
+            .smaller-image {
+            width: 200px;
+            height: auto;
+            vertical-align: bottom; /* 画像の底面を合わせる */
+            }
+            yellow1{
+                color:rgba(252, 211, 77, 1);
+            }
+            red{
+                color:#FFCCAA;
+            }
+            blue{
+                color:rgba(147, 197, 253, 1);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header-container-1024">
+        {% include 'header/small.twig' %}
+    </div>
+    <div class="header-container-1023">
+        {% include 'header/confirm.twig' %}
+    </div>
+    <!-- ヘッダー下 -->
+    <div class="sub-header">
+        <a href="/index.php">HOME</a>　＞　<a href="/top/index.php#business">事業情報</a>　＞　<a href="/business/ev-charger/index.php">EV充電器設置ご検討の方へ</a><a href="/business/ev-charger/EVservice/index.php">　＞　サービス詳細</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-white text-center py-16">
+        <div class="inline-block text-center underline-title">
+            <h2 class="text-4xl font-extrabold inline-block">東京、千葉、埼玉で信頼のEV充電設置工事</h2>
+            <img src="/src/img/EV_logo.png" alt="画像の説明を入れてください" class="inline-block mr-4 smaller-image">
+        </div>
+        <p class="text-lg font-light mt-4"><yellow1>安心</yellow1>・<red>安全</red>・<blue>迅速</blue>にEV充電設備をお届けします</p>
+    </section>
+
+    <!-- スマホ -->
+    <section id="about" class="resonsive-sp bg-gray-100 text-center py-16 border border-gray-400 rounded-lg">
+        <h2 class="text-4xl font-extrabold">サービス概要</h2>
+        <div class="mt-8 text-lg font-bold">
+            <div class="workflow" style="padding-bottom: 7%;">
+                <span class="step">お問い合わせ</span> ↓
+                <span class="step">現地調査</span> ↓
+                <span class="step">お見積り</span> ↓
+                <span class="step">後日工事</span> ↓
+                <span class="step">お引渡し</span> ↓
+                <span class="step">お支払い</span>
+            </div>
+            <!-- <p class="text-2xl">お問い合わせ → 現地調査 → お見積り → 後日工事 → お引渡し → お支払い</p> -->
+            <p class="text-lg">対応可能エリア: 東京23区（多摩エリア以外）、千葉県、埼玉県 ※ご対応できない地域もございます。</p>
+        </div>
+    </section>
+
+    <!-- ipad,pc -->
+    <section id="about" class="resonsive-pc bg-gray-100 text-center py-16 border border-gray-400 rounded-lg">
+        <h2 class="text-4xl font-extrabold">サービス概要</h2>
+        <div class="mt-8 text-lg font-bold">
+            <p class="text-2xl" style="padding-bottom: 1%;">お問い合わせ → 現地調査 → お見積り → 後日工事 → お引渡し → お支払い</p>
+            <p class="text-lg">対応可能エリア: 東京23区（多摩エリア以外）、千葉県、埼玉県 ※ご対応できない地域もございます。</p>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+ <!-- Features Section -->
+<div id="features" class="text-center py-16">
+    <h2 class="text-3xl font-extrabold">特長</h2>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="bg-yellow-300 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">高品質</h3>
+            <p class="mt-4">最新の設備と優れた技術力</p>
+        </div>
+        <div class="bg-custom-orange p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">安全</h3>
+            <p class="mt-4">厳格な安全基準をクリア</p>
+        </div>
+        <div class="bg-blue-300 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">迅速</h3>
+            <p class="mt-4">短期間での設置とサポート</p>
+        </div>
+    </div>
+    <!-- Added "工事実績はこちら" link -->
+    <div class="mt-8">
+        <a href="/business/ev-charger/EVjisseki/index.php" class="text-lg text-blue-500 hover:underline">工事実績はこちら</a>
+    </div>
+</div>
+
+
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-gray-100 text-center py-16">
+        <h2 class="text-3xl font-extrabold">よくある質問</h2>
+        <div class="mt-8 text-lg font-light">
+            <div class="" style = "padding-bottom:3%">
+                <p>Q: 設置費用はいくらですか？</p>
+                <p>A: それは現地調査後にお見積りします。</p>
+            </div>
+            <div class="" style = "padding-bottom:3%">
+                <p>Q: 対応エリア外でも設置可能ですか？</p>
+                <p>A: 基本的には対応エリア内のみですが、ご相談ください。</p>
+            </div>
+            <div class="" style = "padding-bottom:3%">
+                <p>Q: 設置にどれくらい時間がかかりますか？</p>
+                <p>A: 現地の条件により異なります。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="text-center bg-green-600 text-white py-16">
+        <h2 class="text-4xl font-extrabold">お問い合わせはこちら</h2>
+        <div class="mt-8">
+            <a href="/EVform/index.php" class="bg-white text-green-600 py-2 px-4 rounded-full text-lg">お問い合わせ</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto text-center">
+            <p>© 2023 QuickCharge工事サービス</p>
+            <p >お電話でのお問い合わせ : 090-5571-5097</p>
+        </div>
+    </footer>
+
+     <!-- フッター -->
+     <div class="header-container-1024">
+         {% include 'footer/footer.twig' %}
+    </div>
+
+    <div class="header-container-1023">
+         {% include 'footer/confirm.twig' %}
+    </div>
+
+    <!-- JavaScriptのリンク -->
+    <script src="/src/js/busines-header/busines-hover.js"></script>
+</body>
+</html>

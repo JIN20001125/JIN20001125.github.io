@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>{{ title }}</title>
+  <style>
+    /* スマホ用CSS / */
+        @media screen and (min-width:0px) and (max-width:459px) {
+            .mar-top {
+                margin-top: 50%;
+            }
+        }
+
+    .red{
+      color:red;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+  <div class="mar-top container bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <h1 class="text-3xl mb-4">お問い合わせフォーム</h1>
+    <form method="POST" action="../../EVform/confirm.php">
+      <input type="hidden" name="token" value="{{ token }}">
+      <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-600">メールアドレス</label>
+        <input type="email" id="email" name="email" value="{{ post.email }}" class="mt-1 p-2 w-full border rounded-md">
+        <p class="red">{{ err.email }}</p>
+      </div>
+
+      <!-- Name -->
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-600">名前</label>
+        <input type="text" id="name" name="name" value="{{ post.name }}" class="mt-1 p-2 w-full border rounded-md">
+        <p class="red">{{ err.name }}</p>
+      </div>
+
+      <!-- Phone -->
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-gray-600">電話番号</label>
+        <input type="tel" id="phone" name="phone" value="{{ post.phone }}" class="mt-1 p-2 w-full border rounded-md">
+        <p class="red">{{ err.phone }}</p>
+      </div>
+
+      <!-- Car Type -->
+      <div class="mb-4">
+        <label for="car_type" class="block text-sm font-medium text-gray-600">車種</label>
+        <input type="text" id="car_type" name="car_type" value="{{ post.car_type }}" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+
+      <!-- Charger Type -->
+      <div class="mb-4">
+        <label for="charger_type" class="block text-sm font-medium text-gray-600">希望する充電器の種類</label>
+        <select name="charger_type" class="mt-1 p-2 w-full border rounded-md">
+          <option value="">希望する充電器の種類を選択してください</option>
+          {% for key,value in ev_type %}
+          {% if post.charger_type == key %}
+          <option value="{{ key }}" selected="selected">{{ value }}</option>
+          {% else %}
+              <option value="{{ key }}">{{ value }}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Blueprint -->
+      <div class="mb-4">
+        <label for="blueprint" class="block text-sm font-medium text-gray-600">建築図面の有無</label>
+        <select id="blueprint" name="blueprint" class="mt-1 p-2 w-full border rounded-md">
+            <option value="">建築図面の有無を選択してください</option>
+            {% for key,value in umu %}
+            {% if post.blueprint == key %}
+            <option value="{{ key }}" selected="selected">{{ value }}</option>
+            {% else %}
+                <option value="{{ key }}">{{ value }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+
+        {% for val in err.blueprint %}
+        <p class="red">{{ val }}</p>
+        {% endfor %}
+      </div>
+
+      <!-- Electric Contract -->
+      <div class="mb-4">
+        <label for="electric_contract" class="block text-sm font-medium text-gray-600">現在の電気契約容量</label>
+        <input type="text" id="electric_contract" name="electric_contract" value="{{ post.electric_contract }}" class="mt-1 p-2 w-full border rounded-md">
+      </div>
+
+      <!-- Other Questions -->
+      <div class="mb-4">
+        <label for="other_questions" class="block text-sm font-medium text-gray-600">その他質問事項</label>
+        <textarea id="other_questions" name="other_questions" value="{{ post.other_question }}" rows="4" class="mt-1 p-2 w-full border rounded-md"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button id="submit" type="submit" class="btn btn-primary px-4 py-2 bg-blue-500 text-white rounded-md">送信</button>
+      </div>
+    </form>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(".btn").on("click", function () {
+        var val = $(this).val();
+        $("form").attr("action", "../EVform/confirm.php");
+        $("form").submit();
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+
+<header>
+    <div class="smaller-header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="#"><img src="/src/img/shoeiROGO.jpg" alt="昭栄電気産業"></a>
+                <div class="company-name"><a href="/index.php">昭栄電気産業</a></div>
+            </div>
+            <nav class="main-nav">
+                <ul>                     
+                    <li class="nav-contact"><a id="contact" href="/電気点検お問い合わせ/index.php">電気安全点検に関するお問い合わせ</a></li>
+                    <li class="nav-list">
+                        <button id="List-button"><img src="/src/img/List.jpg" alt="リスト" class="toggle-image"></button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2>事業情報</h2>
+            <button class="toggle-button" id="toggle-button-1"><img src="/src/img/+.jpg" alt="+"></button>
+        </div>
+        <div class="section-content" id="section-content-1">
+            <details>
+                <summary><a href="/business/electric-safety/index.php">電気安全調査</a></summary>
+            </details>
+            <details>
+                <summary><a href="/business/home-engineer/index.php">ホームエンジニア</a></summary>
+            </details>
+            <details>
+                <summary><a href="/business/gas-engineer/index.php">ガスエンジニア</a></summary>
+            </details>
+            <details>
+                <summary><a href="/business/ev-charger/index.php">EV充電器設置</a></summary>
+            </details>
+        </div>
+        <div class="section">
+            <h2>企業情報</h2>
+            <button class="toggle-button" id="toggle-button-2"><img src="/src/img/+.jpg" alt="+"></button>
+        </div>
+        <div class="section-content" id="section-content-2">
+            <details>
+                <summary><a href="/company/firm/index.php">会社概要・アクセス</a></summary>
+            </details>
+            <details>
+                <summary><a href="/company/CEO/index.php">CEOメッセージ</a></summary>
+            </details>
+            <details>
+                <summary><a href="/company/member/index.php">経営メンバー</a></summary>
+            </details>
+            <details>
+                <summary><a href="/company/vision/index.php">企業理念</a></summary>
+            </details>
+        </div>
+        <div class="section">
+            <h2>採用情報</h2>
+            <button class="toggle-button" id="toggle-button-3"><img src="/src/img/+.jpg" alt="+"></button>
+        </div>
+        <div class="section-content" id="section-content-3">
+            <details>
+                <summary><a href="/recruit/技術系採用/index.php">技術系</a></summary>
+            </details>
+            <details>
+                <summary><a href="/recruit/事務系採用/index.php">事務系</a></summary>
+            </details>
+        </div>
+        <div class="section">
+            <h2>ニュース</h2>
+        </div>
+    </div>
+
+
+    <div class="header-overlay-nav-before">
+    <div>
+</header>
+
+<script>
+        // 画像を事前に読み込む
+        const preloadedImages = [];
+        const imagesToPreload = ['/src/img/List.jpg', '/src/img/X.jpg'];
+        imagesToPreload.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+            preloadedImages.push(img);
+        });
+
+        document.getElementById('toggle-button-1').addEventListener('click', function() {
+            const sectionContent = document.getElementById('section-content-1');
+            if (sectionContent) {
+                if (sectionContent.classList.contains('show')) {
+                    sectionContent.classList.remove('show');
+                    setTimeout(() => {
+                        sectionContent.style.display = 'none';
+                    }, 500); // アニメーションの時間に合わせて非表示にする
+                } else {
+                    sectionContent.style.display = 'block';
+                    setTimeout(() => {
+                        sectionContent.classList.add('show');
+                    }, 10); // display: block が適用されてからアニメーションを開始
+                }
+            }
+        });
+
+        document.getElementById('toggle-button-2').addEventListener('click', function() {
+            const sectionContent = document.getElementById('section-content-2');
+            if (sectionContent) {
+                if (sectionContent.classList.contains('show')) {
+                    sectionContent.classList.remove('show');
+                    setTimeout(() => {
+                        sectionContent.style.display = 'none';
+                    }, 500); // アニメーションの時間に合わせて非表示にする
+                } else {
+                    sectionContent.style.display = 'block';
+                    setTimeout(() => {
+                        sectionContent.classList.add('show');
+                    }, 10); // display: block が適用されてからアニメーションを開始
+                }
+            }
+        });
+
+        document.getElementById('toggle-button-3').addEventListener('click', function() {
+            const sectionContent = document.getElementById('section-content-3');
+            if (sectionContent) {
+                if (sectionContent.classList.contains('show')) {
+                    sectionContent.classList.remove('show');
+                    setTimeout(() => {
+                        sectionContent.style.display = 'none';
+                    }, 500); // アニメーションの時間に合わせて非表示にする
+                } else {
+                    sectionContent.style.display = 'block';
+                    setTimeout(() => {
+                        sectionContent.classList.add('show');
+                    }, 10); // display: block が適用されてからアニメーションを開始
+                }
+            }
+        });
+
+
+        document.getElementById('List-button').addEventListener('click', function() {
+            const container = document.querySelector('.container');
+            const listButtonImage = document.querySelector('#List-button img');
+
+            // コンテナの表示状態に応じて画像を切り替える
+            if (container.classList.contains('slide-down')) {
+                listButtonImage.classList.add('hidden'); // 画像を非表示にする
+                setTimeout(() => {
+                    listButtonImage.src = '/src/img/List.jpg'; // リスト画像に変更
+                    listButtonImage.classList.remove('hidden'); // 画像を表示する
+                }, 600); // アニメーションの時間に合わせて画像を変更
+                container.classList.remove('slide-down'); // slide-downクラスを削除
+                container.classList.add('slide-up'); // slide-upクラスを追加
+                setTimeout(() => {
+                    container.style.display = 'none'; // コンテナを非表示にする
+                    container.classList.remove('slide-up'); // slide-upクラスを削除
+                }, 600); // アニメーションの時間に合わせて非表示にする
+            } else {
+                listButtonImage.classList.add('hidden'); // 画像を非表示にする
+                setTimeout(() => {
+                    listButtonImage.src = '/src/img/X.jpg'; // ×画像に変更
+                    listButtonImage.classList.remove('hidden'); // 画像を表示する
+                }, 600); // アニメーションの時間に合わせて画像を変更
+                container.style.display = 'block'; // コンテナを表示
+                setTimeout(() => {
+                    container.classList.add('slide-down'); // slide-downクラスを追加
+                }, 10); // display: block が適用されてからアニメーションを開始
+            }
+        });
+    </script>

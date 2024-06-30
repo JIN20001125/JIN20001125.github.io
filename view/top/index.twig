@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社昭栄電気産業</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- スタイルシートのリンク -->
+    <link rel="stylesheet" href="/src/css/common.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <!-- ファビコンのリンク -->
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div class="header-container-1024">
+        {% include 'top/header/index.twig' %}
+    </div>
+
+    <div class="header-container-1023">
+        {% include 'top/header/confirm.twig' %}
+    </div>
+
+    {% if ロゴ表示 %}
+    <div id="notification-logo">
+        <img src="/浜田さん/昭栄君/jpg/1.png" alt="Logo">
+        <p>お知らせ</p>
+    </div>
+    {% else %}
+    {% endif %}
+    
+    <main>
+        <!-- ニュースセクション -->
+        <section id="news">
+            <h2>ニュース</h2>
+            <ul>
+                {% if ニュース30_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news30.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース30_年月 }}</span>
+                                {% if ニュース30_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース30_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース30_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース30_年月 }}</span>
+                            {% if ニュース30_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース30_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース30_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース30_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース29_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news29.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース29_年月 }}</span>
+                                {% if ニュース29_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース29_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース29_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース29_年月 }}</span>
+                            {% if ニュース29_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース29_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース29_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース29_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース28_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news28.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース28_年月 }}</span>
+                                {% if ニュース28_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース28_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース28_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース28_年月 }}</span>
+                            {% if ニュース28_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース28_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース28_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース28_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if ニュース27_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news27.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース27_年月 }}</span>
+                                {% if ニュース27_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース27_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース27_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース27_年月 }}</span>
+                            {% if ニュース27_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース27_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース27_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース27_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース26_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news26.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース26_年月 }}</span>
+                                {% if ニュース26_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース26_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース26_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース26_年月 }}</span>
+                            {% if ニュース26_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース26_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース26_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース26_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース25_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news25.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース25_年月 }}</span>
+                                {% if ニュース25_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース25_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース25_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース25_年月 }}</span>
+                            {% if ニュース25_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース25_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース25_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース25_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース24_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news24.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース24_年月 }}</span>
+                                {% if ニュース24_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース24_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース24_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース24_年月 }}</span>
+                            {% if ニュース24_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース24_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース24_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース24_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース23_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news23.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース23_年月 }}</span>
+                                {% if ニュース23_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース23_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース23_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース23_年月 }}</span>
+                            {% if ニュース23_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース23_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース23_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース23_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース22_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news22.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース22_年月 }}</span>
+                                {% if ニュース22_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース22_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース22_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース22_年月 }}</span>
+                            {% if ニュース22_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース22_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース22_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース22_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース21_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news21.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース21_年月 }}</span>
+                                {% if ニュース21_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース21_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース21_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース21_年月 }}</span>
+                            {% if ニュース21_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース21_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース21_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース21_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース20_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news20.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース20_年月 }}</span>
+                                {% if ニュース20_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース20_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース20_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース20_年月 }}</span>
+                            {% if ニュース20_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース20_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース20_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース20_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース19_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news19.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース19_年月 }}</span>
+                                {% if ニュース19_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース19_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース19_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース19_年月 }}</span>
+                            {% if ニュース19_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース19_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース19_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース19_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース18_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news18.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース18_年月 }}</span>
+                                {% if ニュース18_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース18_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース18_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース18_年月 }}</span>
+                            {% if ニュース18_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース18_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース18_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース18_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース17_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news17.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース17_年月 }}</span>
+                                {% if ニュース17_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース17_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース17_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース17_年月 }}</span>
+                            {% if ニュース17_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース17_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース17_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース17_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+
+                {% if ニュース16_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news16.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース16_年月 }}</span>
+                                {% if ニュース16_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース16_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース16_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース16_年月 }}</span>
+                            {% if ニュース16_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース16_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース16_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース16_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース15_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news15.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース15_年月 }}</span>
+                                {% if ニュース15_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース15_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース15_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース15_年月 }}</span>
+                            {% if ニュース15_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース15_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース15_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース15_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース14_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news14.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース14_年月 }}</span>
+                                {% if ニュース14_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース14_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース14_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース14_年月 }}</span>
+                            {% if ニュース14_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース14_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース14_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース14_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース13_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news13.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース13_年月 }}</span>
+                                {% if ニュース13_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース13_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース13_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース13_年月 }}</span>
+                            {% if ニュース13_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース13_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース13_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース13_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース12_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news12.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース12_年月 }}</span>
+                                {% if ニュース12_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース12_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース12_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース12_年月 }}</span>
+                            {% if ニュース12_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース12_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース12_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース12_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース11_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news11.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース11_年月 }}</span>
+                                {% if ニュース11_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース11_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース11_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース11_年月 }}</span>
+                            {% if ニュース11_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース11_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース11_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース11_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース10_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news10.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース10_年月 }}</span>
+                                {% if ニュース10_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース10_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース10_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース10_年月 }}</span>
+                            {% if ニュース10_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース10_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース10_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース10_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース9_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news9.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース9_年月 }}</span>
+                                {% if ニュース9_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース9_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース9_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース9_年月 }}</span>
+                            {% if ニュース9_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース9_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース9_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース9_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース8_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news8.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース8_年月 }}</span>
+                                {% if ニュース8_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース8_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース8_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース8_年月 }}</span>
+                            {% if ニュース8_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース8_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース8_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース8_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース7_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news7.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース7_年月 }}</span>
+                                {% if ニュース7_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース7_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース7_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース7_年月 }}</span>
+                            {% if ニュース7_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース7_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース7_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース7_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース6_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news6.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース6_年月 }}</span>
+                                {% if ニュース6_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース6_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース6_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース6_年月 }}</span>
+                            {% if ニュース6_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース6_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース6_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース6_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース5_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news5.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース5_年月 }}</span>
+                                {% if ニュース5_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース5_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース5_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース5_年月 }}</span>
+                            {% if ニュース5_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース5_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース5_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース5_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+
+                {% if ニュース4_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news4.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース4_年月 }}</span>
+                                {% if ニュース4_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース4_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース4_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース4_年月 }}</span>
+                            {% if ニュース4_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース4_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース4_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース4_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース3_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news3.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース3_年月 }}</span>
+                                {% if ニュース3_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース3_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース3_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース3_年月 }}</span>
+                            {% if ニュース3_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース3_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース3_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース3_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース2_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news2.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース2_年月 }}</span>
+                                {% if ニュース2_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース2_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース2_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース2_年月 }}</span>
+                            {% if ニュース2_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース2_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース2_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース2_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if ニュース1_年月 %}
+                    <li>
+                        <a href="/浜田さん/news/pdf/news1.pdf">
+                            <div class="date-type-container sp">
+                                <span class="date">{{ ニュース1_年月 }}</span>
+                                {% if ニュース1_タイプ=="1" %}
+                                    <span class="type recruitment">採用情報</span>
+                                {% endif %}
+                                {% if ニュース1_タイプ=="2" %}
+                                    <span class="type event">イベント情報</span>
+                                {% endif %}
+                                {% if ニュース1_タイプ=="3" %}
+                                    <span class="type company">企業情報</span>
+                                {% endif %}
+                            </div>
+                            <span class="date pc">{{ ニュース1_年月 }}</span>
+                            {% if ニュース1_タイプ=="1" %}
+                                <span class="type recruitment pc">採用情報</span>
+                            {% endif %}
+                            {% if ニュース1_タイプ=="2" %}
+                                <span class="type event pc">イベント情報</span>
+                            {% endif %}
+                            {% if ニュース1_タイプ=="3" %}
+                                <span class="type company pc">企業情報</span>
+                            {% endif %}
+                            <span class="title">{{ ニュース1_タイトル }}</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </section>
+
+        <!-- 事業情報セクション -->
+        <section id="business">
+            <h2>事業情報</h2>
+            <!-- 事業情報の内容 -->
+            <div class="business-container"> <!-- このコンテナを追加 -->
+                <div class="business-item" id="home-engineer">
+                    <h3><a href="/business/home-engineer/index.php">ホームエンジニア</a></h3>
+                </div>
+                <div class="business-item" id="electric-safety">
+                    <h3><a href="/business/electric-safety/index.php">電気安全調査</a></h3>
+                </div>
+                <div class="business-item" id="gas-engineer">
+                    <h3><a href="/business/gas-engineer/index.php">ガスエンジニア</a></h3>
+                </div>
+                <div class="business-item" id="ev-charger">
+                    <h3><a href="/business/ev-charger/index.php">EV充電器設置ご検討の方へ</a></h3>
+                </div>
+            </div>
+        </section>
+        <div class="margin">
+        </div>
+
+        <!-- 企業情報 -->
+        <section id="company-info">
+            <h2>企業情報</h2>
+            <div class="company-info-container">
+                <div id="access" class="company-info-item">
+                    <h2>会社概要・アクセス</h2>
+                </div>
+                <div id="ceo-message" class="company-info-item">
+                    <h2>CEOメッセージ</h2>
+                </div>
+                <div id="management-member" class="company-info-item">
+                    <h2>経営メンバー</h2>
+                </div>
+                <div id="corporate-philosophy" class="company-info-item">
+                    <h2>私たちの存在意義</h2>
+                </div>
+            </div>
+        </section>
+
+        <div class="margin">
+        </div>
+
+        <!-- 採用情報セクション -->
+        <section id="recruit" class="slide-in">
+            <h2>採用情報</h2>
+            <h3>ENTRY</h3> <!-- "ENTRY"テキストを追加 -->
+            <p>電気を共に守る仲間を募集します。</p> <!-- "ENTRY"テキストを追加 -->
+
+            <div class="recruit-container">
+                <div class="recruit-item">
+                    <a href="/recruit/技術系採用/index.php" class="recruit-button">技術系　＞</a>
+                </div>
+                <div class="recruit-item">
+                    <a href="/recruit/事務系採用/index.php" class="recruit-button">オペレータ募集　＞</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="margin">
+    </div>
+
+    <!-- フッター -->
+    <div class="header-container-1024">
+         {% include 'footer/footer.twig' %}
+    </div>
+
+    <div class="header-container-1023">
+         {% include 'footer/confirm.twig' %}
+    </div>
+    
+    <!-- JavaScriptのリンク -->
+    <script src="../../src/js/header_hover.js"></script>
+    <script src="../../src/js/header_change.js"></script>
+    
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var accessDiv = document.getElementById('access');
+            accessDiv.addEventListener('click', function() {
+                window.location.href = '/company/firm/index.php';
+                
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var accessDiv = document.getElementById('ceo-message');
+            accessDiv.addEventListener('click', function() {
+                window.location.href = '/company/CEO/index.php';
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var accessDiv = document.getElementById('management-member');
+            accessDiv.addEventListener('click', function() {
+                window.location.href = '/company/member/index.php';
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var accessDiv = document.getElementById('corporate-philosophy');
+            accessDiv.addEventListener('click', function() {
+                window.location.href = '/company/vision/index.php';
+            });
+        });
+
+        window.onload = function() {
+        // ページがリロードされたかどうかを判断するためのフラグ
+        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+            window.scrollTo(0, 0);
+        } else {
+        }
+    };
+        
+    </script>
+</body>
+</html>
+

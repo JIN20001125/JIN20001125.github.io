@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>経営メンバー</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- スタイルシートのリンク -->
+    <link rel="stylesheet" href="/src/css/member/member.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <!-- ファビコンのリンク -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+<!-- ヘッダー -->
+<div class="header-container-1024">
+    {% include 'header/small.twig' %}
+</div>
+<div class="header-container-1023">
+    {% include 'header/confirm.twig' %}
+</div>
+
+<div class="sub-header">
+    <a href="/index.php">HOME</a>　＞　<a href="/top/index.php#company-info">企業情報</a>　＞　<a href="/company/member/index.php">経営メンバー</a>
+</div>
+
+<!-- ヘッダー下 -->
+<div class="ceo-message">
+    <h1>{{ メインタイトル }}</h1>
+</div>
+
+<div class="ceo-auto">
+    <div class="ceo">
+        {% if 役員名1 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/1.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名1 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職1 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名2 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/2.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名2 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職2 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名3 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/3.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名3 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職3 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名4 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/4.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名4 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職4 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名5 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/5.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名5 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職5 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名6 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/6.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名6 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職6 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名7 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/7.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名7 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職7 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名8 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/8.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名8 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職8 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名9 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/9.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名9 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職9 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if 役員名10 %}
+            <div class="ceo-member">
+                <div class="ceo-member-inner">
+                    <img src="/浜田さん/経営メンバー/jpg/10.jpg" alt="CEO写真">
+                    <div class="ceo-member-info">
+                        <p class="ceo-member-name">{{ 役員名10 }}</p>
+                        <p class="ceo-member-title">{{ 役員役職10 }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+    <div class="margin">
+    </div>
+    
+    <!-- フッター -->
+    <div class="header-container-1024">
+         {% include 'footer/footer.twig' %}
+    </div>
+
+    <div class="header-container-1023">
+         {% include 'footer/confirm.twig' %}
+    </div>
+
+    <!-- JavaScriptのリンク -->
+    <script src="/src/js/busines-header/busines-hover.js"></script>
+</body>
+</html>

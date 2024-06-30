@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="/src/css/ev-charger/ev-charger-common.css">
+<link rel="stylesheet" href="/src/css/header.css">
+<link rel="stylesheet" href="/src/css/footer.css">
+<title>QuickCharge工事サービス</title>
+<style>
+   /* スマホ用CSS / */
+   @media screen and (min-width:0px) and (max-width:459px) {
+        .resonsive-pc {
+            display: none;
+        }
+        .koujirei {
+            padding:3%; margin:auto; width: 70%; height: auto;
+        }
+    }
+    /* タブレット用CSS */
+    @media screen and (min-width:460px) and (max-width:899px) {
+        .resonsive-pc {
+            display: none;
+        }
+        .koujirei {
+            padding:3%; margin:auto; width: 70%; height: auto;
+        }
+    }
+
+    /* PC用CSS */
+    @media screen and (min-width:899px) {
+        .resonsive-pc {
+            display: none;
+        }
+        .koujirei {
+            padding:3%; margin:auto; width: 70%; height: auto;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+<!-- ヘッダー下 -->
+<div class="header-container-1024">
+    {% include 'header/small.twig' %}
+</div>
+<div class="header-container-1023">
+    {% include 'header/confirm.twig' %}
+</div>
+ 
+<div class="sub-header">
+        <a href="/index.php">HOME</a>　＞　<a href="/top/index.php#business">事業情報</a>　＞　<a href="/business/ev-charger/index.php">EV充電器設置ご検討の方へ</a><a href="/business/ev-charger/EVjisseki/index.php">　＞　工事実績</a>
+    </div>
+<!-- 題名 -->
+<section class="bg-green-600 text-center py-16" style="color: aliceblue;">
+    <h1 class="text-4xl font-bold">施工実績３００件以上の信頼と実績</h1>
+    <p class="text-lg mt-4">お客様のニーズに合わせた最適な提案で、安全かつ効率的な充電器工事を実現します。</p>
+    <p class="text-lg mt-4">また、わが社はEV充電器はもちろんのこと内線電気工事や太陽光発電設置工事などあらゆる工事を手がけています。</p>
+</section>
+
+<!-- 工事内容１sp -->
+<section class="resonsive-sp bg-white py-16">
+    <div class="px-4">
+        <h3 class=" text-center text-2xl font-bold mt-4">日東工業 Pit-2G 200V/6kW 充電器工事</h3>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事概要:</p>
+        <p class="text-lg mt-4">日東工業のPit-2G 200V/6kW充電器を壁付け方式で設置する工事を行いました。今回の工事には特に電力メーターからの距離が近かったため、電源はメーターから直接取り入れました。その後、ウォールボックスにて漏電ブレーカーなどの遮断機に接続し、安全に充電器に電源を供給しています。</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事の流れ</p>
+        <p class="text-lg mt-4">1. お問い合わせ</p>
+        <p class="text-lg mt-4">2. 現地調査</p>
+        <p class="text-lg mt-4">3. お見積り</p>
+        <p class="text-lg mt-4">4. 後日工事</p>
+        <p class="text-lg mt-4">5. お引渡し</p>
+        <p class="text-lg mt-4">6. お支払い</p>
+        <!-- <p class="text-lg mt-4">工事に関するさらなる詳細やご質問がありましたら、どうぞお気軽にお問い合わせください。</p> -->
+    </div>    
+    <!-- <div class="">
+        <img alt="Construction Image" class="mt-4" src="../../img/koujijiseki1.jpg"/>
+    </div> -->
+</section>
+<!-- 工事内容１pc -->
+<section class="resonsive-pc bg-white py-16 flex">
+    <!-- <div class="w-1/2">
+        <img alt="Construction Image" class="mt-4" src="../../img/koujijiseki1.jpg"/>
+    </div> -->
+    <div class="w-1/2 px-4">
+        <h3 class=" text-center text-2xl font-bold mt-4">日東工業 Pit-2G 200V/6kW 充電器工事</h3>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事概要:</p>
+        <p class="text-lg mt-4">日東工業のPit-2G 200V/6kW充電器を壁付け方式で設置する工事を行いました。今回の工事には特に電力メーターからの距離が近かったため、電源はメーターから直接取り入れました。その後、ウォールボックスにて漏電ブレーカーなどの遮断器に接続し、安全に充電器に電源を供給しています。</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事の流れ</p>
+        <p class="text-lg mt-4">1. お問い合わせ</p>
+        <p class="text-lg mt-4">2. 現地調査</p>
+        <p class="text-lg mt-4">3. お見積り</p>
+        <p class="text-lg mt-4">4. 後日工事</p>
+        <p class="text-lg mt-4">5. お引渡し</p>
+        <p class="text-lg mt-4">6. お支払い</p>
+        <!-- <p class="text-lg mt-4">工事に関するさらなる詳細やご質問がありましたら、どうぞお気軽にお問い合わせください。</p> -->
+    </div>    
+</section>
+
+<!-- 工事内容２sp -->
+<section class="resonsive-sp bg-white py-16">
+    <div class="px-4">
+        <h3 class=" text-center text-2xl font-bold mt-4">Panasonic ELSEEV hekia S Mode3 ウオルボックスタイプ 200V/6kW 充電器工事</h3>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事概要:</p>
+        <p class="text-lg mt-4">Panasonicの高性能充電器「ELSEEV hekia S Mode3」のウオルボックスタイプを設置する工事を行いました。今回の工事では、特に電源供給地点までの距離が遠かったため、コンクリート貫通工事を施し、最短距離で電源を供給しました。さらに、お客様の壁の色に合わせて灰色の配管を選定し、外観にも配慮しました。</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事の流れ</p>
+        <p class="text-lg mt-4">1. お問い合わせ</p>
+        <p class="text-lg mt-4">2. 現地調査</p>
+        <p class="text-lg mt-4">3. お見積り</p>
+        <p class="text-lg mt-4">4. 後日工事</p>
+        <p class="text-lg mt-4">5. お引渡し</p>
+        <p class="text-lg mt-4">6. お支払い</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">顧客満足度</p>
+        <p class="text-lg mt-4">お客様からは、特に配管の色選定について高い評価をいただきました。</p>
+        
+    </div>    
+    <!-- <div class="">
+        <img alt="Construction Image" class="mt-4" src="../../img/koujijiseki2.jpg"/>
+    </div> -->
+</section>
+<!-- 工事内容２pc -->
+<section class="resonsive-pc bg-white py-16 flex">
+    <!-- <div class="w-1/2">
+        <img alt="Construction Image" class="mt-4" src="../../img/koujijiseki2.jpg"/>
+    </div> -->
+    <div class="w-1/2 px-4">
+        <h3 class=" text-center text-2xl font-bold mt-4">Panasonic ELSEEV hekia S Mode3 ウオルボックスタイプ 200V/6kW 充電器工事</h3>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事概要:</p>
+        <p class="text-lg mt-4">Panasonicの高性能充電器「ELSEEV hekia S Mode3」のウオルボックスタイプを設置する工事を行いました。今回の工事では、特に電源供給地点までの距離が遠かったため、コンクリート貫通工事を施し、最短距離で電源を供給しました。さらに、お客様の壁の色に合わせて灰色の配管を選定し、外観にも配慮しました。</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事の流れ</p>
+        <p class="text-lg mt-4">1. お問い合わせ</p>
+        <p class="text-lg mt-4">2. 現地調査</p>
+        <p class="text-lg mt-4">3. お見積り</p>
+        <p class="text-lg mt-4">4. 後日工事</p>
+        <p class="text-lg mt-4">5. お引渡し</p>
+        <p class="text-lg mt-4">6. お支払い</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">顧客満足度</p>
+        <p class="text-lg mt-4">お客様からは、特に配管の色選定について高い評価をいただきました。</p>
+        
+    </div>    
+</section>
+
+<!-- 工事内容３sp -->
+<section class="resonsive-sp bg-white py-16">
+    <div class="px-4">
+        <h3 class=" text-center text-2xl font-bold mt-4">Panasonic　EVコンセント　WK4422s 簡易鍵付きタイプ　200ｖ/3ｋｗ</h3>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事概要:</p>
+        <p class="text-lg mt-4">PanasonicのEVコンセント「WK4422s 簡易鍵付きタイプ」の設置を床下配線で施工いたしました。お客様から「配管を極力外に出したくない」という特別なご要望をいただいたため、床下を通して電気供給線を通線しました。この工程によって、EVコンセントの立ち上げのみを配管にすることできました。
+        </p>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事の流れ</p>
+        <p class="text-lg mt-4">1. お問い合わせ</p>
+        <p class="text-lg mt-4">2. 現地調査</p>
+        <p class="text-lg mt-4">3. 即日工事</p>
+        <p class="text-lg mt-4">4. お引渡し</p>
+        <p class="text-lg mt-4">5. お支払い</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">お客様の声</p>
+        <p class="text-lg mt-4">今回の工事で特に評価されたのは、お客様のご要望に応じて床下を利用した通線工事で、お客様より高い評価をいただきました。</p>
+        </p>
+    </div>    
+    <!-- <div class="">
+        <img alt="Construction Image" class="mt-4" src="../../img/koujijiseki3.jpg"/>
+    </div> -->
+    
+</section>
+
+<!-- 工事内容３pc -->
+<section class="resonsive-pc bg-white py-16 flex">
+    <!-- <div class="w-1/2">
+        <img alt="Construction Image" class="mt-4" src="../../img/koujijiseki3.jpg"/>
+    </div> -->
+    <div class="w-1/2 px-4">
+        <h3 class=" text-center text-2xl font-bold mt-4">Panasonic　EVコンセント　WK4422s 簡易鍵付きタイプ　200ｖ/3ｋｗ</h3>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事概要:</p>
+        <p class="text-lg mt-4">PanasonicのEVコンセント「WK4422s 簡易鍵付きタイプ」の設置を床下配線で施工いたしました。お客様から「配管を極力外に出したくない」という特別なご要望をいただいたため、床下を通して電気供給線を通線しました。この工程によって、EVコンセントの立ち上げのみを配管にすることできました。
+        </p>
+        <p class="text-lg mt-4" style="font-weight: 700;">工事の流れ</p>
+        <p class="text-lg mt-4">1. お問い合わせ</p>
+        <p class="text-lg mt-4">2. 現地調査</p>
+        <p class="text-lg mt-4">3. 即日工事</p>
+        <p class="text-lg mt-4">4. お引渡し</p>
+        <p class="text-lg mt-4">5. お支払い</p>
+        <p class="text-lg mt-4" style="font-weight: 700;">お客様の声</p>
+        <p class="text-lg mt-4">今回の工事で特に評価されたのは、お客様のご要望に応じて床下を利用した通線工事で、お客様より高い評価をいただきました。</p>
+        </p>
+    </div>    
+</section>
+
+<!-- 工事例 -->
+<!-- <section class="bg-white text-center py-16">
+    <h1 class="text-4xl font-bold">---- 工事例  ----</h1>
+    <div style="text-align: center;"><img src="../../img/koujirei1.jpg" alt="Image" class="koujirei"></div>
+    <div style="text-align: center;"><img src="../../img/koujirei2.jpg" alt="Image" class="koujirei"></div>
+    <div style="text-align: center;"><img src="../../img/koujirei3.jpg" alt="Image" class="koujirei"></div>
+</section> -->
+
+<!-- Call to Action Section -->
+<section class="bg-blue-600 text-white text-center py-16">
+<h2 class="text-2xl font-bold">お問い合わせはこちら</h2>
+<a class="mt-4 inline-block bg-white text-blue-600 py-2 px-4 rounded-full" href="/EVform/index.php">お問い合わせ</a>
+</section>
+<!-- Footer Section -->
+ <!-- フッター -->
+<div class="header-container-1024">
+    {% include 'footer/footer.twig' %}
+</div>
+
+<div class="header-container-1023">
+    {% include 'footer/confirm.twig' %}
+</div>
+
+    <!-- JavaScriptのリンク -->
+    <script src="/src/js/busines-header/busines-hover.js"></script>
+</body>
+</html>

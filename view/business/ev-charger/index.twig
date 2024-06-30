@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV充電器</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <!-- スタイルシートのリンク -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/ev-charger/ev-charger-common.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <!-- ファビコンのリンク -->
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+<!-- ヘッダー -->
+<div class="header-container-1024">
+    {% include 'header/small.twig' %}
+</div>
+<div class="header-container-1023">
+    {% include 'header/confirm.twig' %}
+</div>
+
+<div class="sub-header">
+    <a href="/index.php">HOME</a>　＞　<a href="/top/index.php#business">事業情報</a>　＞　<a href="/business/ev-charger/index.php">EV充電器設置</a>
+</div>
+
+<!-- ヘッダー下 -->
+<div class="background-image-section-ev">
+    <!-- このセクションに背景画像が表示されます -->
+    <section class="bak dark:bg-gray-900 text-center" style='background-size: cover; min-height: 50%;'>
+
+        <h1 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white h1-white-bg">
+            <span style="color: #000;
+            text-shadow:2px 2px 0 #FFF, -2px -2px 0 #FFF,
+                        -2px 2px 0 #FFF, 2px -2px 0 #FFF,
+                        0px 2px 0 #FFF,  0-2px 0 #FFF,
+                        -2px 0 0 #FFF, 2px 0 0 #FFF;background: linear-gradient(transparent 70%, #a7d6ff 70%);">安全・迅速なEV充電器の設置</span>
+        </h1>
+        <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+            <span style="font-weight: 800;color: #000;
+            text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+                        -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+                        0px 1px 0 #FFF,  0-1px 0 #FFF,
+                        -1px 0 0 #FFF, 1px 0 0 #FFF;">私たち昭栄電気産業は、品質とサービスでお客様の満足を追求します。</span>
+        </p>
+        <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+            <a class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-black rounded-lg 
+            bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-400" href="/business/ev-charger/EVservice/index.php">サービス詳細</a>
+            
+            <a href="/EVform/index.php" class="inline-flex justify-center items-center py-3 px-5 text-base 
+            font-medium text-gray-900 rounded-lg border border-gray-300 bg-white focus:ring-4 focus:ring-white dark:text-white 
+            dark:border-gray-700 dark:bg-white dark:focus:ring-gray-800" style="--tw-ring-offset-color: #fff;">お問い合わせ</a>
+
+        </div>
+    </section>
+</div>
+
+<!-- 詳細説明 -->
+<section class="py-16 text-center">
+<h2 class="text-3xl font-bold mb-8">なぜ昭栄電気産業なのか</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">施工実績３００件以上の経験豊富な専門チームが、お客様のニーズに合ったご提案をいたします。</p>
+<a class="text-blue-500 hover:text-blue-600 underline" href="/business/ev-charger/EVjisseki/index.php">工事実績こちら</a>
+</section>
+
+<!-- お客様の声 -->
+<section class="py-16 bg-gray-100 dark:bg-gray-800 text-center">
+    <h2 class="text-3xl font-bold mb-8">お客様の声</h2>
+    <div class="max-w-4xl mx-auto space-y-8">
+    <blockquote><p class="text-gray-600 dark:text-gray-400 mb-4">非常にスムーズな工事で、全く問題ありませんでした。予定通りの時間に作業が終わり、後片付けも完璧でした。</p><cite class="text-gray-500">- Panasonic　EVコンセント　WK4422ｓ簡易鍵付きタイプ　200ｖ/3ｋｗ設置</cite></blockquote><blockquote><p class="text-gray-600 dark:text-gray-400 mb-4">事前の説明から完成まで、とても丁寧な対応でした。特に、設置場所の選定について詳しく説明していただき、非常に助かりました。</p><cite class="text-gray-500">- 日東工業　Pit-2G　200ｖ/6ｋｗ設置</cite></blockquote><blockquote><p class="text-gray-600 dark:text-gray-400 mb-4">料金も明瞭で、作業も早く終わりました。最後に使用方法の説明もしていただき、これからの利用が楽しみです。</p><cite class="text-gray-500">- Panasonic　ELSEEV　hekia　S　 Mode3　200ｖ/6ｋｗ設置</cite></blockquote></div>
+</section>
+
+<!-- アクション呼びかけ -->
+<section class="bg-blue-600 text-white py-16 text-center">
+    <h2 class="text-3xl font-bold mb-8">今すぐお問い合わせを！</h2>
+    <p class="text-lg mb-8">EV充電器の設置に関するご質問やお見積もりなど、お気軽にご連絡ください。</p>
+    <a class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-white rounded-lg bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:ring-gray-700" href="/EVform/index.php">お問い合わせフォームへ</a>
+</section>
+    
+<!--ナビゲーション-->
+<!-- フッター -->
+<div class="header-container-1024">
+        {% include 'footer/footer.twig' %}
+</div>
+
+<div class="header-container-1023">
+        {% include 'footer/confirm.twig' %}
+</div>
+
+<!-- JavaScriptのリンク -->
+<script src="/src/js/busines-header/busines-hover.js"></script>
+</body>
+</html>

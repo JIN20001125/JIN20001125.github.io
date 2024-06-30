@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>{{ title }}</title>
+</head>
+
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+  <div class="container bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+    <h1 class="text-3xl mb-4">確認フォーム</h1>
+
+    <form method="POST" action="../../form/confirm.php">
+      <input type="hidden" name="token" value="{{ token }}">
+      <!-- Email -->
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-600">メールアドレス</label>
+        <input type="hidden" id="email" name="email" value="{{ post.email }}" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.email }}</p>
+      </div>
+
+      <!-- Name -->
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-600">名前</label>
+        <input type="hidden" id="name" name="name" value="{{ post.name }}" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.name }}</p>
+      </div>
+
+      <!-- Phone -->
+      <div class="mb-4">
+        <label for="phone" class="block text-sm font-medium text-gray-600">電話番号</label>
+        <input type="hidden" id="phone" name="phone" value="{{ post.phone }}" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.phone }}</p>
+      </div>
+
+      <!-- Car Type -->
+      <div class="mb-4">
+        <label for="car_type" class="block text-sm font-medium text-gray-600">車種</label>
+        <input type="hidden" id="car_type" name="car_type" value="{{ post.car_type }}" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.car_type }}</p>
+      </div>
+
+      <!-- Charger Type -->
+      <div class="mb-4">
+        <label for="charger_type" class="block text-sm font-medium text-gray-600">希望する充電器の種類</label>
+        <input type="hidden" name="charger_type" value="{{ post.charger_type }}" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.charger_typeView }}</p>
+      </div>
+
+      <!-- Blueprint -->
+      <div class="mb-4">
+        <label for="blueprint" class="block text-sm font-medium text-gray-600">建築図面の有無</label>
+        <input type="hidden" name="blueprint" value="{{ post.blueprint }}" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.blueprintView }}</p>
+      </div>
+
+      <!-- Electric Contract -->
+      <div class="mb-4">
+        <label for="electric_contract" class="block text-sm font-medium text-gray-600">現在の電気契約容量</label>
+        <input type="hidden" id="electric_contract" value="{{ post.electric_contract }}" name="electric_contract" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.electric_contract }}</p>
+      </div>
+
+      <!-- Other Questions -->
+      <div class="mb-4">
+        <label for="other_questions" class="block text-sm font-medium text-gray-600">その他質問事項</label>
+        <input type="hidden" id="other_questions" value="{{ post.other_questions }}" name="other_questions" class="mt-1 p-2 w-full border rounded-md">
+        <p>{{ post.other_questions }}</p>
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button id="submit" type="submit" class="btn btn-primary px-4 py-2 bg-blue-500 text-white rounded-md">送信</button>
+      </div>
+    </form>
+  </div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+ $(".btn").on("click",function(){
+        var val = $(this).val();
+        if(val == "back") {
+            var url = "../EVform/";
+        } else {
+            var url = "../EVform/thanks.php";
+        }
+        $("form").attr("action",url);
+        $("form").submit();
+    });
+</script>
+</body>
+</html>
