@@ -1,0 +1,1172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit; 
+    text-decoration: none;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+strong{
+    font-weight: bold;
+}
+
+minstrong{
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none; /* リストマーカーを削除 */
+}
+
+body {
+    font-family: 'YakuHanJP', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media screen and (max-width:480px) {
+    .company-overview.pc{
+        display: none;
+    }
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    
+    /* フッター終了///////////////////////////////////////////////////////////////////// */
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    /* アイコン終了///////////////////////////////////////////////////////////////////// */
+    
+    .background-image-section {
+        display: flex;
+        justify-content: center; /* 水平方向の中央揃え */
+        align-items: center; /* 垂直方向の中央揃え */
+        height: 300px; /* セクションの高さ。必要に応じて調整してください */
+        background-image: url('/src/img/会社情報/会社概要・アクセス.jpg'); /* 背景画像のパス */
+        background-size: cover; /* 背景画像をカバーとして設定 */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央揃え */
+        color: white; /* テキストの色。背景画像に合わせて調整してください */
+        width: 100%; /* 幅を80%に設定 */
+        margin: auto; /* 左右のマージンを自動で設定し、中央に寄せる */
+    }
+    
+    .background-image-section h1{
+        font-size: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* テキストに影を追加 */
+    }
+    
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    .margin{
+        margin: 5%;
+    }
+    
+    .company-overview {
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        justify-content: center; /* 中央寄せ */
+        width: 100%;
+    }
+    
+    .company-details-content, .company-map {
+        flex: 1 1 auto; /* 子要素の幅を自動に */
+    }
+    
+    .company-details, .company-map {
+        flex: 1 1 auto; /* 子要素の幅を自動に */
+        display: flex; /* Flexコンテナとして設定 */
+        flex-direction: column; /* 子要素を縦方向に並べる */
+    }
+    .info-content.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .info-title.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+
+    .company-map iframe {
+        width: 100%; /* 幅をコンテナに合わせる */
+        height: 250px; /* 高さをコンテナに合わせる */
+        border: 0; /* iframeの枠線を削除 */
+    }
+    
+    .company-details-content {
+        display: flex; /* Flexboxを使用して横に並べる */
+        width: 100%; /* 幅を100%に設定 */
+        margin-left: 0; /* 左の余白を削除 */
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    
+    .info-container1, .info-container2 {
+        flex: 1; /* 子要素の幅を均等に */
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        gap: 10px; /* 各項目の間隔 */
+    }
+
+    .info-container1 {
+        flex: 3.5; /* 幅の割合を4に設定 */
+        font-weight: bold;
+    }
+    
+    .info-container2 {
+        flex: 6.5; /* 幅の割合を6に設定 */
+    }
+    
+    @media (max-width: 768px) {
+        .company-overview-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .company-details, .company-map {
+            flex-basis: auto;
+        }
+    
+        .company-map iframe {
+            height: 300px;
+        }
+    }
+    
+    /* info-containerクラスを持つdivをFlexコンテナに設定 */
+    .info-container {
+        display: flex;
+        align-items: center; /* 中央揃え */
+        gap: 16px; /* タイトルと内容の間に16pxの空白を設ける */
+    }
+    
+    .info-title,.info-content {
+        border-bottom: 1px solid #c0bebe; /* 黒色の1ピクセルの線を引く */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content {
+        position: relative; /* 疑似要素の基準点として設定 */
+        display: inline-block; /* 下線をテキストの幅に合わせる */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px; /* 下線の太さ */
+        background: linear-gradient(90deg, rgb(14, 3, 8) 0%, rgb(243, 238, 238) 100%); /* グラデーションの色 */
+        transition: width 0.3s ease-in-out; /* アニメーションの速度と種類 */
+    }
+    
+    .info-content:hover::after {
+        width: 100%; /* ホバー時に下線をテキストの全幅に伸ばす */
+    }
+    
+    .info-content {
+        margin: 0; /* 余白のリセット */
+    }
+}
+@media screen and (min-width:481px) and ( max-width:767px) {
+    .info-content.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .info-title.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .company-overview.pc{
+        display: none;
+    }
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    
+    /* フッター終了///////////////////////////////////////////////////////////////////// */
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    /* アイコン終了///////////////////////////////////////////////////////////////////// */
+    
+    .background-image-section {
+        display: flex;
+        justify-content: center; /* 水平方向の中央揃え */
+        align-items: center; /* 垂直方向の中央揃え */
+        height: 300px; /* セクションの高さ。必要に応じて調整してください */
+        background-image: url('/src/img/会社情報/会社概要・アクセス.jpg'); /* 背景画像のパス */
+        background-size: cover; /* 背景画像をカバーとして設定 */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央揃え */
+        color: white; /* テキストの色。背景画像に合わせて調整してください */
+        width: 100%; /* 幅を80%に設定 */
+        margin: auto; /* 左右のマージンを自動で設定し、中央に寄せる */
+    }
+    
+    .background-image-section h1{
+        font-size: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* テキストに影を追加 */
+    }
+    
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    .margin{
+        margin: 5%;
+    }
+    
+    .company-overview {
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        justify-content: center; /* 中央寄せ */
+        margin: 10px 10px;
+        width: 100%;
+    }
+    
+    .company-details-content, .company-map {
+        flex: 1 1 auto; /* 子要素の幅を自動に */
+    }
+    
+    .company-details, .company-map {
+        flex: 1 1 auto; /* 子要素の幅を自動に */
+        display: flex; /* Flexコンテナとして設定 */
+        flex-direction: column; /* 子要素を縦方向に並べる */
+    }
+    
+    .company-map iframe {
+        width: 100%; /* 幅をコンテナに合わせる */
+        height: 250px; /* 高さをコンテナに合わせる */
+        border: 0; /* iframeの枠線を削除 */
+    }
+    
+    .company-details-content {
+        display: flex; /* Flexboxを使用して横に並べる */
+        width: 100%; /* 幅を100%に設定 */
+        margin-left: 0; /* 左の余白を削除 */
+        font-size: 18px;
+        margin-top:30px;
+    }
+    
+    .info-container1, .info-container2 {
+        flex: 1; /* 子要素の幅を均等に */
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        gap: 10px; /* 各項目の間隔 */
+    }
+    
+    .info-container1 {
+        flex: 3; /* 幅の割合を4に設定 */
+        font-weight: bold;
+    }
+    
+    .info-container2 {
+        flex: 7; /* 幅の割合を6に設定 */
+    }
+    
+    @media (max-width: 768px) {
+        .company-overview-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .company-details, .company-map {
+            flex-basis: auto;
+        }
+    
+        .company-map iframe {
+            height: 300px;
+        }
+    }
+    
+    /* info-containerクラスを持つdivをFlexコンテナに設定 */
+    .info-container {
+        display: flex;
+        align-items: center; /* 中央揃え */
+        gap: 16px; /* タイトルと内容の間に16pxの空白を設ける */
+    }
+    
+    .info-title,.info-content {
+        border-bottom: 1px solid #c0bebe; /* 黒色の1ピクセルの線を引く */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content {
+        position: relative; /* 疑似要素の基準点として設定 */
+        display: inline-block; /* 下線をテキストの幅に合わせる */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px; /* 下線の太さ */
+        background: linear-gradient(90deg, rgb(14, 3, 8) 0%, rgb(243, 238, 238) 100%); /* グラデーションの色 */
+        transition: width 0.3s ease-in-out; /* アニメーションの速度と種類 */
+    }
+    
+    .info-content:hover::after {
+        width: 100%; /* ホバー時に下線をテキストの全幅に伸ばす */
+    }
+    
+    .info-content {
+    
+        margin: 0; /* 余白のリセット */
+    }
+}
+@media screen and (min-width:768px) and ( max-width:1023px) {
+    .info-content.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .info-title.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .company-overview.pc{
+        display: none;
+    }
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    
+    /* フッター終了///////////////////////////////////////////////////////////////////// */
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    /* アイコン終了///////////////////////////////////////////////////////////////////// */
+    
+    .background-image-section {
+        display: flex;
+        justify-content: center; /* 水平方向の中央揃え */
+        align-items: center; /* 垂直方向の中央揃え */
+        height: 400px; /* セクションの高さ。必要に応じて調整してください */
+        background-image: url('/src/img/会社情報/会社概要・アクセス.jpg'); /* 背景画像のパス */
+        background-size: cover; /* 背景画像をカバーとして設定 */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央揃え */
+        color: white; /* テキストの色。背景画像に合わせて調整してください */
+        width: 80%; /* 幅を80%に設定 */
+        margin: auto; /* 左右のマージンを自動で設定し、中央に寄せる */
+    }
+    
+    .background-image-section h1{
+        font-size: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* テキストに影を追加 */
+    }
+    
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    .margin{
+        margin: 5%;
+    }
+    
+    .company-overview {
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        justify-content: center; /* 中央寄せ */
+        margin: 20px auto;
+        width: 80%;
+    }
+    
+    .company-details-content, .company-map {
+        flex: 1 1 auto; /* 子要素の幅を自動に */
+    }
+    
+    .company-details, .company-map {
+        flex: 1 1 auto; /* 子要素の幅を自動に */
+        display: flex; /* Flexコンテナとして設定 */
+        flex-direction: column; /* 子要素を縦方向に並べる */
+    }
+    
+    .company-map iframe {
+        width: 100%; /* 幅をコンテナに合わせる */
+        height: 250px; /* 高さをコンテナに合わせる */
+        border: 0; /* iframeの枠線を削除 */
+    }
+    
+    .company-details-content {
+        display: flex; /* Flexboxを使用して横に並べる */
+        width: 100%; /* 幅を100%に設定 */
+        margin-left: 0; /* 左の余白を削除 */
+        font-size: 18px;
+    }
+    
+    .info-container1, .info-container2 {
+        flex: 1; /* 子要素の幅を均等に */
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        gap: 10px; /* 各項目の間隔 */
+    }
+    
+    .info-container1 {
+        flex: 4; /* 幅の割合を4に設定 */
+        font-weight: bold;
+    }
+    
+    .info-container2 {
+        flex: 6; /* 幅の割合を6に設定 */
+    }
+    
+    @media (max-width: 768px) {
+        .company-overview-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .company-details, .company-map {
+            flex-basis: auto;
+        }
+    
+        .company-map iframe {
+            height: 300px;
+        }
+    }
+    
+    /* info-containerクラスを持つdivをFlexコンテナに設定 */
+    .info-container {
+        display: flex;
+        align-items: center; /* 中央揃え */
+        gap: 16px; /* タイトルと内容の間に16pxの空白を設ける */
+    }
+    
+    .info-title,.info-content {
+        border-bottom: 1px solid #c0bebe; /* 黒色の1ピクセルの線を引く */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content {
+        position: relative; /* 疑似要素の基準点として設定 */
+        display: inline-block; /* 下線をテキストの幅に合わせる */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px; /* 下線の太さ */
+        background: linear-gradient(90deg, rgb(14, 3, 8) 0%, rgb(243, 238, 238) 100%); /* グラデーションの色 */
+        transition: width 0.3s ease-in-out; /* アニメーションの速度と種類 */
+    }
+    
+    .info-content:hover::after {
+        width: 100%; /* ホバー時に下線をテキストの全幅に伸ばす */
+    }
+    
+    .info-content {
+    
+        margin: 0; /* 余白のリセット */
+    }
+}
+@media screen and (min-width:1024px) and ( max-width:1300px) {
+    .info-content.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .info-title.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .company-overview.sp{
+        display: none;
+    }
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    
+    /* フッター終了///////////////////////////////////////////////////////////////////// */
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    /* アイコン終了///////////////////////////////////////////////////////////////////// */
+    
+    .background-image-section {
+        display: flex;
+        justify-content: center; /* 水平方向の中央揃え */
+        align-items: center; /* 垂直方向の中央揃え */
+        height: 400px; /* セクションの高さ。必要に応じて調整してください */
+        background-image: url('/src/img/会社情報/会社概要・アクセス.jpg'); /* 背景画像のパス */
+        background-size: cover; /* 背景画像をカバーとして設定 */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央揃え */
+        color: white; /* テキストの色。背景画像に合わせて調整してください */
+        width: 80%; /* 幅を80%に設定 */
+        margin: auto; /* 左右のマージンを自動で設定し、中央に寄せる */
+    }
+    
+    .background-image-section h1{
+        font-size: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* テキストに影を追加 */
+    }
+    
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    .margin{
+        margin: 5%;
+    }
+    
+    .company-overview {
+        display: flex;
+        justify-content: center; /* 中央寄せ */
+        margin: 20px auto;
+        width: 95%;
+        max-width: 1025px;
+    }
+    
+    .company-details-content, .company-map {
+        flex: 1 1 50%; /* 子要素の幅を均等に */
+    }
+    
+    .company-details, .company-map {
+        flex: 1 1 50%; /* 子要素の幅を均等に */
+        display: flex; /* Flexコンテナとして設定 */
+        flex-direction: column; /* 子要素を縦方向に並べる */
+    }
+    
+    .company-map iframe {
+        width: 100%; /* 幅をコンテナに合わせる */
+        height: 100%; /* 高さをコンテナに合わせる */
+        border: 0; /* iframeの枠線を削除 */
+    }
+    
+    .company-details-content {
+        display: flex; /* Flexboxを使用して横に並べる */
+        align-items: flex-start; /* 上端揃え */
+        font-size: 16px;
+    }
+    
+    .info-container1, .info-container2 {
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        gap: 10px; /* 各項目の間隔 */
+    }
+    
+    .info-container1 {
+        flex: 4; /* 幅の割合を4に設定 */
+        font-weight: bold;
+    }
+    
+    .info-container2 {
+        flex: 6; /* 幅の割合を6に設定 */
+    }
+    
+    @media (max-width: 768px) {
+        .company-overview-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .company-details, .company-map {
+            flex-basis: auto;
+        }
+    
+        .company-map iframe {
+            height: 300px;
+        }
+    }
+    
+    /* info-containerクラスを持つdivをFlexコンテナに設定 */
+    .info-container {
+        display: flex;
+        align-items: center; /* 中央揃え */
+        gap: 16px; /* タイトルと内容の間に16pxの空白を設ける */
+    }
+    
+    .info-title,.info-content {
+        border-bottom: 1px solid #c0bebe; /* 黒色の1ピクセルの線を引く */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content {
+        position: relative; /* 疑似要素の基準点として設定 */
+        display: inline-block; /* 下線をテキストの幅に合わせる */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px; /* 下線の太さ */
+        background: linear-gradient(90deg, rgb(14, 3, 8) 0%, rgb(243, 238, 238) 100%); /* グラデーションの色 */
+        transition: width 0.3s ease-in-out; /* アニメーションの速度と種類 */
+    }
+    
+    .info-content:hover::after {
+        width: 100%; /* ホバー時に下線をテキストの全幅に伸ばす */
+    }
+    
+    .info-content {
+    
+        margin: 0; /* 余白のリセット */
+    }
+}
+@media screen and (min-width:1301px) and ( max-width:1700px) {
+    .info-content.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .info-title.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .company-overview.sp{
+        display: none;
+    }
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    
+    /* フッター終了///////////////////////////////////////////////////////////////////// */
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    /* アイコン終了///////////////////////////////////////////////////////////////////// */
+    
+    .background-image-section {
+        display: flex;
+        justify-content: center; /* 水平方向の中央揃え */
+        align-items: center; /* 垂直方向の中央揃え */
+        height: 400px; /* セクションの高さ。必要に応じて調整してください */
+        background-image: url('/src/img/会社情報/会社概要・アクセス.jpg'); /* 背景画像のパス */
+        background-size: cover; /* 背景画像をカバーとして設定 */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央揃え */
+        color: white; /* テキストの色。背景画像に合わせて調整してください */
+        width: 80%; /* 幅を80%に設定 */
+        margin: auto; /* 左右のマージンを自動で設定し、中央に寄せる */
+    }
+    
+    .background-image-section h1{
+        font-size: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* テキストに影を追加 */
+    }
+    
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    .margin{
+        margin: 5%;
+    }
+    
+    .company-overview {
+        display: flex;
+        justify-content: center; /* 中央寄せ */
+        margin: 20px auto;
+        width: 80%;
+    }
+    
+    .company-details-content, .company-map {
+        flex: 1 1 50%; /* 子要素の幅を均等に */
+    }
+    
+    .company-details, .company-map {
+        flex: 1 1 50%; /* 子要素の幅を均等に */
+        display: flex; /* Flexコンテナとして設定 */
+        flex-direction: column; /* 子要素を縦方向に並べる */
+    }
+    
+    .company-map iframe {
+        width: 100%; /* 幅をコンテナに合わせる */
+        height: 100%; /* 高さをコンテナに合わせる */
+        border: 0; /* iframeの枠線を削除 */
+    }
+    
+    .company-details-content {
+        display: flex; /* Flexboxを使用して横に並べる */
+        align-items: flex-start; /* 上端揃え */
+        font-size: 20px;
+    }
+    
+    .info-container1, .info-container2 {
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        gap: 10px; /* 各項目の間隔 */
+    }
+    
+    .info-container1 {
+        flex: 4; /* 幅の割合を4に設定 */
+        font-weight: bold;
+    }
+    
+    .info-container2 {
+        flex: 6; /* 幅の割合を6に設定 */
+    }
+    
+    @media (max-width: 768px) {
+        .company-overview-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .company-details, .company-map {
+            flex-basis: auto;
+        }
+    
+        .company-map iframe {
+            height: 300px;
+        }
+    }
+    
+    /* info-containerクラスを持つdivをFlexコンテナに設定 */
+    .info-container {
+        display: flex;
+        align-items: center; /* 中央揃え */
+        gap: 16px; /* タイトルと内容の間に16pxの空白を設ける */
+    }
+    
+    .info-title,.info-content {
+        border-bottom: 1px solid #c0bebe; /* 黒色の1ピクセルの線を引く */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content {
+        position: relative; /* 疑似要素の基準点として設定 */
+        display: inline-block; /* 下線をテキストの幅に合わせる */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px; /* 下線の太さ */
+        background: linear-gradient(90deg, rgb(14, 3, 8) 0%, rgb(243, 238, 238) 100%); /* グラデーションの色 */
+        transition: width 0.3s ease-in-out; /* アニメーションの速度と種類 */
+    }
+    
+    .info-content:hover::after {
+        width: 100%; /* ホバー時に下線をテキストの全幅に伸ばす */
+    }
+    
+    .info-content {
+    
+        margin: 0; /* 余白のリセット */
+    }
+}
+@media screen and (min-width:1701px) {
+    .info-content.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .info-title.no-border {
+        border-bottom: none; /* 下線を無効にする */
+    }
+    .company-overview.sp{
+        display: none;
+    }
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    
+    /* フッター終了///////////////////////////////////////////////////////////////////// */
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    /* アイコン終了///////////////////////////////////////////////////////////////////// */
+    
+    .background-image-section {
+        display: flex;
+        justify-content: center; /* 水平方向の中央揃え */
+        align-items: center; /* 垂直方向の中央揃え */
+        height: 400px; /* セクションの高さ。必要に応じて調整してください */
+        background-image: url('/src/img/会社情報/会社概要・アクセス.jpg'); /* 背景画像のパス */
+        background-size: cover; /* 背景画像をカバーとして設定 */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央揃え */
+        color: white; /* テキストの色。背景画像に合わせて調整してください */
+        width: 80%; /* 幅を80%に設定 */
+        margin: auto; /* 左右のマージンを自動で設定し、中央に寄せる */
+    }
+    
+    .background-image-section h1{
+        font-size: 80px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* テキストに影を追加 */
+    }
+    
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    .margin{
+        margin: 5%;
+    }
+    
+    .company-overview {
+        display: flex;
+        justify-content: center; /* 中央寄せ */
+        margin: 20px auto;
+        width: 80%;
+    }
+    
+    .company-details-content, .company-map {
+        flex: 1 1 50%; /* 子要素の幅を均等に */
+    }
+    
+    .company-details, .company-map {
+        flex: 1 1 50%; /* 子要素の幅を均等に */
+        display: flex; /* Flexコンテナとして設定 */
+        flex-direction: column; /* 子要素を縦方向に並べる */
+    }
+    
+    .company-map iframe {
+        width: 100%; /* 幅をコンテナに合わせる */
+        height: 100%; /* 高さをコンテナに合わせる */
+        border: 0; /* iframeの枠線を削除 */
+    }
+    
+    .company-details-content {
+        display: flex; /* Flexboxを使用して横に並べる */
+        align-items: flex-start; /* 上端揃え */
+        font-size: 20px;
+    }
+    
+    .info-container1, .info-container2 {
+        display: flex;
+        flex-direction: column; /* 縦方向に並べる */
+        gap: 10px; /* 各項目の間隔 */
+        font-size: 26px;
+    }
+    
+    .info-container1 {
+        flex: 4; /* 幅の割合を4に設定 */
+        font-weight: bold;
+    }
+    
+    .info-container2 {
+        flex: 6; /* 幅の割合を6に設定 */
+    }
+    
+    @media (max-width: 768px) {
+        .company-overview-container {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .company-details, .company-map {
+            flex-basis: auto;
+        }
+    
+        .company-map iframe {
+            height: 300px;
+        }
+    }
+    
+    /* info-containerクラスを持つdivをFlexコンテナに設定 */
+    .info-container {
+        display: flex;
+        align-items: center; /* 中央揃え */
+        gap: 16px; /* タイトルと内容の間に16pxの空白を設ける */
+    }
+    
+    .info-title,.info-content {
+        border-bottom: 1px solid #c0bebe; /* 黒色の1ピクセルの線を引く */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content {
+        position: relative; /* 疑似要素の基準点として設定 */
+        display: inline-block; /* 下線をテキストの幅に合わせる */
+        padding-bottom: 5px; /* テキストと下線の間隔 */
+    }
+    
+    .info-content::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px; /* 下線の太さ */
+        background: linear-gradient(90deg, rgb(14, 3, 8) 0%, rgb(243, 238, 238) 100%); /* グラデーションの色 */
+        transition: width 0.3s ease-in-out; /* アニメーションの速度と種類 */
+    }
+    
+    .info-content:hover::after {
+        width: 100%; /* ホバー時に下線をテキストの全幅に伸ばす */
+    }
+    
+    .info-content {
+    
+        margin: 0; /* 余白のリセット */
+    }
+}
+
+
+
+
+
+
+

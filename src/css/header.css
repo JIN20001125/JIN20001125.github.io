@@ -1,0 +1,2250 @@
+
+@media screen and (max-width:480px) {
+    .company-name{
+        display: none;
+    }
+    .header-container-1024{
+        display: none;
+    }
+/* ヘッダーCSSセット {*/
+    .header-top{
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .smaller-header {
+        height: 80px; /* ヘッダーの高さを小さくする */
+        background-color: white; /* 薄い白の背景を追加 */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: height 0.3s ease;
+        animation: slideInFromTop 1s forwards;
+        z-index: 999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */ /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        border: 1px solid rgba(0, 0, 0, 0.2); /* 薄い黒の線で囲む */
+    }
+    
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 15px;
+    }
+    
+    
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+    }
+
+    .nav-list img{
+        width: 30px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    #List-button {
+        border: none;
+        background: none; /* 背景を透明に */
+        box-shadow: none; /* 影を取り除く */
+        float: right; /* ボタンを右端に配置 */
+    }
+
+    #List-button img.toggle-image {
+        transition: opacity 0.3s ease; /* 画像の切り替えにアニメーションを追加 */
+    }
+    
+    #List-button img.hidden {
+        opacity: 0; /* 画像を非表示にする */
+    }
+    .section h2 {
+        padding-left: 10px; /* 左側に空白を追加 */
+        padding-right: 10px; /* 右側に空白を追加 */
+    }
+    
+    .section button {
+        margin-left: 10px; /* 左側に空白を追加 */
+        margin-right: 10px; /* 右側に空白を追加 */
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    details {
+        margin-top: 2px;
+    }
+    
+    summary {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #eee;
+        border-radius: 4px;
+    }
+
+    .section-content {
+        display: none;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+    .section-content-1 {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+    .section-content.show {
+        display: block;
+        max-height: 1000px; /* 適切な最大高さに調整してください */
+        transition: max-height 0.5s ease-in;
+    }
+
+    .section-content-1.show2 {
+        display: block;
+        max-height: 1000px; /* 適切な最大高さに調整してください */
+        transition: max-height 0.5s ease-in;
+    }
+    .section img{
+        width: 30px; /* ロゴのサイズは適宜調整 */
+    }
+    .summary img{
+        width: 20px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    /* ロゴ */
+    .logo img {
+        width: 40px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    .company-name {
+        margin-left: 10px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 25px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    /* styles.css */
+    .container {
+        display: none; /* 初期状態では非表示 */
+        position: fixed; /* 固定位置に変更 */
+        top: 80px; /* ヘッダーの下に配置 */
+        width: 100%;
+        height: 100%;
+        background-color: white; /* 背景色を設定 */
+        z-index: 998; /* ヘッダーの下に表示されるように設定 */
+        color: black;
+        transform: translateY(-100%);
+        transition: transform 0.6s ease;
+
+    }
+    .container-1 {
+        margin-top:20%;
+        margin-bottom: 10%;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5; /* 背景色を設定 */
+        color: black;
+    }
+
+    .container.slide-down {
+        transform: translateY(0);
+    }
+    .container.slide-up {
+        transform: translateY(-100%);
+    }
+
+    .section {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .toggle-button{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button:focus {
+        outline: none;
+    }
+
+    .toggle-button-1{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-1:focus {
+        outline: none;
+    }
+
+    .toggle-button-2{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-2:focus {
+        outline: none;
+    }
+
+    .toggle-button-3{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-3:focus {
+        outline: none;
+    }
+
+    .toggle-button-4{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-4:focus {
+        outline: none;
+    }
+
+    .main-nav {
+        display: flex;
+    }
+    
+    .main-nav ul{
+        display: flex;
+    }
+
+    .nav-contact {
+        flex-shrink: 0; /* 要素が潰れないようにする */
+        margin: 25px 10px; /* 必要に応じて調整 */
+    }
+    
+    #contact{
+        padding: 5px 10px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+
+    .sub-header {
+        background-color: white; /* 背景色を白に設定 */
+        position: relative; /* z-indexを効かせるために必要 */
+        text-align: left; /* テキストを中央揃えに */
+        padding: 10px 0; /* 上下にパディングを追加 */
+        margin-top: 80px;
+        color:rgb(122, 114, 114);
+        padding-left: 8%; /* 上下にパディングを追加 */
+        z-index: 2;
+        font-size: 14px;
+    }
+    
+    
+    .sub-header p {
+        padding-left: 8%; /* 上下にパディングを追加 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+    
+    
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+    
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+    
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+    
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+    
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+    
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+    /*ヘッダーCSSセット終了////////////////////////////////////////////////*/
+
+.large-text {
+    font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+    border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+    padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+    box-sizing: border-box; /* パディングを要素の幅に含める */
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+
+nav > ul > li {
+    display: inline-block; /* 主要項目を横に並べる */
+    margin-right: 20px; /* 主要項目の間にスペースを作る */
+}
+
+nav ul ul {
+    display: block; /* 子項目を常に表示 */
+    position: static; /* 子項目を下に表示 */
+    width: auto; /* ulの幅を自動に設定 */
+}
+
+.nav-list-li{
+    display: inline-block; /* 全てのリスト項目を横に並べる */
+    margin-right: 20px; /* リスト項目の間にスペースを作る */
+    vertical-align: top; /* テキストを上揃えに設定 */
+    width: 200px; /* リスト項目の幅を150pxに設定 */
+}
+
+.nav-list-ul a{
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+/*ナビゲーションCSSセット終了////////////////////////////////////////////////*/
+    
+    
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .business-info-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-top:3px;
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-list li {
+        display: flex;
+        align-items: center; /* アイコンとテキストを中央揃えにする */
+    }
+}
+@media screen and (min-width:481px) and ( max-width:767px) {
+    .header-container-1024{
+        display: none;
+    }
+/* ヘッダーCSSセット {*/
+    .header-top{
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .smaller-header {
+        height: 80px; /* ヘッダーの高さを小さくする */
+        background-color: white; /* 薄い白の背景を追加 */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: height 0.3s ease;
+        animation: slideInFromTop 1s forwards;
+        z-index: 999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */ /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        border: 1px solid rgba(0, 0, 0, 0.2); /* 薄い黒の線で囲む */
+    }
+    
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 15px;
+    }
+    
+    
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+    }
+
+    .nav-list img{
+        width: 30px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    #List-button {
+        border: none;
+        background: none; /* 背景を透明に */
+        box-shadow: none; /* 影を取り除く */
+        float: right; /* ボタンを右端に配置 */
+    }
+
+    #List-button img.toggle-image {
+        transition: opacity 0.3s ease; /* 画像の切り替えにアニメーションを追加 */
+    }
+    
+    #List-button img.hidden {
+        opacity: 0; /* 画像を非表示にする */
+    }
+    .section h2 {
+        padding-left: 10px; /* 左側に空白を追加 */
+        padding-right: 10px; /* 右側に空白を追加 */
+    }
+    
+    .section button {
+        margin-left: 10px; /* 左側に空白を追加 */
+        margin-right: 10px; /* 右側に空白を追加 */
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    details {
+        margin-top: 2px;
+    }
+    
+    summary {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #eee;
+        border-radius: 4px;
+    }
+
+    .section-content {
+        display: none;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+    .section-content-1 {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+    .section-content.show {
+        display: block;
+        max-height: 1000px; /* 適切な最大高さに調整してください */
+        transition: max-height 0.5s ease-in;
+    }
+
+    .section-content-1.show2 {
+        display: block;
+        max-height: 1000px; /* 適切な最大高さに調整してください */
+        transition: max-height 0.5s ease-in;
+    }
+    .section img{
+        width: 30px; /* ロゴのサイズは適宜調整 */
+    }
+    .summary img{
+        width: 20px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    /* ロゴ */
+    .logo img {
+        width: 40px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    .company-name {
+        margin-left: 10px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 25px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    /* styles.css */
+    .container {
+        display: none; /* 初期状態では非表示 */
+        position: fixed; /* 固定位置に変更 */
+        top: 80px; /* ヘッダーの下に配置 */
+        width: 100%;
+        height: 100%;
+        background-color: white; /* 背景色を設定 */
+        z-index: 998; /* ヘッダーの下に表示されるように設定 */
+        color: black;
+        transform: translateY(-100%);
+        transition: transform 0.6s ease;
+
+    }
+    .container-1 {
+        margin-top:20%;
+        margin-bottom: 10%;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5; /* 背景色を設定 */
+        color: black;
+    }
+
+    .container.slide-down {
+        transform: translateY(0);
+    }
+    .container.slide-up {
+        transform: translateY(-100%);
+    }
+
+    .section {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .toggle-button{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button:focus {
+        outline: none;
+    }
+
+    .toggle-button-1{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-1:focus {
+        outline: none;
+    }
+
+    .toggle-button-2{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-2:focus {
+        outline: none;
+    }
+
+    .toggle-button-3{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-3:focus {
+        outline: none;
+    }
+
+    .toggle-button-4{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-4:focus {
+        outline: none;
+    }
+
+    .main-nav {
+        display: flex;
+    }
+    
+    .main-nav ul{
+        display: flex;
+    }
+
+    .nav-contact {
+        flex-shrink: 0; /* 要素が潰れないようにする */
+        margin: 25px 10px; /* 必要に応じて調整 */
+    }
+    
+    #contact{
+        padding: 5px 10px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+
+    .sub-header {
+        background-color: white; /* 背景色を白に設定 */
+        position: relative; /* z-indexを効かせるために必要 */
+        text-align: left; /* テキストを中央揃えに */
+        padding: 10px 0; /* 上下にパディングを追加 */
+        margin-top: 80px;
+        color:rgb(122, 114, 114);
+        padding-left: 8%; /* 上下にパディングを追加 */
+        z-index: 2;
+    }
+    
+    
+    .sub-header p {
+        padding-left: 8%; /* 上下にパディングを追加 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+    
+    
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+    
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+    
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+    
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+    
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+    
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+    /*ヘッダーCSSセット終了////////////////////////////////////////////////*/
+
+.large-text {
+    font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+    border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+    padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+    box-sizing: border-box; /* パディングを要素の幅に含める */
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+
+nav > ul > li {
+    display: inline-block; /* 主要項目を横に並べる */
+    margin-right: 20px; /* 主要項目の間にスペースを作る */
+}
+
+nav ul ul {
+    display: block; /* 子項目を常に表示 */
+    position: static; /* 子項目を下に表示 */
+    width: auto; /* ulの幅を自動に設定 */
+}
+
+.nav-list-li{
+    display: inline-block; /* 全てのリスト項目を横に並べる */
+    margin-right: 20px; /* リスト項目の間にスペースを作る */
+    vertical-align: top; /* テキストを上揃えに設定 */
+    width: 200px; /* リスト項目の幅を150pxに設定 */
+}
+
+.nav-list-ul a{
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+/*ナビゲーションCSSセット終了////////////////////////////////////////////////*/
+    
+    
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .business-info-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-top:3px;
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-list li {
+        display: flex;
+        align-items: center; /* アイコンとテキストを中央揃えにする */
+    }
+}
+@media screen and (min-width:768px) and ( max-width:1023px) {
+    .container-1 {
+        margin-top:20%;
+        margin-bottom: 10%;
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5; /* 背景色を設定 */
+        color: black;
+    }
+
+
+    .header-container-1024{
+        display: none;
+    }
+/* ヘッダーCSSセット {*/
+    .header-top{
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .smaller-header {
+        height: 80px; /* ヘッダーの高さを小さくする */
+        background-color: white; /* 薄い白の背景を追加 */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: height 0.3s ease;
+        animation: slideInFromTop 1s forwards;
+        z-index: 999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */ /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        border: 1px solid rgba(0, 0, 0, 0.2); /* 薄い黒の線で囲む */
+    }
+    
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 15px;
+    }
+    
+    
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+    }
+
+    .nav-list img{
+        width: 40px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    #List-button {
+        border: none;
+        background: none; /* 背景を透明に */
+        box-shadow: none; /* 影を取り除く */
+        float: right; /* ボタンを右端に配置 */
+    }
+
+    #List-button img.toggle-image {
+        transition: opacity 0.3s ease; /* 画像の切り替えにアニメーションを追加 */
+    }
+    
+    #List-button img.hidden {
+        opacity: 0; /* 画像を非表示にする */
+    }
+    .section h2 {
+        padding-left: 10px; /* 左側に空白を追加 */
+        padding-right: 10px; /* 右側に空白を追加 */
+    }
+    
+    .section button {
+        margin-left: 10px; /* 左側に空白を追加 */
+        margin-right: 10px; /* 右側に空白を追加 */
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    details {
+        margin-top: 2px;
+    }
+    
+    summary {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #eee;
+        border-radius: 4px;
+    }
+
+    .section-content {
+        display: none;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+    .section-content-1 {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+    .section-content.show {
+        display: block;
+        max-height: 1000px; /* 適切な最大高さに調整してください */
+        transition: max-height 0.5s ease-in;
+    }
+
+    .section-content-1.show2 {
+        display: block;
+        max-height: 1000px; /* 適切な最大高さに調整してください */
+        transition: max-height 0.5s ease-in;
+    }
+    .section img{
+        width: 30px; /* ロゴのサイズは適宜調整 */
+    }
+    .summary img{
+        width: 20px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    /* ロゴ */
+    .logo img {
+        width: 50px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    .company-name {
+        margin-left: 20px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 25px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    /* styles.css */
+    .container {
+        display: none; /* 初期状態では非表示 */
+        position: fixed; /* 固定位置に変更 */
+        top: 80px; /* ヘッダーの下に配置 */
+        width: 100%;
+        height: 100%;
+        background-color: white; /* 背景色を設定 */
+        z-index: 998; /* ヘッダーの下に表示されるように設定 */
+        color: black;
+        transform: translateY(-100%);
+        transition: transform 0.6s ease;
+
+    }
+
+    .container.slide-down {
+        transform: translateY(0);
+    }
+    .container.slide-up {
+        transform: translateY(-100%);
+    }
+
+    .section {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .section h2 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .toggle-button{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button:focus {
+        outline: none;
+    }
+
+    .toggle-button-1{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-1:focus {
+        outline: none;
+    }
+
+    .toggle-button-2{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-2:focus {
+        outline: none;
+    }
+
+    .toggle-button-3{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-3:focus {
+        outline: none;
+    }
+
+    .toggle-button-4{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .toggle-button-4:focus {
+        outline: none;
+    }
+
+
+    .main-nav {
+        display: flex;
+    }
+    
+    .main-nav ul{
+        display: flex;
+        gap:20px;
+    }
+
+    .nav-contact {
+        flex-shrink: 0; /* 要素が潰れないようにする */
+        margin: 25px 10px; /* 必要に応じて調整 */
+    }
+    
+    #contact{
+        padding: 10px 10px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+
+    .sub-header {
+        background-color: white; /* 背景色を白に設定 */
+        position: relative; /* z-indexを効かせるために必要 */
+        text-align: left; /* テキストを中央揃えに */
+        padding: 10px 0; /* 上下にパディングを追加 */
+        margin-top: 80px;
+        color:rgb(122, 114, 114);
+        padding-left: 8%; /* 上下にパディングを追加 */
+        z-index: 2;
+    }
+    
+    
+    .sub-header p {
+        padding-left: 8%; /* 上下にパディングを追加 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+    
+    
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+    
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+    
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+    
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+    
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+    
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+    /*ヘッダーCSSセット終了////////////////////////////////////////////////*/
+
+.large-text {
+    font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+    border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+    padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+    box-sizing: border-box; /* パディングを要素の幅に含める */
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+
+nav > ul > li {
+    display: inline-block; /* 主要項目を横に並べる */
+   
+}
+
+ul{
+    align-items: center;
+}
+
+nav ul ul {
+    display: block; /* 子項目を常に表示 */
+    position: static; /* 子項目を下に表示 */
+    width: auto; /* ulの幅を自動に設定 */
+}
+
+.nav-list-li{
+    display: inline-block; /* 全てのリスト項目を横に並べる */
+    margin-right: 20px; /* リスト項目の間にスペースを作る */
+    vertical-align: top; /* テキストを上揃えに設定 */
+    width: 200px; /* リスト項目の幅を150pxに設定 */
+}
+
+.nav-list-ul a{
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+/*ナビゲーションCSSセット終了////////////////////////////////////////////////*/
+    
+    
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .business-info-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-top:3px;
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-list li {
+        display: flex;
+        align-items: center; /* アイコンとテキストを中央揃えにする */
+    }
+}
+@media screen and (min-width:1024px) and ( max-width:1300px) {
+    .header-container-1023{
+        display: none;
+    }
+/* ヘッダーCSSセット {*/
+    .header-top{
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .smaller-header {
+        height: 80px; /* ヘッダーの高さを小さくする */
+        background-color: white; /* 薄い白の背景を追加 */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: height 0.3s ease;
+        animation: slideInFromTop 1s forwards;
+        z-index: 999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */ /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        border: 1px solid rgba(0, 0, 0, 0.2); /* 薄い黒の線で囲む */
+    }
+    
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 17px;
+    }
+    
+    
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+    
+    /* ロゴ */
+    .logo img {
+        width: 70px; /* 固定幅を設定 */
+        max-width: 75%; /* 必要に応じて最大幅を設定 */
+    }
+    
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    .company-name {
+        margin-left: 10px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 27px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .main-nav {
+        display: flex;
+    }
+    
+    .main-nav ul{
+        display: flex;
+        gap:20px;
+    }
+    
+    #contact{
+        padding: 10px 10px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+
+    .sub-header {
+        background-color: white; /* 背景色を白に設定 */
+        position: relative; /* z-indexを効かせるために必要 */   
+        text-align: left; /* テキストを中央揃えに */
+        padding: 10px 0; /* 上下にパディングを追加 */
+        margin-top: 80px;
+        color:rgb(122, 114, 114);
+        padding-left: 8%; /* 上下にパディングを追加 */
+        z-index: 2;
+    }
+    
+    
+    .sub-header p {
+        padding-left: 8%; /* 上下にパディングを追加 */
+    }
+
+    .main-business {
+        width: 100%; /* 幅を75%に設定 */
+        max-width: 900px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 600px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-company {
+        width: 100%; /* 幅を80%に設定 */
+        max-width: 900px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+    
+    
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+    
+    .business-info-list li {
+        margin: 0 10px; /* 項目間のスペースを設定 */
+    }
+    
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 15px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+    
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 80px; /* 画像の高さを設定 */
+    }
+    
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+    
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+    /*ヘッダーCSSセット終了////////////////////////////////////////////////*/
+
+.large-text {
+    font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+    border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+    padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+    box-sizing: border-box; /* パディングを要素の幅に含める */
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+
+nav > ul > li {
+    display: inline-block; /* 主要項目を横に並べる */
+    margin-right: 20px; /* 主要項目の間にスペースを作る */
+}
+
+nav ul ul {
+    display: block; /* 子項目を常に表示 */
+    position: static; /* 子項目を下に表示 */
+    width: auto; /* ulの幅を自動に設定 */
+}
+
+.nav-list-li{
+    display: inline-block; /* 全てのリスト項目を横に並べる */
+    margin-right: 20px; /* リスト項目の間にスペースを作る */
+    vertical-align: top; /* テキストを上揃えに設定 */
+    width: 200px; /* リスト項目の幅を150pxに設定 */
+}
+
+.nav-list-ul a{
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+/*ナビゲーションCSSセット終了////////////////////////////////////////////////*/
+    
+    
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .business-info-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-top:3px;
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-list li {
+        display: flex;
+        align-items: center; /* アイコンとテキストを中央揃えにする */
+    }
+}
+@media screen and (min-width:1301px) and ( max-width:1700px) {
+    .header-container-1023{
+        display: none;
+    }
+/* ヘッダーCSSセット {*/
+    .header-top{
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .smaller-header {
+        height: 120px; /* ヘッダーの高さを小さくする */
+        background-color: white; /* 薄い白の背景を追加 */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: height 0.3s ease;
+        animation: slideInFromTop 1s forwards;
+        z-index: 999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */ /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        border: 1px solid rgba(0, 0, 0, 0.2); /* 薄い黒の線で囲む */
+    }
+    
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 22px;
+    }
+    
+    
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+    
+    /* ロゴ */
+    .logo img {
+        width: auto; /* 固定幅を設定 */
+        height: 110px; /* 必要に応じて最大幅を設定 */
+    }
+    
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+    .company-name {
+        margin-left: 10px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 40px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .main-nav {
+        display: flex;
+    }
+    
+    .main-nav ul{
+        display: flex;
+        gap:20px;
+    }
+    
+    #contact{
+        padding: 10px 10px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+
+    .sub-header {
+        background-color: white; /* 背景色を白に設定 */
+        position: relative; /* z-indexを効かせるために必要 */   
+        text-align: left; /* テキストを中央揃えに */
+        padding: 10px 0; /* 上下にパディングを追加 */
+        margin-top: 120px;
+        color:rgb(122, 114, 114);
+        padding-left: 8%; /* 上下にパディングを追加 */
+        z-index: 2;
+    }
+    
+    
+    .sub-header p {
+        padding-left: 8%; /* 上下にパディングを追加 */
+    }
+
+    .main-business {
+        width: 90%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-recruit {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 700px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-company {
+        width: 90%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+    
+    
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+    
+    .business-info-list li {
+        margin: 0 10px; /* 項目間のスペースを設定 */
+    }
+    
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 20px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+    
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 120px; /* 画像の高さを設定 */
+    }
+    
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+    
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+    /*ヘッダーCSSセット終了////////////////////////////////////////////////*/
+
+.large-text {
+    font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+    border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+    padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+    box-sizing: border-box; /* パディングを要素の幅に含める */
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+
+nav > ul > li {
+    display: inline-block; /* 主要項目を横に並べる */
+    margin-right: 20px; /* 主要項目の間にスペースを作る */
+}
+
+nav ul ul {
+    display: block; /* 子項目を常に表示 */
+    position: static; /* 子項目を下に表示 */
+    width: auto; /* ulの幅を自動に設定 */
+}
+
+.nav-list-li{
+    display: inline-block; /* 全てのリスト項目を横に並べる */
+    margin-right: 20px; /* リスト項目の間にスペースを作る */
+    vertical-align: top; /* テキストを上揃えに設定 */
+    width: 200px; /* リスト項目の幅を150pxに設定 */
+}
+
+.nav-list-ul a{
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+/*ナビゲーションCSSセット終了////////////////////////////////////////////////*/
+    
+    
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .business-info-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-top:3px;
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-list li {
+        display: flex;
+        align-items: center; /* アイコンとテキストを中央揃えにする */
+    }
+}
+@media screen and (min-width:1701px) {
+    .header-container-1023{
+        display: none;
+    }
+/* ヘッダーCSSセット {*/
+    .header-top{
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .smaller-header {
+        height: 140px;
+        background-color: white; /* 薄い白の背景を追加 */   
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: height 0.3s ease;
+        animation: slideInFromTop 1s forwards;
+        z-index: 999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */ /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+    }
+    
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: clamp(20px, 2vw, 32px); 
+    }
+    
+    
+    /* ... 既存のコード ... */
+
+    .header-content {
+        display: flex;
+        justify-content: space-between; /* 親要素の幅を適切に設定 */
+        align-items: center;
+    }
+    
+    /* ロゴ */
+    .logo img {
+        height: 120px; /* ロゴのサイズは適宜調整 */
+    }
+    
+    .logo {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+/* ... 既存のコード ... */
+    
+    .company-name {
+        margin-left: 20px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: clamp(36px, 2vw, 52px); /* 最小16px、最大32pxの範囲でビューポート幅に応じてフォントサイズを調整 */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .main-nav {
+        display: flex;
+    }
+    
+    .main-nav ul{
+        display: flex;
+        gap:20px;
+    }
+    
+    #contact{
+        padding: 10px 30px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+
+    .sub-header {
+        background-color: white; /* 背景色を白に設定 */
+        position: relative; /* z-indexを効かせるために必要 */
+        text-align: left; /* テキストを中央揃えに */
+        padding: 10px 0; /* 上下にパディングを追加 */
+        margin-top: 130px;
+        color:rgb(122, 114, 114);
+        padding-left: 8%; /* 上下にパディングを追加 */
+        z-index: 2;
+        font-size: 25px;
+    }
+    
+    
+    .sub-header p {
+        padding-left: 8%; /* 上下にパディングを追加 */
+    }
+
+    .main-business {
+        width: 100%; /* 幅を75%に設定 */
+        max-width: 1600px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-recruit {
+        width: 70%; /* 幅を75%に設定 */
+        max-width: 900px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .main-company {
+        width: 100%; /* 幅を80%に設定 */
+        max-width: 1600px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+    
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+    
+    
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+    
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+    
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 30px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+    
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 120px; /* 画像の高さを設定 */
+    }
+    
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+    
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+    
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+    
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+    /*ヘッダーCSSセット終了////////////////////////////////////////////////*/
+
+.large-text {
+    font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+    border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+    padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+    box-sizing: border-box; /* パディングを要素の幅に含める */
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+
+nav > ul > li {
+    display: inline-block; /* 主要項目を横に並べる */
+    margin-right: 30px; /* 主要項目の間にスペースを作る */
+}
+
+nav ul ul {
+    display: block; /* 子項目を常に表示 */
+    position: static; /* 子項目を下に表示 */
+    width: auto; /* ulの幅を自動に設定 */
+}
+
+.nav-list-li{
+    display: inline-block; /* 全てのリスト項目を横に並べる */
+    margin-right: 20px; /* リスト項目の間にスペースを作る */
+    vertical-align: top; /* テキストを上揃えに設定 */
+    width: 200px; /* リスト項目の幅を150pxに設定 */
+}
+
+.nav-list-ul a{
+    color: black; /* テキスト色を黒に設定 */
+    display: block; /* リンクをブロックレベル要素に設定 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px;
+}
+
+/*ナビゲーションCSSセット終了////////////////////////////////////////////////*/
+    
+    
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    
+    /* アイコン開始///////////////////////////////////////////////////////////////////// */
+    .business-info-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .business-info-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .business-info-icon {
+        width: 30px; /* アイコンの幅を24ピクセルに設定 */
+        height: 30px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-top:3px;
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-list li {
+        display: flex;
+        align-items: center; /* アイコンとテキストを中央揃えにする */
+    }
+}
+
+

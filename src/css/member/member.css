@@ -1,0 +1,711 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit; 
+    text-decoration: none;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+strong{
+    font-weight: bold;
+}
+
+minstrong{
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none; /* リストマーカーを削除 */
+}
+
+body {
+    font-family: 'YakuHanJP', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media screen and (max-width:480px) {
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    
+    .ceo-message h1{
+        font-size: 45px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+        text-align: center;
+        margin: 5%;
+    }
+    
+    .message-section h1{
+        font-size: 30px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+    
+    }
+    
+    .ceo-auto{
+        width: 95%;
+        margin:auto;
+    }
+    
+    .margin{
+        margin: 5%;
+    }
+    .ceo {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap:10px;
+    }
+    
+    .ceo-member {
+        width: 45%;
+        margin: 5px;
+        margin-top: 10px;
+        text-align: center; /* テキストを中央揃えに */
+    }
+    
+    .ceo-member-inner {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(114, 111, 111, 0.1);
+        border: 2px solid rgb(156, 152, 152); /* かっこいい黒枠を追加 */
+    }
+    
+    .ceo-member img {
+        width: 100%;
+        height: 200px; /* 画像の高さを自動調整に */
+        object-fit: cover;
+    }
+    
+    .ceo-member-info {
+        position: relative; /* 常に表示されるようにpositionをrelativeに変更 */
+        padding: 10px 0; /* 名前の上下にパディングを追加 */
+        background-color: transparent; /* 背景色を透明に */
+        color: #333; /* 名前の色を暗めに設定 */
+    }
+    
+    .ceo-member-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .ceo-member-title {
+        font-size: 14px;
+        color: #666; /* 役職の色を少し薄く */
+        transition: color 0.3s ease-in-out;
+    }
+}
+@media screen and (min-width:481px) and ( max-width:767px) {
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    
+    .ceo-message h1{
+        font-size: 45px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+        text-align: center;
+        margin: 5%;
+    }
+    
+    .message-section h1{
+        font-size: 30px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+    
+    }
+    
+    .ceo-auto{
+        width: 95%;
+        margin:auto;
+    }
+    
+    .margin{
+        margin: 5%;
+    }
+    .ceo {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap:10px;
+    }
+    
+    .ceo-member {
+        width: 45%;
+        margin: 5px;
+        margin-top: 10px;
+        text-align: center; /* テキストを中央揃えに */
+    }
+    
+    .ceo-member-inner {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(114, 111, 111, 0.1);
+        border: 2px solid rgb(156, 152, 152); /* かっこいい黒枠を追加 */
+    }
+    
+    .ceo-member img {
+        width: 100%;
+        height: 300px; /* 画像の高さを自動調整に */
+        object-fit: cover;
+    }
+    
+    .ceo-member-info {
+        position: relative; /* 常に表示されるようにpositionをrelativeに変更 */
+        padding: 10px 0; /* 名前の上下にパディングを追加 */
+        background-color: transparent; /* 背景色を透明に */
+        color: #333; /* 名前の色を暗めに設定 */
+    }
+    
+    .ceo-member-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .ceo-member-title {
+        font-size: 14px;
+        color: #666; /* 役職の色を少し薄く */
+        transition: color 0.3s ease-in-out;
+    }
+}
+@media screen and (min-width:768px) and ( max-width:1023px) {
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    
+    .ceo-message h1{
+        font-size: 45px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+        text-align: center;
+        margin: 5%;
+    }
+    
+    .message-section h1{
+        font-size: 30px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+    
+    }
+    
+    .ceo-auto{
+        width: 90%;
+        margin:auto;
+    }
+    
+    .margin{
+        margin: 5%;
+    }
+    .ceo {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap:20px;
+    }
+    
+    .ceo-member {
+        width: 23%; /* 4つ並べるための幅指定 */
+        margin-bottom: 30px;
+        text-align: center; /* テキストを中央揃えに */
+    }
+    
+    .ceo-member-inner {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(114, 111, 111, 0.1);
+        border: 2px solid rgb(156, 152, 152); /* かっこいい黒枠を追加 */
+    }
+    
+    .ceo-member img {
+        width: 100%;
+        height: 200px; /* 画像の高さを自動調整に */
+        object-fit: cover;
+    }
+    
+    .ceo-member-info {
+        position: relative; /* 常に表示されるようにpositionをrelativeに変更 */
+        padding: 10px 0; /* 名前の上下にパディングを追加 */
+        background-color: transparent; /* 背景色を透明に */
+        color: #333; /* 名前の色を暗めに設定 */
+    }
+    
+    .ceo-member-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .ceo-member-title {
+        font-size: 14px;
+        color: #666; /* 役職の色を少し薄く */
+        transition: color 0.3s ease-in-out;
+    }
+}
+@media screen and (min-width:1024px) and ( max-width:1300px) {
+section:target {
+    padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+    margin-top: -220px; /* パディングと同じ値だが負の値 */
+  }
+
+.background {
+    position: fixed; /* positionをstatic以外に設定 */
+    z-index: 100; /* z-indexを大きな値に設定 */
+    background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+    top: 0; /* 画面の上端から配置 */
+    left: 0; /* 画面の左端から配置 */
+    width: 100%; /* 画面全体の幅に設定 */
+    height: 100%; /* 画面全体の高さに設定 */
+    pointer-events: none; 
+}
+
+/* メインコンテンツ */
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* セクションのタイトル */
+h2 {
+    font-size: 35px;
+    padding-bottom: 1%;
+    font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+}
+h3 {
+    font-size: 30px;
+    font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+}
+/* フッター開始///////////////////////////////////////////////////////////////////// */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding: 1rem 0;
+    position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+    z-index: 1; /* z-indexを設定 */
+}
+/* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+
+
+.ceo-message h1{
+    font-size: 45px;
+    color: rgb(39, 39, 39); /* テキストに影を追加 */
+    text-align: center;
+    margin: 5%;
+}
+
+.message-section h1{
+    font-size: 30px;
+    color: rgb(39, 39, 39); /* テキストに影を追加 */
+
+}
+
+.ceo-auto{
+    width: 90%;
+    margin:auto;
+}
+
+.margin{
+    margin: 5%;
+}
+.ceo {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+.ceo-member {
+    width: 23%; /* 4つ並べるための幅指定 */
+    margin-bottom: 30px;
+    text-align: center; /* テキストを中央揃えに */
+}
+
+.ceo-member-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(114, 111, 111, 0.1);
+    border: 2px solid rgb(156, 152, 152); /* かっこいい黒枠を追加 */
+}
+
+.ceo-member img {
+    width: 100%;
+    height: 250px; /* 画像の高さを自動調整に */
+    object-fit: cover;
+}
+
+.ceo-member-info {
+    position: relative; /* 常に表示されるようにpositionをrelativeに変更 */
+    padding: 10px 0; /* 名前の上下にパディングを追加 */
+    background-color: transparent; /* 背景色を透明に */
+    color: #333; /* 名前の色を暗めに設定 */
+}
+
+.ceo-member-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ceo-member-title {
+    font-size: 14px;
+    color: #666; /* 役職の色を少し薄く */
+    transition: color 0.3s ease-in-out;
+}
+
+}
+@media screen and (min-width:1301px) and ( max-width:1700px) {
+    
+    section:target {
+        padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+      }
+    
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+    
+    /* メインコンテンツ */
+    
+    section {
+        margin-bottom: 2rem;
+    }
+    
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    /* フッター開始///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+    /* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+    
+    
+    .ceo-message h1{
+        font-size: 45px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+        text-align: center;
+        margin: 5%;
+    }
+    
+    .message-section h1{
+        font-size: 30px;
+        color: rgb(39, 39, 39); /* テキストに影を追加 */
+    
+    }
+    
+    .ceo-auto{
+        width: 80%;
+        margin:auto;
+    }
+    
+    .margin{
+        margin: 5%;
+    }
+    .ceo {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap:20px;
+    }
+    
+    .ceo-member {
+        width: 23%; /* 4つ並べるための幅指定 */
+        margin-bottom: 30px;
+        text-align: center; /* テキストを中央揃えに */
+    }
+    
+    .ceo-member-inner {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(114, 111, 111, 0.1);
+        border: 2px solid rgb(156, 152, 152); /* かっこいい黒枠を追加 */
+    }
+    
+    .ceo-member img {
+        width: 100%;
+        height: 350px; /* 画像の高さを自動調整に */
+        object-fit: cover;
+    }
+    
+    .ceo-member-info {
+        position: relative; /* 常に表示されるようにpositionをrelativeに変更 */
+        padding: 10px 0; /* 名前の上下にパディングを追加 */
+        background-color: transparent; /* 背景色を透明に */
+        color: #333; /* 名前の色を暗めに設定 */
+    }
+    
+    .ceo-member-name {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .ceo-member-title {
+        font-size: 25px;
+        color: #666; /* 役職の色を少し薄く */
+        transition: color 0.3s ease-in-out;
+    }
+    
+}
+@media screen and (min-width:1701px) {
+    
+section:target {
+    padding-top: 220px; /* ヘッダーの高さに応じて調整 */
+    margin-top: -220px; /* パディングと同じ値だが負の値 */
+  }
+
+.background {
+    position: fixed; /* positionをstatic以外に設定 */
+    z-index: 100; /* z-indexを大きな値に設定 */
+    background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+    top: 0; /* 画面の上端から配置 */
+    left: 0; /* 画面の左端から配置 */
+    width: 100%; /* 画面全体の幅に設定 */
+    height: 100%; /* 画面全体の高さに設定 */
+    pointer-events: none; 
+}
+
+/* メインコンテンツ */
+
+section {
+    margin-bottom: 2rem;
+}
+
+/* セクションのタイトル */
+h2 {
+    font-size: 35px;
+    padding-bottom: 1%;
+    font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+}
+h3 {
+    font-size: 30px;
+    font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+}
+/* フッター開始///////////////////////////////////////////////////////////////////// */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    display: block;
+    padding: 1rem 0;
+    position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+    z-index: 1; /* z-indexを設定 */
+}
+/* ヘッダー下終了///////////////////////////////////////////////////////////////////// */
+
+
+.ceo-message h1{
+    font-size: 45px;
+    color: rgb(39, 39, 39); /* テキストに影を追加 */
+    text-align: center;
+    margin: 5%;
+}
+
+.message-section h1{
+    font-size: 30px;
+    color: rgb(39, 39, 39); /* テキストに影を追加 */
+
+}
+
+.ceo-auto{
+    width: 80%;
+    margin:auto;
+}
+
+.margin{
+    margin: 5%;
+}
+.ceo {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap:20px;
+}
+
+.ceo-member {
+    width: 23%; /* 4つ並べるための幅指定 */
+    margin-bottom: 30px;
+    text-align: center; /* テキストを中央揃えに */
+}
+
+.ceo-member-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(114, 111, 111, 0.1);
+    border: 2px solid rgb(156, 152, 152); /* かっこいい黒枠を追加 */
+}
+
+.ceo-member img {
+    width: 100%;
+    height: 400px; /* 画像の高さを自動調整に */
+    object-fit: cover;
+}
+
+.ceo-member-info {
+    position: relative; /* 常に表示されるようにpositionをrelativeに変更 */
+    padding: 10px 0; /* 名前の上下にパディングを追加 */
+    background-color: transparent; /* 背景色を透明に */
+    color: #333; /* 名前の色を暗めに設定 */
+}
+
+.ceo-member-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.ceo-member-title {
+    font-size: 25px;
+    color: #666; /* 役職の色を少し薄く */
+    transition: color 0.3s ease-in-out;
+}
+
+}

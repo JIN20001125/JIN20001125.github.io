@@ -1,0 +1,364 @@
+@media screen and (max-width:480px) {
+    /* ナビゲーション////////////////////////////////////////////////////// */
+    .navige{
+        background-color: #f5f5f5; /* ナビゲーションの背景色を設定 */
+    }
+    .nav-list {
+        /* スタイル設定 */
+        list-style: none;
+        padding: 0;
+        text-align: left; /* テキストを左揃えに設定 */
+        padding-bottom: 5%;
+        padding-top: 9%;
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 100%; /* ulの幅を設定（必要に応じて調整） */
+        max-width: 1200px;
+    }
+
+    .large-text {
+        font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+        border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+        padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+        box-sizing: border-box; /* パディングを要素の幅に含める */
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    nav ul ul {
+        display: block; /* 子項目を常に表示 */
+        position: static; /* 子項目を下に表示 */
+        width: auto; /* ulの幅を自動に設定 */
+    }
+
+    .nav-list-li{
+        display: inline-block; /* 全てのリスト項目を横に並べる */
+        margin-right: 20px; /* リスト項目の間にスペースを作る */
+        vertical-align: top; /* テキストを上揃えに設定 */
+        width: 17%; /* リスト項目の幅を150pxに設定 */
+    }
+
+    .nav-list-ul a{
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    /* フッター///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; 
+    }
+}
+@media screen and (min-width:481px) and ( max-width:767px) {
+    /* ナビゲーション////////////////////////////////////////////////////// */
+    .navige{
+        background-color: #f5f5f5; /* ナビゲーションの背景色を設定 */
+    }
+    .nav-list {
+        /* スタイル設定 */
+        list-style: none;
+        padding: 0;
+        text-align: left; /* テキストを左揃えに設定 */
+        padding-bottom: 5%;
+        padding-top: 9%;
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 100%; /* ulの幅を設定（必要に応じて調整） */
+        max-width: 1200px;
+    }
+
+    .large-text {
+        font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+        border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+        padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+        box-sizing: border-box; /* パディングを要素の幅に含める */
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    nav ul ul {
+        display: block; /* 子項目を常に表示 */
+        position: static; /* 子項目を下に表示 */
+        width: auto; /* ulの幅を自動に設定 */
+    }
+
+    .nav-list-li{
+        display: inline-block; /* 全てのリスト項目を横に並べる */
+        margin-right: 20px; /* リスト項目の間にスペースを作る */
+        vertical-align: top; /* テキストを上揃えに設定 */
+        width: 17%; /* リスト項目の幅を150pxに設定 */
+    }
+
+    .nav-list-ul a{
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    /* フッター///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; 
+    }
+}
+@media screen and (min-width:768px) and ( max-width:1023px) {
+    /* ナビゲーション////////////////////////////////////////////////////// */
+    .navige{
+        background-color: #f5f5f5; /* ナビゲーションの背景色を設定 */
+    }
+    .nav-list {
+        /* スタイル設定 */
+        list-style: none;
+        padding: 0;
+        text-align: left; /* テキストを左揃えに設定 */
+        padding-bottom: 5%;
+        padding-top: 7%;
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 100%; /* ulの幅を設定（必要に応じて調整） */
+        max-width: 1200px;
+    }
+
+    .large-text {
+        font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+        border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+        padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+        box-sizing: border-box; /* パディングを要素の幅に含める */
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    nav ul ul {
+        display: block; /* 子項目を常に表示 */
+        position: static; /* 子項目を下に表示 */
+        width: auto; /* ulの幅を自動に設定 */
+    }
+
+    .nav-list-li{
+        display: inline-block; /* 全てのリスト項目を横に並べる */
+        margin-right: 20px; /* リスト項目の間にスペースを作る */
+        vertical-align: top; /* テキストを上揃えに設定 */
+        width: 17%; /* リスト項目の幅を150pxに設定 */
+    }
+
+    .nav-list-ul a{
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+
+    /* フッター///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+}
+@media screen and (min-width:1024px) and ( max-width:1300px) {
+    /* ナビゲーション////////////////////////////////////////////////////// */
+    .navige{
+        background-color: #f5f5f5; /* ナビゲーションの背景色を設定 */
+    }
+    .nav-list {
+        /* スタイル設定 */
+        list-style: none;
+        padding: 0;
+        text-align: left; /* テキストを左揃えに設定 */
+        padding-bottom: 5%;
+        padding-top: 5%;
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 100%; /* ulの幅を設定（必要に応じて調整） */
+        max-width: 1200px;
+    }
+
+    .large-text {
+        font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+        border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+        padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+        box-sizing: border-box; /* パディングを要素の幅に含める */
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    nav ul ul {
+        display: block; /* 子項目を常に表示 */
+        position: static; /* 子項目を下に表示 */
+        width: auto; /* ulの幅を自動に設定 */
+    }
+
+    .nav-list-li{
+        display: inline-block; /* 全てのリスト項目を横に並べる */
+        margin-right: 20px; /* リスト項目の間にスペースを作る */
+        vertical-align: top; /* テキストを上揃えに設定 */
+        width: 17%; /* リスト項目の幅を150pxに設定 */
+    }
+
+    .nav-list-ul a{
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+
+    /* フッター///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+}
+@media screen and (min-width:1301px) and ( max-width:1700px) {
+    /* ナビゲーション////////////////////////////////////////////////////// */
+    .navige{
+        background-color: #f5f5f5; /* ナビゲーションの背景色を設定 */
+    }
+    .nav-list {
+        /* スタイル設定 */
+        list-style: none;
+        padding: 0;
+        text-align: left; /* テキストを左揃えに設定 */
+        padding-bottom: 5%;
+        padding-top: 5%;
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 100%; /* ulの幅を設定（必要に応じて調整） */
+        max-width: 1200px;
+    }
+
+    .large-text {
+        font-size: 20px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+        border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+        padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+        box-sizing: border-box; /* パディングを要素の幅に含める */
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    nav ul ul {
+        display: block; /* 子項目を常に表示 */
+        position: static; /* 子項目を下に表示 */
+        width: auto; /* ulの幅を自動に設定 */
+    }
+
+    .nav-list-li{
+        display: inline-block; /* 全てのリスト項目を横に並べる */
+        margin-right: 20px; /* リスト項目の間にスペースを作る */
+        vertical-align: top; /* テキストを上揃えに設定 */
+        width: 17%; /* リスト項目の幅を150pxに設定 */
+    }
+
+    .nav-list-ul a{
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+
+    /* フッター///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+}
+@media screen and (min-width:1701px) {
+    /* ナビゲーション////////////////////////////////////////////////////// */
+    .navige{
+        background-color: #f5f5f5; /* ナビゲーションの背景色を設定 */
+    }
+    .nav-list {
+        /* スタイル設定 */
+        list-style: none;
+        padding: 0;
+        text-align: left; /* テキストを左揃えに設定 */
+        padding-bottom: 5%;
+        padding-top: 5%;
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 98%; /* ulの幅を設定（必要に応じて調整） */
+        max-width: 1701px;
+    }
+
+    .large-text {
+        font-size: 40px; /* 文字サイズを20pxに設定（必要に応じて調整） */
+        border-bottom: 1px solid lightgray; /* 下線を追加し、色を薄い灰色に設定 */
+        padding: 0 10px; /* 左右のパディングを追加して下線の長さを調整 */
+        box-sizing: border-box; /* パディングを要素の幅に含める */
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+    }
+
+    nav ul ul {
+        display: block; /* 子項目を常に表示 */
+        position: static; /* 子項目を下に表示 */
+        width: auto; /* ulの幅を自動に設定 */
+    }
+
+    .nav-list-li{
+        display: inline-block; /* 全てのリスト項目を横に並べる */
+        margin-right: 20px; /* リスト項目の間にスペースを作る */
+        vertical-align: top; /* テキストを上揃えに設定 */
+        width: 300px; /* リスト項目の幅を150pxに設定 */
+    }
+
+    .nav-list-ul a{
+        color: black; /* テキスト色を黒に設定 */
+        display: block; /* リンクをブロックレベル要素に設定 */
+        text-decoration: none; /* 下線を削除 */
+        padding: 10px;
+        font-size:30px;
+    }
+
+    /* フッター///////////////////////////////////////////////////////////////////// */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        display: block;
+        padding: 1rem 0;
+        position: relative; /* z-indexを適用するためには、positionプロパティがstatic以外である必要があります */
+        z-index: 1; /* z-indexを設定 */
+    }
+}

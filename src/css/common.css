@@ -1,0 +1,4455 @@
+/* 基本的なリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit; 
+    text-decoration: none;
+}
+.margin{
+    margin: 10%;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none; /* リストマーカーを削除 */
+}
+
+body {
+    font-family: 'YakuHanJP', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+@media screen and (max-width:480px) {
+    #notification-logo {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        z-index: 1000;
+        animation: bounce 2s infinite;
+    }
+    #notification-logo p {
+        padding-left: 15px;
+        color: red;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    #notification-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+    .pc{
+        display: none;
+    }
+    section:target {
+        padding-top: 120px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+    }
+
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+
+    /* メインコンテンツ */
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+
+    /* ヘッダー */
+    /* ヘッダー全体のスタイル */
+    /* header start///////////////////////////////////////////////////////////////////////////////////////////// */
+
+    header {
+        position: relative;
+        height: 100vh; /* ビューポートの高さに合わせる */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .nav-contact{
+        color:black;
+    }
+
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 35px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+
+
+    @keyframes slideInLeftFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-1500px) skewX(-40deg);;
+            filter: brightness(0%); /* アニメーションの開始時にビデオの明るさを50%に設定 */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)  skewX(0deg);;
+            filter: brightness(100%); /* アニメーションの終了時にビデオの明るさを100%に設定 */
+        }
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        animation: slideInLeftFadeIn 1s; /* 左からスライドインとフェードインのアニメーションを設定 */
+        animation-delay: 1s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+        z-index: -1; /* 緑の線がビデオの上に表示されるようにする */
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromdown {
+        0% {
+            transform: translateY(50%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .site-title {
+        /* 以前のスタイル設定 */
+        animation: slideInFromdown 2s; /* 上からスライドインのアニメーションを設定 */
+        animation-delay: 2s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+    }
+
+
+    .header-overlay {
+        position: fixed;
+        top: 3%;
+        left: 0;
+        width: calc(100% - 80px); /* 全体の幅から60px（左右30pxずつ）を引く */
+        margin-left: 40px; /* 左側のマージンを30pxに設定 */
+        height: 12%; /* 長方形の高さ */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 中央に寄せる */
+        /* 影をもっとつける */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        background: white; /* 白い半透明のオーバーレイ */
+        /* 角を丸くする */
+        border-radius: 10px;
+        z-index:999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        /* transition: background-color 0.1s ease, box-shadow 0.1s ease; */
+        animation: fadeIn 1.6s; /* フェードインのアニメーションを設定 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1300px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .company-info-item a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color:white ;
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 20px;
+    }
+
+
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    
+    .company-name {
+        margin-left: 10px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 30px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .site-title h1{
+        font-size: 35px
+    }
+
+
+    .main-nav {
+        display: flex;
+
+    }
+
+    .main-nav ul{
+        display: flex;
+    }
+
+    #contact{
+        padding: 10px 30px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+    /* header end///////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* ////////NEWS  start////////////////////// */
+    #news {
+        margin: 10% 3%; /* 上部にマージンを追加 */
+        position: relative; /* 線の位置を調整するため */
+    }
+
+    #news h2 {
+        position: relative; /* 追加 */
+    }
+
+    #news h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px; /* 線の位置を調整 */
+        height: 1px; /* 線の高さを1pxに設定 */
+        background-color:  #b8b4b4; /* 線の色を設定 */
+    }
+
+    #news ul {
+        list-style: none; /* リストマーカーを削除 */
+        padding-left: 0; /* リストの左パディングを削除 */
+        margin-top: 1%;
+        font-size: 19px;
+    }
+
+    #news li {
+        margin-bottom: 10px; /* リスト項目間のマージンを設定 */
+        transition: background-color 0.3s ease; /* 背景色の変化を0.5秒でゆっくりと行う */
+        height: 80px;
+    }
+
+    #news a {
+        padding-top: 1.5%;
+        display: flex; /* フレックスボックスを使用して項目を横並びに */
+        text-decoration: none; /* リンクの下線を削除 */
+        align-items: center; /* 項目を縦方向に中央に配置 */
+        color: #333; /* リンクの色を設定 */
+        
+    }
+    #news li:hover {
+        background-color: #ebe8e8; /* ホバー時の背景色を設定 */
+        border-radius: 7px; /* 背景の角を丸くする */
+    }
+
+    #news .date{
+        margin-right: 5px; /* 項目間のマージンを10pxに設定 */
+        width:35%;
+    }
+
+    #news .type {
+        text-align: center;
+        margin-right: 3%;
+        border-radius: 10px; /* 背景の角を丸くする */
+        width:55%;
+    }
+
+    #news .title {
+        width: 100%; /* ニュースのタイトルの幅を70%に設定 */
+        margin-top: 10px;
+    }
+
+    #news .type.recruitment {
+        background-color: rgb(184, 233, 184); /* 採用情報の背景色を緑に設定 */
+    }
+
+    #news .type.company {
+        background-color: rgb(201, 201, 247); /* 企業情報の背景色を青に設定 */
+    }
+
+    #news .type.event {
+        background-color: rgb(250, 211, 139); /* イベント情報の背景色をオレンジに設定 */
+    }
+    /* ニュースセクションのスタイル */
+    /* ニュースセクションのスタイル */
+    #news ul li {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #news ul li a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #news ul li a .date-type-container {
+        display: flex;
+        justify-content: flex-start; /* 左寄せにする */
+        width: 100%;
+    }
+
+
+    
+    /* ////////NEWS  end////////////////////// */
+
+
+    /* ///////business start////////// */
+    /* 事業情報セクションのスタイル */
+    #business {
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 横方向の中央揃え */
+        flex-direction: column; /* 子要素を縦方向に配置 */
+        text-align: center;
+        background-color: #f5f5f5; /* 薄い灰色の背景色を設定 */
+        box-sizing: border-box; /* paddingとborderを要素の幅と高さに含める */
+        margin-top: 5%;
+    }
+    .business-container {
+        display: flex;
+        flex-wrap: wrap; /* アイテムがコンテナを超えたら折り返す */
+        justify-content: center; /* 横方向の中央揃え */
+    }
+    .business-item a{
+        color: inherit; 
+        text-decoration: none;
+    }
+    .business-container h3{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    }
+
+    .business-item {
+        display: flex;
+        align-items: center; /* 中央に配置 */
+        justify-content: center; /* 横方向も中央に配置 */
+        text-align: center; /* テキストを中央揃えに */
+        background-size: cover;
+        background-position: center;
+        height: 300px; /* 高さを設定 */
+        color: white;
+        font-size: 40px;
+        border: 1px solid white; /* 白い線で囲む */
+        /* 既存のスタイル設定 */
+        transition: transform 0.3s ease; /* アニメーション効果を追加 */
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    
+    .business-item h3 {
+        width: 100%; /* 幅を親要素全体に */
+        margin: 0; /* デフォルトのマージンを削除 */
+    }
+
+    .business-item:hover {
+        transform: scale(1.05); /* 1.1倍に拡大 */
+    }
+    /* 上段のアイテム */
+    #home-engineer, #electric-safety {
+        width: 100%; /* 幅を50%に設定 */
+        height: 250px; /* 高さを設定 */
+    }
+
+    #gas-engineer, #ev-charger {
+        width: 100%; /* 幅を50%に設定 */
+        height: 250px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #home-engineer {
+        background-image: url('../../src/img/事業情報/ホームエンジニア.jpg');
+        order: 2; /* 中央に配置 */
+    }
+
+    #electric-safety {
+        background-image: url('/src/img/事業情報/電気安全調査.jpg');
+        order: 1; /* 左に配置 */
+    }
+
+    #ev-charger {
+        background-image: url('/src/img/事業情報/EV充電器.jpg');
+        order: 4; /* 中央に配置 */
+    }
+
+    #gas-engineer {
+        background-image: url('/src/img/事業情報/ガスエンジニア/ガスエンジニア.jpg');
+        order: 3; /* 左に配置 */
+    }
+
+    /* ////企業情報//////////////////////////////////////////////////////////// */
+
+    /* 企業情報セクションのアイテムを一段ずつに表示するスタイル */
+    #company-info .company-info-container {
+        display: flex;
+        flex-direction: column; /* アイテムを縦方向に並べる */
+        align-items: center; /* アイテムを中央揃えに */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+    #company-info{
+        margin-top: 20%;
+    }
+
+    #company-info h2{
+        text-align: center;
+    }
+    #company-info .company-info-item {
+        width: 100%; /* 各アイテムの幅をコンテナ全体の幅に設定 */
+        margin-bottom: 20px; /* アイテム間の間隔を設定 */
+        margin-top: 1%; /* 上にマージンを追加 */
+        text-align: center; /* 中央に寄せる */
+        height: 250px; /* 各アイテムの高さを設定 */
+        box-sizing: border-box; /* パディングとボーダーを含める */
+        clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%); /* 左上端の角を切る */
+        background-size: cover; /* 背景画像を要素の大きさに合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        position: relative; /* 子要素の絶対位置を有効にする */
+    }
+
+    .company-info-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* 背景を薄い白に設定 */
+        transform: skewX(-15deg);
+        transition: transform 0.3s ease;
+    }
+
+    .company-info-item:hover::before {
+        transform: skewX(-15deg) translateX(100%);
+    }
+
+    #company-info .company-info-item h2 {
+        position: absolute; /* 絶対位置を指定 */
+        bottom: 0; /* 下に配置 */
+        left: 0; /* 左から配置 */
+        width: 100%; /* 全幅に広げる */
+        text-align: center; /* テキストを中央に配置 */
+        color: white; /* テキスト色を白に設定 */
+        background-color: rgba(128, 128, 128, 0.4); /* 背景に薄い灰色を追加 */
+    }
+
+    #access, #ceo-message, #management-member, #corporate-philosophy {
+        height: 300px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #access {
+        background-image: url('../../src/img/会社情報/会社概要・アクセス.jpg');
+    }
+
+    #ceo-message {
+        background-image: url('/浜田さん/CEO/jpg/1.jpg');
+    }
+
+    #management-member {
+        background-image: url('../../src/img/会社情報/経営メンバー.jpg');
+        
+    }
+
+    #corporate-philosophy {
+        background-image: url('../../src/img/会社情報/企業理念.png');
+    }
+
+
+    /* 採用情報////////////////////////////////////////////////////////////////////////// */
+    #recruit {
+        margin-top: 20%; /* 上にマージンを追加 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央に配置 */
+        min-height: 450px; /* 最小高さを設定して、背景画像が切れないようにする */
+        color: white;
+        position: relative;
+        transition: transform 0.3s ease; /* トランジション効果を追加 */
+    }
+    #recruit:hover {
+        transform: scale(1.05); /* ホバー時に画像を少し拡大 */
+    }
+
+    #recruit h2 {
+        padding-top: 10%;
+        padding-bottom: 0%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit h3 {
+        font-size: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit p {
+        font-size: 20px;
+        padding-top: 1%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    .recruit-container {
+        justify-content: space-around; /* 項目間のスペースを均等に分配 */
+        padding-top: 5%;
+        margin: auto; /* 自動マージンを設定して中央に配置 */
+        width:  35%; /* コンテナの幅を80%に設定 */
+    }
+
+    .recruit-item {
+        text-align: center; /* テキストを中央に配置 */
+        margin-top: 15%;
+    }
+
+    .recruit-item a {
+        /* 既存のスタイル設定 */
+        display: flex; /* Flexboxを使用 */
+        justify-content: center; /* 横方向の中央に配置 */
+        align-items: center; /* 縦方向の中央に配置 */
+        font-size: 15px;
+        width:150px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* 既存のスタイル設定 */
+    }
+
+    .recruit-item a:hover  {
+        /* 既存のスタイル設定 */
+        background-color: white;
+        color: rgb(37, 146, 37);;
+    }
+
+    .recruit-button {
+        display: inline-block; /* ボタンのスタイルを適用 */
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        /* 既存のスタイル設定 */
+        width: 100px; /* ボタンの幅を150pxに設定 */
+        height: 80px; /* ボタンの高さを50pxに設定 */
+    }
+
+    @keyframes slideInFromLeftDiagonal {
+        0% {
+            transform: translateX(-100%) skewX(-40deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) skewX(0deg);
+            opacity: 1;
+        }
+    }
+
+    #recruit.slide-in:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../src/img/採用情報/採用背景.jpg'); /* 背景画像を設定 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        animation: slideInFromLeftDiagonal 2s; /* 左から斜めにスライドインのアニメーションを設定 */
+        z-index: -1; /* 疑似要素を背面に移動 */
+    }
+
+    /* お問い合わせ//////////////////////////////////////////////////////////////////////// */
+    #contact {
+        margin: 10%; /* お問い合わせの上にマージン */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 50%; /* セクションの幅を設定（必要に応じて調整） */
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .contact-button {
+        padding-top: 3%;
+        display: inline-block;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        padding: 20px 80px; /* パディングを適用 */
+        text-decoration: none; /* テキストの下線を削除 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* 背景色とテキスト色の変更を滑らかにする */
+        border-radius: 30px;
+        border: 2px solid  rgb(37, 146, 37);
+
+    }
+
+    #contact p {
+        padding-bottom: 5%;
+    }
+
+    .contact-button:hover {
+        background-color: white; /* ホバー時の背景色を白に設定 */
+        color: green; /* ホバー時のテキスト色を緑に設定 */
+    }
+
+    #contact h2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #contact h2::before,
+    #contact h2::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 160px; /* ラインの長さを調整 */
+        height: 1px; /* ラインの太さを調整 */
+        background-color: black; /* ラインの色を調整 */
+    }
+
+    #contact h2::before {
+        left: -190px; /* ラインとテキストの間隔を調整 */
+    }
+
+    #contact h2::after {
+        right: -190px; /* ラインとテキストの間隔を調整 */
+    }
+}
+@media screen and (min-width:481px) and ( max-width:767px) {
+    #notification-logo {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        width: 80px;
+        height: 80px;
+        z-index: 1000;
+        animation: bounce 2s infinite;
+    }
+    #notification-logo p {
+        padding-left: 15px;
+        color: red;
+        font-weight: bold;
+        font-size: 12px;
+    }
+    
+    #notification-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+    .sp{
+        display: none;
+    }
+    section:target {
+        padding-top: 120px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+    }
+
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+
+    /* メインコンテンツ */
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+
+    /* ヘッダー */
+    /* ヘッダー全体のスタイル */
+    /* header start///////////////////////////////////////////////////////////////////////////////////////////// */
+
+    header {
+        position: relative;
+        height: 100vh; /* ビューポートの高さに合わせる */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .nav-contact{
+        color:black;
+    }
+
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 35px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+
+
+    @keyframes slideInLeftFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-1500px) skewX(-40deg);;
+            filter: brightness(0%); /* アニメーションの開始時にビデオの明るさを50%に設定 */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)  skewX(0deg);;
+            filter: brightness(100%); /* アニメーションの終了時にビデオの明るさを100%に設定 */
+        }
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        animation: slideInLeftFadeIn 1s; /* 左からスライドインとフェードインのアニメーションを設定 */
+        animation-delay: 1s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+        z-index: -1; /* 緑の線がビデオの上に表示されるようにする */
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromdown {
+        0% {
+            transform: translateY(50%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .site-title {
+        /* 以前のスタイル設定 */
+        animation: slideInFromdown 2s; /* 上からスライドインのアニメーションを設定 */
+        animation-delay: 2s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+    }
+
+
+    .header-overlay {
+        position: fixed;
+        top: 3%;
+        left: 0;
+        width: calc(100% - 80px); /* 全体の幅から60px（左右30pxずつ）を引く */
+        margin-left: 40px; /* 左側のマージンを30pxに設定 */
+        height: 12%; /* 長方形の高さ */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 中央に寄せる */
+        /* 影をもっとつける */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        background: white; /* 白い半透明のオーバーレイ */
+        /* 角を丸くする */
+        border-radius: 10px;
+        z-index:999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        /* transition: background-color 0.1s ease, box-shadow 0.1s ease; */
+        animation: fadeIn 1.6s; /* フェードインのアニメーションを設定 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1300px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .company-info-item a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color:white ;
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 20px;
+    }
+
+
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    
+    .company-name {
+        margin-left: 10px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 30px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .site-title h1{
+        font-size: 50px
+    }
+
+
+    .main-nav {
+        display: flex;
+
+    }
+
+    .main-nav ul{
+        display: flex;
+    }
+
+    #contact{
+        padding: 10px 30px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+    /* header end///////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* ////////NEWS  start////////////////////// */
+    #news {
+        margin: 3% 3%; /* 上部にマージンを追加 */
+        position: relative; /* 線の位置を調整するため */
+    }
+
+    #news h2 {
+        position: relative; /* 追加 */
+    }
+
+    #news h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px; /* 線の位置を調整 */
+        height: 1px; /* 線の高さを1pxに設定 */
+        background-color:  #b8b4b4; /* 線の色を設定 */
+    }
+
+    #news ul {
+        list-style: none; /* リストマーカーを削除 */
+        padding-left: 0; /* リストの左パディングを削除 */
+        margin-top: 1%;
+        font-size: 20px;
+    }
+
+    #news li {
+        margin-bottom: 10px; /* リスト項目間のマージンを設定 */
+        transition: background-color 0.3s ease; /* 背景色の変化を0.5秒でゆっくりと行う */
+        height: 100px;
+    }
+
+    #news a {
+        padding-top: 1.5%;
+        display: flex; /* フレックスボックスを使用して項目を横並びに */
+        text-decoration: none; /* リンクの下線を削除 */
+        align-items: center; /* 項目を縦方向に中央に配置 */
+        color: #333; /* リンクの色を設定 */
+        
+    }
+    #news li:hover {
+        background-color: #ebe8e8; /* ホバー時の背景色を設定 */
+        border-radius: 7px; /* 背景の角を丸くする */
+    }
+
+    #news .date{
+        width: 26%; /* 日付とニュースの種類の幅を15%に設定 */
+        margin-right: 5px; /* 項目間のマージンを10pxに設定 */
+    }
+
+    #news .type {
+        width: 30%; /* ニュースの種類の幅を100pxに設定 */
+        text-align: center;
+        margin-right: 3%;
+        border-radius: 10px; /* 背景の角を丸くする */
+    }
+
+    #news .title {
+        width: 55%; /* ニュースのタイトルの幅を70%に設定 */
+    }
+
+    #news .type.recruitment {
+        background-color: rgb(184, 233, 184); /* 採用情報の背景色を緑に設定 */
+    }
+
+    #news .type.company {
+        background-color: rgb(201, 201, 247); /* 企業情報の背景色を青に設定 */
+    }
+
+    #news .type.event {
+        background-color: rgb(250, 211, 139); /* イベント情報の背景色をオレンジに設定 */
+    }
+    /* ////////NEWS  end////////////////////// */
+
+
+    /* ///////business start////////// */
+    /* 事業情報セクションのスタイル */
+    #business {
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 横方向の中央揃え */
+        flex-direction: column; /* 子要素を縦方向に配置 */
+        text-align: center;
+        background-color: #f5f5f5; /* 薄い灰色の背景色を設定 */
+        box-sizing: border-box; /* paddingとborderを要素の幅と高さに含める */
+        margin-top: 5%;
+    }
+    .business-container {
+        display: flex;
+        flex-wrap: wrap; /* アイテムがコンテナを超えたら折り返す */
+        justify-content: center; /* 横方向の中央揃え */
+    }
+    .business-item a{
+        color: inherit; 
+        text-decoration: none;
+    }
+    .business-container h3{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    }
+
+    .business-item {
+        display: flex;
+        align-items: center; /* 中央に配置 */
+        justify-content: center; /* 横方向も中央に配置 */
+        text-align: center; /* テキストを中央揃えに */
+        background-size: cover;
+        background-position: center;
+        height: 300px; /* 高さを設定 */
+        color: white;
+        font-size: 40px;
+        border: 1px solid white; /* 白い線で囲む */
+        /* 既存のスタイル設定 */
+        transition: transform 0.3s ease; /* アニメーション効果を追加 */
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    
+    .business-item h3 {
+        width: 100%; /* 幅を親要素全体に */
+        margin: 0; /* デフォルトのマージンを削除 */
+    }
+
+    .business-item:hover {
+        transform: scale(1.05); /* 1.1倍に拡大 */
+    }
+    /* 上段のアイテム */
+    #home-engineer, #electric-safety {
+        width: 100%; /* 幅を50%に設定 */
+        height: 250px; /* 高さを設定 */
+    }
+
+    #gas-engineer, #ev-charger {
+        width: 100%; /* 幅を50%に設定 */
+        height: 250px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #home-engineer {
+        background-image: url('../../src/img/事業情報/ホームエンジニア.jpg');
+        order: 2; /* 中央に配置 */
+    }
+
+    #electric-safety {
+        background-image: url('/src/img/事業情報/電気安全調査.jpg');
+        order: 1; /* 左に配置 */
+    }
+
+    #ev-charger {
+        background-image: url('/src/img/事業情報/EV充電器.jpg');
+        order: 4; /* 中央に配置 */
+    }
+
+    #gas-engineer {
+        background-image: url('/src/img/事業情報/ガスエンジニア/ガスエンジニア.jpg');
+        order: 3; /* 左に配置 */
+    }
+
+    /* ////企業情報//////////////////////////////////////////////////////////// */
+
+    /* 企業情報セクションのアイテムを一段ずつに表示するスタイル */
+    #company-info .company-info-container {
+        display: flex;
+        flex-direction: column; /* アイテムを縦方向に並べる */
+        align-items: center; /* アイテムを中央揃えに */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+    #company-info{
+        margin-top: 20%;
+    }
+
+    #company-info h2{
+        text-align: center;
+    }
+    #company-info .company-info-item {
+        width: 100%; /* 各アイテムの幅をコンテナ全体の幅に設定 */
+        margin-bottom: 20px; /* アイテム間の間隔を設定 */
+        margin-top: 1%; /* 上にマージンを追加 */
+        text-align: center; /* 中央に寄せる */
+        height: 250px; /* 各アイテムの高さを設定 */
+        box-sizing: border-box; /* パディングとボーダーを含める */
+        clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%); /* 左上端の角を切る */
+        background-size: cover; /* 背景画像を要素の大きさに合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        position: relative; /* 子要素の絶対位置を有効にする */
+    }
+
+    .company-info-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* 背景を薄い白に設定 */
+        transform: skewX(-15deg);
+        transition: transform 0.3s ease;
+    }
+
+    .company-info-item:hover::before {
+        transform: skewX(-15deg) translateX(100%);
+    }
+
+    #company-info .company-info-item h2 {
+        position: absolute; /* 絶対位置を指定 */
+        bottom: 0; /* 下に配置 */
+        left: 0; /* 左から配置 */
+        width: 100%; /* 全幅に広げる */
+        text-align: center; /* テキストを中央に配置 */
+        color: white; /* テキスト色を白に設定 */
+        background-color: rgba(128, 128, 128, 0.4); /* 背景に薄い灰色を追加 */
+    }
+
+    #access, #ceo-message, #management-member, #corporate-philosophy {
+        height: 300px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #access {
+        background-image: url('../../src/img/会社情報/会社概要・アクセス.jpg');
+    }
+
+    #ceo-message {
+        background-image: url('/浜田さん/CEO/jpg/1.jpg');
+    }
+
+    #management-member {
+        background-image: url('../../src/img/会社情報/経営メンバー.jpg');
+        
+    }
+
+    #corporate-philosophy {
+        background-image: url('../../src/img/会社情報/企業理念.png');
+    }
+
+
+    /* 採用情報////////////////////////////////////////////////////////////////////////// */
+    #recruit {
+        margin-top: 20%; /* 上にマージンを追加 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央に配置 */
+        min-height: 400px; /* 最小高さを設定して、背景画像が切れないようにする */
+        color: white;
+        position: relative;
+        transition: transform 0.3s ease; /* トランジション効果を追加 */
+    }
+    #recruit:hover {
+        transform: scale(1.05); /* ホバー時に画像を少し拡大 */
+    }
+
+    #recruit h2 {
+        padding-top: 10%;
+        padding-bottom: 0%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit h3 {
+        font-size: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit p {
+        font-size: 20px;
+        padding-top: 1%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    .recruit-container {
+        display: flex; /* 項目を横並びにする */
+        justify-content: space-around; /* 項目間のスペースを均等に分配 */
+        padding-top: 5%;
+        margin: auto; /* 自動マージンを設定して中央に配置 */
+        width:  70%; /* コンテナの幅を80%に設定 */
+    }
+
+    .recruit-item {
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .recruit-item a {
+        /* 既存のスタイル設定 */
+        display: flex; /* Flexboxを使用 */
+        justify-content: center; /* 横方向の中央に配置 */
+        align-items: center; /* 縦方向の中央に配置 */
+        font-size: 15px;
+        width:150px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* 既存のスタイル設定 */
+    }
+
+    .recruit-item a:hover  {
+        /* 既存のスタイル設定 */
+        background-color: white;
+        color: rgb(37, 146, 37);;
+    }
+
+    .recruit-button {
+        display: inline-block; /* ボタンのスタイルを適用 */
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        /* 既存のスタイル設定 */
+        width: 100px; /* ボタンの幅を150pxに設定 */
+        height: 80px; /* ボタンの高さを50pxに設定 */
+    }
+
+    @keyframes slideInFromLeftDiagonal {
+        0% {
+            transform: translateX(-100%) skewX(-40deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) skewX(0deg);
+            opacity: 1;
+        }
+    }
+
+    #recruit.slide-in:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../src/img/採用情報/採用背景.jpg'); /* 背景画像を設定 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        animation: slideInFromLeftDiagonal 2s; /* 左から斜めにスライドインのアニメーションを設定 */
+        z-index: -1; /* 疑似要素を背面に移動 */
+    }
+
+    /* お問い合わせ//////////////////////////////////////////////////////////////////////// */
+    #contact {
+        margin: 10%; /* お問い合わせの上にマージン */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 50%; /* セクションの幅を設定（必要に応じて調整） */
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .contact-button {
+        padding-top: 3%;
+        display: inline-block;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        padding: 20px 80px; /* パディングを適用 */
+        text-decoration: none; /* テキストの下線を削除 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* 背景色とテキスト色の変更を滑らかにする */
+        border-radius: 30px;
+        border: 2px solid  rgb(37, 146, 37);
+
+    }
+
+    #contact p {
+        padding-bottom: 5%;
+    }
+
+    .contact-button:hover {
+        background-color: white; /* ホバー時の背景色を白に設定 */
+        color: green; /* ホバー時のテキスト色を緑に設定 */
+    }
+
+    #contact h2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #contact h2::before,
+    #contact h2::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 160px; /* ラインの長さを調整 */
+        height: 1px; /* ラインの太さを調整 */
+        background-color: black; /* ラインの色を調整 */
+    }
+
+    #contact h2::before {
+        left: -190px; /* ラインとテキストの間隔を調整 */
+    }
+
+    #contact h2::after {
+        right: -190px; /* ラインとテキストの間隔を調整 */
+    }
+}
+@media screen and (min-width:768px) and ( max-width:1023px) {
+    #notification-logo {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
+        z-index: 1000;
+        animation: bounce 2s infinite;
+    }
+    #notification-logo p {
+        padding-left: 20px;
+        color: red;
+        font-weight: bold;
+    }
+    
+    #notification-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .sp{
+        display: none;
+    }
+    section:target {
+        padding-top: 120px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+    }
+
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+
+    /* メインコンテンツ */
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+
+    /* ヘッダー */
+    /* ヘッダー全体のスタイル */
+    /* header start///////////////////////////////////////////////////////////////////////////////////////////// */
+
+    header {
+        position: relative;
+        height: 100vh; /* ビューポートの高さに合わせる */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .nav-contact{
+        color:black;
+    }
+
+    /* セクションのタイトル */
+    h2 {
+        font-size: 45px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 40px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+
+
+    @keyframes slideInLeftFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-1500px) skewX(-40deg);;
+            filter: brightness(0%); /* アニメーションの開始時にビデオの明るさを50%に設定 */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)  skewX(0deg);;
+            filter: brightness(100%); /* アニメーションの終了時にビデオの明るさを100%に設定 */
+        }
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        animation: slideInLeftFadeIn 1s; /* 左からスライドインとフェードインのアニメーションを設定 */
+        animation-delay: 1s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+        z-index: -1; /* 緑の線がビデオの上に表示されるようにする */
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromdown {
+        0% {
+            transform: translateY(50%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .site-title {
+        /* 以前のスタイル設定 */
+        animation: slideInFromdown 2s; /* 上からスライドインのアニメーションを設定 */
+        animation-delay: 2s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+    }
+
+
+    .header-overlay {
+        position: fixed;
+        top: 3%;
+        left: 0;
+        width: calc(100% - 80px); /* 全体の幅から60px（左右30pxずつ）を引く */
+        margin-left: 40px; /* 左側のマージンを30pxに設定 */
+        height: 12%; /* 長方形の高さ */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 中央に寄せる */
+        /* 影をもっとつける */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        background: white; /* 白い半透明のオーバーレイ */
+        /* 角を丸くする */
+        border-radius: 10px;
+        z-index:999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        /* transition: background-color 0.1s ease, box-shadow 0.1s ease; */
+        animation: fadeIn 1.6s; /* フェードインのアニメーションを設定 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1300px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .company-info-item a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color:white ;
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 20px;
+    }
+
+
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    
+    .company-name {
+        margin-left: 20px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 30px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .site-title h1{
+        font-size: 50px
+    }
+
+
+    .main-nav {
+        display: flex;
+
+    }
+
+    .main-nav ul{
+        display: flex;
+        gap: 20px;
+    }
+
+    #contact{
+        padding: 10px 30px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+    /* header end///////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* ////////NEWS  start////////////////////// */
+    #news {
+        margin: 3% 3%; /* 上部にマージンを追加 */
+        position: relative; /* 線の位置を調整するため */
+    }
+
+    #news h2 {
+        position: relative; /* 追加 */
+    }
+
+    #news h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px; /* 線の位置を調整 */
+        height: 1px; /* 線の高さを1pxに設定 */
+        background-color:  #b8b4b4; /* 線の色を設定 */
+    }
+
+    #news ul {
+        list-style: none; /* リストマーカーを削除 */
+        padding-left: 0; /* リストの左パディングを削除 */
+        margin-top: 1%;
+        font-size: 22px;
+    }
+
+    #news li {
+        margin-bottom: 10px; /* リスト項目間のマージンを設定 */
+        transition: background-color 0.3s ease; /* 背景色の変化を0.5秒でゆっくりと行う */
+        height: 100px;
+    }
+
+    #news a {
+        padding-top: 1.5%;
+        display: flex; /* フレックスボックスを使用して項目を横並びに */
+        text-decoration: none; /* リンクの下線を削除 */
+        align-items: center; /* 項目を縦方向に中央に配置 */
+        color: #333; /* リンクの色を設定 */
+        
+    }
+    #news li:hover {
+        background-color: #ebe8e8; /* ホバー時の背景色を設定 */
+        border-radius: 7px; /* 背景の角を丸くする */
+    }
+
+    #news .date{
+        width: 20%; /* 日付とニュースの種類の幅を15%に設定 */
+        margin-right: 10px; /* 項目間のマージンを10pxに設定 */
+    }
+
+    #news .type {
+        width: 25%; /* ニュースの種類の幅を100pxに設定 */
+        text-align: center;
+        margin-right: 3%;
+        border-radius: 10px; /* 背景の角を丸くする */
+    }
+
+    #news .title {
+        width: 70%; /* ニュースのタイトルの幅を70%に設定 */
+    }
+
+    #news .type.recruitment {
+        background-color: rgb(184, 233, 184); /* 採用情報の背景色を緑に設定 */
+    }
+
+    #news .type.company {
+        background-color: rgb(201, 201, 247); /* 企業情報の背景色を青に設定 */
+    }
+
+    #news .type.event {
+        background-color: rgb(250, 211, 139); /* イベント情報の背景色をオレンジに設定 */
+    }
+    /* ////////NEWS  end////////////////////// */
+
+
+    /* ///////business start////////// */
+    /* 事業情報セクションのスタイル */
+    #business {
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 横方向の中央揃え */
+        flex-direction: column; /* 子要素を縦方向に配置 */
+        text-align: center;
+        background-color: #f5f5f5; /* 薄い灰色の背景色を設定 */
+        box-sizing: border-box; /* paddingとborderを要素の幅と高さに含める */
+        margin-top: 5%;
+    }
+    .business-container {
+        display: flex;
+        flex-wrap: wrap; /* アイテムがコンテナを超えたら折り返す */
+        justify-content: center; /* 横方向の中央揃え */
+    }
+    .business-item a{
+        color: inherit; 
+        text-decoration: none;
+    }
+    .business-container h3{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    }
+
+    .business-item {
+        display: flex;
+        align-items: center; /* 中央に配置 */
+        justify-content: center; /* 横方向も中央に配置 */
+        text-align: center; /* テキストを中央揃えに */
+        background-size: cover;
+        background-position: center;
+        height: 300px; /* 高さを設定 */
+        color: white;
+        font-size: 40px;
+        border: 1px solid white; /* 白い線で囲む */
+        /* 既存のスタイル設定 */
+        transition: transform 0.3s ease; /* アニメーション効果を追加 */
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    
+    .business-item h3 {
+        width: 100%; /* 幅を親要素全体に */
+        margin: 0; /* デフォルトのマージンを削除 */
+    }
+
+    .business-item:hover {
+        transform: scale(1.05); /* 1.1倍に拡大 */
+    }
+    /* 上段のアイテム */
+    #home-engineer, #electric-safety {
+        width: 100%; /* 幅を50%に設定 */
+        height: 400px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #home-engineer {
+        background-image: url('../../src/img/事業情報/ホームエンジニア.jpg');
+        order: 2; /* 中央に配置 */
+    }
+
+    #electric-safety {
+        background-image: url('/src/img/事業情報/電気安全調査.jpg');
+        order: 1; /* 左に配置 */
+    }
+
+    #ev-charger {
+        background-image: url('/src/img/事業情報/EV充電器.jpg');
+        order: 4; /* 中央に配置 */
+    }
+
+    #gas-engineer {
+        background-image: url('/src/img/事業情報/ガスエンジニア/ガスエンジニア.jpg');
+        order: 3; /* 左に配置 */
+    }
+
+    #gas-engineer, #ev-charger {
+        width: 100%; /* 幅を50%に設定 */
+        height: 400px; /* 高さを設定 */
+    }
+
+
+
+    /* ////企業情報//////////////////////////////////////////////////////////// */
+
+    /* 企業情報セクションのアイテムを一段ずつに表示するスタイル */
+    #company-info .company-info-container {
+        display: flex;
+        flex-direction: column; /* アイテムを縦方向に並べる */
+        align-items: center; /* アイテムを中央揃えに */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+    #company-info{
+        margin-top: 20%;
+    }
+
+    #company-info h2{
+        text-align: center;
+    }
+    #company-info .company-info-item {
+        width: 100%; /* 各アイテムの幅をコンテナ全体の幅に設定 */
+        margin-bottom: 20px; /* アイテム間の間隔を設定 */
+        margin-top: 1%; /* 上にマージンを追加 */
+        text-align: center; /* 中央に寄せる */
+        height: 400px; /* 各アイテムの高さを設定 */
+        box-sizing: border-box; /* パディングとボーダーを含める */
+        clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%); /* 左上端の角を切る */
+        background-size: cover; /* 背景画像を要素の大きさに合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        position: relative; /* 子要素の絶対位置を有効にする */
+    }
+
+    .company-info-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* 背景を薄い白に設定 */
+        transform: skewX(-15deg);
+        transition: transform 0.3s ease;
+    }
+
+    .company-info-item:hover::before {
+        transform: skewX(-15deg) translateX(100%);
+    }
+
+    #company-info .company-info-item h2 {
+        position: absolute; /* 絶対位置を指定 */
+        bottom: 0; /* 下に配置 */
+        left: 0; /* 左から配置 */
+        width: 100%; /* 全幅に広げる */
+        text-align: center; /* テキストを中央に配置 */
+        color: white; /* テキスト色を白に設定 */
+        background-color: rgba(128, 128, 128, 0.4); /* 背景に薄い灰色を追加 */
+    }
+
+    #access, #ceo-message, #management-member, #corporate-philosophy {
+        height: 300px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #access {
+        background-image: url('../../src/img/会社情報/会社概要・アクセス.jpg');
+    }
+
+    #ceo-message {
+        background-image: url('/浜田さん/CEO/jpg/1.jpg');
+    }
+
+    #management-member {
+        background-image: url('../../src/img/会社情報/経営メンバー.jpg');
+        
+    }
+
+    #corporate-philosophy {
+        background-image: url('../../src/img/会社情報/企業理念.png');
+    }
+
+
+    /* 採用情報////////////////////////////////////////////////////////////////////////// */
+    #recruit {
+        margin-top: 20%; /* 上にマージンを追加 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央に配置 */
+        min-height: 500px; /* 最小高さを設定して、背景画像が切れないようにする */
+        color: white;
+        position: relative;
+        transition: transform 0.3s ease; /* トランジション効果を追加 */
+    }
+    #recruit:hover {
+        transform: scale(1.05); /* ホバー時に画像を少し拡大 */
+    }
+
+    #recruit h2 {
+        padding-top: 10%;
+        padding-bottom: 0%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit h3 {
+        font-size: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit p {
+        font-size: 20px;
+        padding-top: 1%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    .recruit-container {
+        display: flex; /* 項目を横並びにする */
+        justify-content: space-around; /* 項目間のスペースを均等に分配 */
+        padding-top: 5%;
+        margin: auto; /* 自動マージンを設定して中央に配置 */
+        width:  70%; /* コンテナの幅を80%に設定 */
+    }
+
+    .recruit-item {
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .recruit-item a {
+        /* 既存のスタイル設定 */
+        display: flex; /* Flexboxを使用 */
+        justify-content: center; /* 横方向の中央に配置 */
+        align-items: center; /* 縦方向の中央に配置 */
+        font-size: 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* 既存のスタイル設定 */
+    }
+
+    .recruit-item a:hover  {
+        /* 既存のスタイル設定 */
+        background-color: white;
+        color: rgb(37, 146, 37);;
+    }
+
+    .recruit-button {
+        display: inline-block; /* ボタンのスタイルを適用 */
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        /* 既存のスタイル設定 */
+        width: 260px; /* ボタンの幅を150pxに設定 */
+        height: 80px; /* ボタンの高さを50pxに設定 */
+    }
+
+    @keyframes slideInFromLeftDiagonal {
+        0% {
+            transform: translateX(-100%) skewX(-40deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) skewX(0deg);
+            opacity: 1;
+        }
+    }
+
+    #recruit.slide-in:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../src/img/採用情報/採用背景.jpg'); /* 背景画像を設定 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        animation: slideInFromLeftDiagonal 2s; /* 左から斜めにスライドインのアニメーションを設定 */
+        z-index: -1; /* 疑似要素を背面に移動 */
+    }
+
+    /* お問い合わせ//////////////////////////////////////////////////////////////////////// */
+    #contact {
+        margin: 10%; /* お問い合わせの上にマージン */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 50%; /* セクションの幅を設定（必要に応じて調整） */
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .contact-button {
+        padding-top: 3%;
+        display: inline-block;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        padding: 20px 80px; /* パディングを適用 */
+        text-decoration: none; /* テキストの下線を削除 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* 背景色とテキスト色の変更を滑らかにする */
+        border-radius: 30px;
+        border: 2px solid  rgb(37, 146, 37);
+
+    }
+
+    #contact p {
+        padding-bottom: 5%;
+    }
+
+    .contact-button:hover {
+        background-color: white; /* ホバー時の背景色を白に設定 */
+        color: green; /* ホバー時のテキスト色を緑に設定 */
+    }
+
+    #contact h2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #contact h2::before,
+    #contact h2::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 160px; /* ラインの長さを調整 */
+        height: 1px; /* ラインの太さを調整 */
+        background-color: black; /* ラインの色を調整 */
+    }
+
+    #contact h2::before {
+        left: -190px; /* ラインとテキストの間隔を調整 */
+    }
+
+    #contact h2::after {
+        right: -190px; /* ラインとテキストの間隔を調整 */
+    }
+}
+@media screen and (min-width:1024px) and ( max-width:1300px) {
+    #notification-logo {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        width: 140px;
+        height: 140px;
+        z-index: 1000;
+        animation: bounce 2s infinite;
+    }
+    #notification-logo p {
+        padding-left: 40px;
+        color: red;
+        font-weight: bold;
+        font-size: 13px;
+        
+    }
+    
+    #notification-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+    .sp{
+        display: none;
+    }
+
+    section:target {
+        padding-top: 120px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+    }
+
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+
+    /* メインコンテンツ */
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+
+    /* ヘッダー */
+    /* ヘッダー全体のスタイル */
+    /* header start///////////////////////////////////////////////////////////////////////////////////////////// */
+
+    header {
+        position: relative;
+        height: 100vh; /* ビューポートの高さに合わせる */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .nav-contact{
+        color:black;
+    }
+
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+
+
+    @keyframes slideInLeftFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-1500px) skewX(-40deg);;
+            filter: brightness(0%); /* アニメーションの開始時にビデオの明るさを50%に設定 */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)  skewX(0deg);;
+            filter: brightness(100%); /* アニメーションの終了時にビデオの明るさを100%に設定 */
+        }
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        animation: slideInLeftFadeIn 1s; /* 左からスライドインとフェードインのアニメーションを設定 */
+        animation-delay: 1s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+        z-index: -1; /* 緑の線がビデオの上に表示されるようにする */
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromdown {
+        0% {
+            transform: translateY(50%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .site-title {
+        /* 以前のスタイル設定 */
+        animation: slideInFromdown 2s; /* 上からスライドインのアニメーションを設定 */
+        animation-delay: 2s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+    }
+
+
+    .header-overlay {
+        position: fixed;
+        top: 30px;
+        left: 0;
+        width: calc(100% - 80px); /* 全体の幅から60px（左右30pxずつ）を引く */
+        margin-left: 40px; /* 左側のマージンを30pxに設定 */
+        height: 80px; /* 長方形の高さ */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 中央に寄せる */
+        /* 影をもっとつける */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        background: white; /* 白い半透明のオーバーレイ */
+        /* 角を丸くする */
+        border-radius: 10px;
+        z-index:999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        /* transition: background-color 0.1s ease, box-shadow 0.1s ease; */
+        animation: fadeIn 1.6s; /* フェードインのアニメーションを設定 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1300px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .company-info-item a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color:white ;
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 20px;
+    }
+
+
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    
+    .company-name {
+        margin-left: 20px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 25px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .site-title h1{
+        font-size: 50px
+    }
+
+
+    .main-nav {
+        display: flex;
+
+    }
+
+    .main-nav ul{
+        display: flex;
+        gap: 20px;
+    }
+
+    #contact{
+        padding: 10px 30px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+    /* header end///////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* ////////NEWS  start////////////////////// */
+    #news {
+        margin: 3% 3%; /* 上部にマージンを追加 */
+        position: relative; /* 線の位置を調整するため */
+    }
+
+    #news h2 {
+        position: relative; /* 追加 */
+    }
+
+    #news h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px; /* 線の位置を調整 */
+        height: 1px; /* 線の高さを1pxに設定 */
+        background-color:  #b8b4b4; /* 線の色を設定 */
+    }
+
+    #news ul {
+        list-style: none; /* リストマーカーを削除 */
+        padding-left: 0; /* リストの左パディングを削除 */
+        margin-top: 1%;
+        font-size: 20px;
+    }
+
+    #news li {
+        margin-bottom: 10px; /* リスト項目間のマージンを設定 */
+        margin: 0rem 2rem;
+        transition: background-color 0.3s ease; /* 背景色の変化を0.5秒でゆっくりと行う */
+        height: 70px;
+    }
+
+    #news a {
+        padding-top: 1.5%;
+        display: flex; /* フレックスボックスを使用して項目を横並びに */
+        text-decoration: none; /* リンクの下線を削除 */
+        align-items: center; /* 項目を縦方向に中央に配置 */
+        color: #333; /* リンクの色を設定 */
+        
+    }
+    #news li:hover {
+        background-color: #ebe8e8; /* ホバー時の背景色を設定 */
+        border-radius: 7px; /* 背景の角を丸くする */
+    }
+
+    #news .date{
+        width: 15%; /* 日付とニュースの種類の幅を15%に設定 */
+        margin-right: 10px; /* 項目間のマージンを10pxに設定 */
+    }
+
+    #news .type {
+        width: 20%; /* ニュースの種類の幅を100pxに設定 */
+        text-align: center;
+        margin-right: 7%;
+        border-radius: 10px; /* 背景の角を丸くする */
+    }
+
+    #news .title {
+        width: 70%; /* ニュースのタイトルの幅を70%に設定 */
+    }
+
+    #news .type.recruitment {
+        background-color: rgb(184, 233, 184); /* 採用情報の背景色を緑に設定 */
+    }
+
+    #news .type.company {
+        background-color: rgb(201, 201, 247); /* 企業情報の背景色を青に設定 */
+    }
+
+    #news .type.event {
+        background-color: rgb(250, 211, 139); /* イベント情報の背景色をオレンジに設定 */
+    }
+    /* ////////NEWS  end////////////////////// */
+
+
+    /* ///////business start////////// */
+    /* 事業情報セクションのスタイル */
+    #business {
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 横方向の中央揃え */
+        flex-direction: column; /* 子要素を縦方向に配置 */
+        text-align: center;
+        padding: 3% 8%; /* 両サイドのパディングを設定 */
+        background-color: #f5f5f5; /* 薄い灰色の背景色を設定 */
+        box-sizing: border-box; /* paddingとborderを要素の幅と高さに含める */
+        margin-top: 10%;
+    }
+    .business-container {
+        display: flex;
+        flex-wrap: wrap; /* アイテムがコンテナを超えたら折り返す */
+        justify-content: center; /* 横方向の中央揃え */
+    }
+    .business-item a{
+        color: inherit; 
+        text-decoration: none;
+    }
+    .business-container h3{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+        
+    }
+
+    .business-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-size: cover; /* 背景画像を要素に合わせて調整 */
+        height: 200px; /* 高さを設定 */
+        color: white;
+        font-size: 25px;
+        border: 1px solid white; /* 白い線で囲む */
+        /* 既存のスタイル設定 */
+        transition: transform 0.3s ease; /* アニメーション効果を追加 */
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+    .business-item:hover {
+        transform: scale(1.02); /* 1.1倍に拡大 */
+    }
+    /* 上段のアイテム */
+    #home-engineer, #electric-safety {
+        width: 50%; /* 幅を50%に設定 */
+        height: 200px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #home-engineer {
+        background-image: url('../../src/img/事業情報/ホームエンジニア.jpg');
+        order: 2; /* 中央に配置 */
+    }
+
+    #electric-safety {
+        background-image: url('/src/img/事業情報/電気安全調査.jpg');
+        order: 1; /* 左に配置 */
+    }
+
+    #ev-charger {
+        background-image: url('/src/img/事業情報/EV充電器.jpg');
+        order: 4; /* 中央に配置 */
+    }
+
+    #gas-engineer {
+        background-image: url('/src/img/事業情報/ガスエンジニア/ガスエンジニア.jpg');
+        order: 3; /* 左に配置 */
+    }
+
+    #gas-engineer, #ev-charger {
+        width: 50%; /* 幅を50%に設定 */
+        height: 200px; /* 高さを設定 */
+    }
+
+
+
+    /* ////企業情報//////////////////////////////////////////////////////////// */
+    #company-info {
+        margin-top: 1%; /* 上にマージンを追加 */
+        text-align: center; /* 中央に寄せる */
+    }
+
+    .company-info-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* 中央に寄せる */
+        gap: 1rem; /* 項目間の間隔 */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        max-width: 1200px; /* コンテナの最大幅を設定 */
+    }
+
+    .company-info-item {
+        flex-basis: calc(55% - 10rem); /* 項目の幅を50%に設定し、間隔を考慮 */
+        box-sizing: border-box;
+        background-position: center; /* 画像を右中央に配置 */
+        background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+        background-size: cover; /* 画像を要素の幅に合わせる */
+        position: relative; /* 子要素の位置を制御するために必要 */
+        overflow: hidden; /* 子要素が項目の外に出ないようにする */
+        transform: rotate(0deg); /* 要素を-10度回転させる */
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); /* 左上端の角を切る */
+    }
+
+    .company-info-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* 背景を薄い白に設定 */
+        transform: skewX(-15deg);
+        transition: transform 0.3s ease;
+    }
+
+    .company-info-item:hover::before {
+        transform: skewX(-15deg) translateX(100%);
+    }
+
+    .company-info-item h2 {
+        position: absolute; /* 絶対位置を指定 */
+        bottom: 0; /* 下に配置 */
+        left: 0; /* 左から配置 */
+        width: 100%; /* 全幅に広げる */
+        text-align: center; /* テキストを中央に配置 */
+        color: white; /* テキスト色を白に設定 */
+        background-color: rgba(128, 128, 128, 0.4); /* 背景に薄い灰色を追加 */
+        
+    }
+
+    #access, #ceo-message, #management-member, #corporate-philosophy {
+        height: 250px; /* 高さを設定 */
+    }
+
+    #management-member, #corporate-philosophy {
+        /* 既存のスタイル設定 */
+        transform: translateX(-10%); /* 要素を左に10%ずらす */
+        /* 既存のスタイル設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #access {
+        background-image: url('../../src/img/会社情報/会社概要・アクセス.jpg');
+    }
+
+    #ceo-message {
+        background-image: url('/浜田さん/CEO/jpg/1.jpg');
+    }
+
+    #management-member {
+        background-image: url('../../src/img/会社情報/経営メンバー.jpg');
+        
+    }
+
+    #corporate-philosophy {
+        background-image: url('../../src/img/会社情報/企業理念.png');
+    }
+
+
+    /* 採用情報////////////////////////////////////////////////////////////////////////// */
+    #recruit {
+        margin-top: 14%; /* 上にマージンを追加 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央に配置 */
+        min-height: 400px; /* 最小高さを設定して、背景画像が切れないようにする */
+        color: white;
+        position: relative;
+        transition: transform 0.3s ease; /* トランジション効果を追加 */
+    }
+    #recruit:hover {
+        transform: scale(1.05); /* ホバー時に画像を少し拡大 */
+    }
+
+    #recruit h2 {
+        padding-top: 3%;
+        padding-bottom: 0%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit h3 {
+        font-size: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit p {
+        font-size: 20px;
+        padding-top: 1%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    .recruit-container {
+        display: flex; /* 項目を横並びにする */
+        justify-content: space-around; /* 項目間のスペースを均等に分配 */
+        padding-top: 5%;
+        margin: auto; /* 自動マージンを設定して中央に配置 */
+        width:  70%; /* コンテナの幅を80%に設定 */
+    }
+
+    .recruit-item {
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .recruit-item a {
+        /* 既存のスタイル設定 */
+        display: flex; /* Flexboxを使用 */
+        justify-content: center; /* 横方向の中央に配置 */
+        align-items: center; /* 縦方向の中央に配置 */
+        font-size: 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* 既存のスタイル設定 */
+    }
+
+    .recruit-item a:hover  {
+        /* 既存のスタイル設定 */
+        background-color: white;
+        color: rgb(37, 146, 37);;
+    }
+
+    .recruit-button {
+        display: inline-block; /* ボタンのスタイルを適用 */
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        /* 既存のスタイル設定 */
+        width: 260px; /* ボタンの幅を150pxに設定 */
+        height: 80px; /* ボタンの高さを50pxに設定 */
+    }
+
+    @keyframes slideInFromLeftDiagonal {
+        0% {
+            transform: translateX(-100%) skewX(-40deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) skewX(0deg);
+            opacity: 1;
+        }
+    }
+
+    #recruit.slide-in:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../src/img/採用情報/採用背景.jpg'); /* 背景画像を設定 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        animation: slideInFromLeftDiagonal 2s; /* 左から斜めにスライドインのアニメーションを設定 */
+        z-index: -1; /* 疑似要素を背面に移動 */
+    }
+
+    /* お問い合わせ//////////////////////////////////////////////////////////////////////// */
+    #contact {
+        margin: 10%; /* お問い合わせの上にマージン */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 50%; /* セクションの幅を設定（必要に応じて調整） */
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .contact-button {
+        padding-top: 3%;
+        display: inline-block;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        padding: 20px 80px; /* パディングを適用 */
+        text-decoration: none; /* テキストの下線を削除 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* 背景色とテキスト色の変更を滑らかにする */
+        border-radius: 30px;
+        border: 2px solid  rgb(37, 146, 37);
+
+    }
+
+    #contact p {
+        padding-bottom: 5%;
+    }
+
+    .contact-button:hover {
+        background-color: white; /* ホバー時の背景色を白に設定 */
+        color: green; /* ホバー時のテキスト色を緑に設定 */
+    }
+
+    #contact h2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #contact h2::before,
+    #contact h2::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 160px; /* ラインの長さを調整 */
+        height: 1px; /* ラインの太さを調整 */
+        background-color: black; /* ラインの色を調整 */
+    }
+
+    #contact h2::before {
+        left: -190px; /* ラインとテキストの間隔を調整 */
+    }
+
+    #contact h2::after {
+        right: -190px; /* ラインとテキストの間隔を調整 */
+    }
+}
+@media screen and (min-width:1301px) and ( max-width:1700px) {
+    #notification-logo {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        width: 150px;
+        height: 150px;
+        z-index: 1000;
+        animation: bounce 2s infinite;
+    }
+    #notification-logo p {
+        padding-left: 40px;
+        color: red;
+        font-weight: bold;
+        
+    }
+    
+    #notification-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+    .sp{
+        display: none;
+    }
+
+    section:target {
+        padding-top: 120px; /* ヘッダーの高さに応じて調整 */
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+    }
+
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+
+    /* メインコンテンツ */
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+
+    /* ヘッダー */
+    /* ヘッダー全体のスタイル */
+    /* header start///////////////////////////////////////////////////////////////////////////////////////////// */
+
+    header {
+        position: relative;
+        height: 100vh; /* ビューポートの高さに合わせる */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .nav-contact{
+        color:black;
+    }
+
+    /* セクションのタイトル */
+    h2 {
+        font-size: 35px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 30px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+
+
+    @keyframes slideInLeftFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-1500px) skewX(-40deg);;
+            filter: brightness(0%); /* アニメーションの開始時にビデオの明るさを50%に設定 */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)  skewX(0deg);;
+            filter: brightness(100%); /* アニメーションの終了時にビデオの明るさを100%に設定 */
+        }
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        animation: slideInLeftFadeIn 1s; /* 左からスライドインとフェードインのアニメーションを設定 */
+        animation-delay: 1s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+        z-index: -1; /* 緑の線がビデオの上に表示されるようにする */
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromdown {
+        0% {
+            transform: translateY(50%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .site-title {
+        /* 以前のスタイル設定 */
+        animation: slideInFromdown 2s; /* 上からスライドインのアニメーションを設定 */
+        animation-delay: 2s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+    }
+
+
+    .header-overlay {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: calc(100% - 80px); /* 全体の幅から60px（左右30pxずつ）を引く */
+        margin-left: 40px; /* 左側のマージンを30pxに設定 */
+        height: 120px; /* 長方形の高さ */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 中央に寄せる */
+        /* 影をもっとつける */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        background: white; /* 白い半透明のオーバーレイ */
+        /* 角を丸くする */
+        border-radius: 10px;
+        z-index:999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        /* transition: background-color 0.1s ease, box-shadow 0.1s ease; */
+        animation: fadeIn 1.6s; /* フェードインのアニメーションを設定 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1300px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .company-info-item a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color:white ;
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 20px;
+    }
+
+
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    
+    .company-name {
+        margin-left: 20px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 25px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .site-title h1{
+        font-size: 50px
+    }
+
+
+    .main-nav {
+        display: flex;
+
+    }
+
+    .main-nav ul{
+        display: flex;
+        gap: 20px;
+    }
+
+    #contact{
+        padding: 10px 30px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+    /* header end///////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* ////////NEWS  start////////////////////// */
+    #news {
+        margin: 3% 3%; /* 上部にマージンを追加 */
+        position: relative; /* 線の位置を調整するため */
+    }
+
+    #news h2 {
+        position: relative; /* 追加 */
+    }
+
+    #news h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px; /* 線の位置を調整 */
+        height: 1px; /* 線の高さを1pxに設定 */
+        background-color:  #b8b4b4; /* 線の色を設定 */
+    }
+
+    #news ul {
+        list-style: none; /* リストマーカーを削除 */
+        padding-left: 0; /* リストの左パディングを削除 */
+        margin-top: 1%;
+        font-size: 20px;
+    }
+
+    #news li {
+        margin-bottom: 10px; /* リスト項目間のマージンを設定 */
+        margin: 0rem 2rem;
+        transition: background-color 0.3s ease; /* 背景色の変化を0.5秒でゆっくりと行う */
+        height: 70px;
+    }
+
+    #news a {
+        padding-top: 1.5%;
+        display: flex; /* フレックスボックスを使用して項目を横並びに */
+        text-decoration: none; /* リンクの下線を削除 */
+        align-items: center; /* 項目を縦方向に中央に配置 */
+        color: #333; /* リンクの色を設定 */
+        
+    }
+    #news li:hover {
+        background-color: #ebe8e8; /* ホバー時の背景色を設定 */
+        border-radius: 7px; /* 背景の角を丸くする */
+    }
+
+    #news .date{
+        width: 15%; /* 日付とニュースの種類の幅を15%に設定 */
+        margin-right: 10px; /* 項目間のマージンを10pxに設定 */
+    }
+
+    #news .type {
+        width: 20%; /* ニュースの種類の幅を100pxに設定 */
+        text-align: center;
+        margin-right: 7%;
+        border-radius: 10px; /* 背景の角を丸くする */
+    }
+
+    #news .title {
+        width: 70%; /* ニュースのタイトルの幅を70%に設定 */
+    }
+
+    #news .type.recruitment {
+        background-color: rgb(184, 233, 184); /* 採用情報の背景色を緑に設定 */
+    }
+
+    #news .type.company {
+        background-color: rgb(201, 201, 247); /* 企業情報の背景色を青に設定 */
+    }
+
+    #news .type.event {
+        background-color: rgb(250, 211, 139); /* イベント情報の背景色をオレンジに設定 */
+    }
+    /* ////////NEWS  end////////////////////// */
+
+
+    /* ///////business start////////// */
+    /* 事業情報セクションのスタイル */
+    #business {
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 横方向の中央揃え */
+        flex-direction: column; /* 子要素を縦方向に配置 */
+        text-align: center;
+        padding: 3% 8%; /* 両サイドのパディングを設定 */
+        background-color: #f5f5f5; /* 薄い灰色の背景色を設定 */
+        box-sizing: border-box; /* paddingとborderを要素の幅と高さに含める */
+        margin-top: 10%;
+    }
+    .business-container {
+        display: flex;
+        flex-wrap: wrap; /* アイテムがコンテナを超えたら折り返す */
+        justify-content: center; /* 横方向の中央揃え */
+    }
+    .business-item a{
+        color: inherit; 
+        text-decoration: none;
+    }
+    .business-container h3{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+        
+    }
+
+    .business-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-size: cover; /* 背景画像を要素に合わせて調整 */
+        height: 200px; /* 高さを設定 */
+        color: white;
+        font-size: 25px;
+        border: 1px solid white; /* 白い線で囲む */
+        /* 既存のスタイル設定 */
+        transition: transform 0.3s ease; /* アニメーション効果を追加 */
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+    .business-item:hover {
+        transform: scale(1.02); /* 1.1倍に拡大 */
+    }
+    /* 上段のアイテム */
+    #home-engineer, #electric-safety {
+        width: 50%; /* 幅を50%に設定 */
+        height: 200px; /* 高さを設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #home-engineer {
+        background-image: url('../../src/img/事業情報/ホームエンジニア.jpg');
+        order: 2; /* 中央に配置 */
+    }
+
+    #electric-safety {
+        background-image: url('/src/img/事業情報/電気安全調査.jpg');
+        order: 1; /* 左に配置 */
+    }
+
+    #ev-charger {
+        background-image: url('/src/img/事業情報/EV充電器.jpg');
+        order: 4; /* 中央に配置 */
+    }
+
+    #gas-engineer {
+        background-image: url('/src/img/事業情報/ガスエンジニア/ガスエンジニア.jpg');
+        order: 3; /* 左に配置 */
+    }
+
+    #gas-engineer, #ev-charger {
+        width: 50%; /* 幅を50%に設定 */
+        height: 200px; /* 高さを設定 */
+    }
+
+
+
+    /* ////企業情報//////////////////////////////////////////////////////////// */
+    #company-info {
+        margin-top: 1%; /* 上にマージンを追加 */
+        text-align: center; /* 中央に寄せる */
+    }
+
+    .company-info-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* 中央に寄せる */
+        gap: 1rem; /* 項目間の間隔 */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        max-width: 1400px; /* コンテナの最大幅を設定 */
+    }
+
+    .company-info-item {
+        flex-basis: calc(55% - 10rem); /* 項目の幅を50%に設定し、間隔を考慮 */
+        box-sizing: border-box;
+        background-position: center; /* 画像を右中央に配置 */
+        background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+        background-size: cover; /* 画像を要素の幅に合わせる */
+        position: relative; /* 子要素の位置を制御するために必要 */
+        overflow: hidden; /* 子要素が項目の外に出ないようにする */
+        transform: rotate(0deg); /* 要素を-10度回転させる */
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); /* 左上端の角を切る */
+    }
+
+    .company-info-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* 背景を薄い白に設定 */
+        transform: skewX(-15deg);
+        transition: transform 0.3s ease;
+    }
+
+    .company-info-item:hover::before {
+        transform: skewX(-15deg) translateX(100%);
+    }
+
+    .company-info-item h2 {
+        position: absolute; /* 絶対位置を指定 */
+        bottom: 0; /* 下に配置 */
+        left: 0; /* 左から配置 */
+        width: 100%; /* 全幅に広げる */
+        text-align: center; /* テキストを中央に配置 */
+        color: white; /* テキスト色を白に設定 */
+        background-color: rgba(128, 128, 128, 0.4); /* 背景に薄い灰色を追加 */
+        
+    }
+
+    #access, #ceo-message, #management-member, #corporate-philosophy {
+        height: clamp(250px, 20vh, 400px); /* 高さを設定 */
+    }
+
+    #management-member, #corporate-philosophy {
+        /* 既存のスタイル設定 */
+        transform: translateX(-10%); /* 要素を左に10%ずらす */
+        /* 既存のスタイル設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #access {
+        background-image: url('../../src/img/会社情報/会社概要・アクセス.jpg');
+    }
+
+    #ceo-message {
+        background-image: url('/浜田さん/CEO/jpg/1.jpg');
+    }
+
+    #management-member {
+        background-image: url('../../src/img/会社情報/経営メンバー.jpg');
+        
+    }
+
+    #corporate-philosophy {
+        background-image: url('../../src/img/会社情報/企業理念.png');
+    }
+
+
+    /* 採用情報////////////////////////////////////////////////////////////////////////// */
+    #recruit {
+        margin-top: 14%; /* 上にマージンを追加 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央に配置 */
+        min-height: 400px; /* 最小高さを設定して、背景画像が切れないようにする */
+        color: white;
+        position: relative;
+        transition: transform 0.3s ease; /* トランジション効果を追加 */
+    }
+    #recruit:hover {
+        transform: scale(1.05); /* ホバー時に画像を少し拡大 */
+    }
+
+    #recruit h2 {
+        padding-top: 3%;
+        padding-bottom: 0%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit h3 {
+        font-size: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit p {
+        font-size: 20px;
+        padding-top: 1%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    .recruit-container {
+        display: flex; /* 項目を横並びにする */
+        justify-content: space-around; /* 項目間のスペースを均等に分配 */
+        padding-top: 5%;
+        margin: auto; /* 自動マージンを設定して中央に配置 */
+        width:  70%; /* コンテナの幅を80%に設定 */
+    }
+
+    .recruit-item {
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .recruit-item a {
+        /* 既存のスタイル設定 */
+        display: flex; /* Flexboxを使用 */
+        justify-content: center; /* 横方向の中央に配置 */
+        align-items: center; /* 縦方向の中央に配置 */
+        font-size: 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* 既存のスタイル設定 */
+    }
+
+    .recruit-item a:hover  {
+        /* 既存のスタイル設定 */
+        background-color: white;
+        color: rgb(37, 146, 37);;
+    }
+
+    .recruit-button {
+        display: inline-block; /* ボタンのスタイルを適用 */
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        /* 既存のスタイル設定 */
+        width: 260px; /* ボタンの幅を150pxに設定 */
+        height: 80px; /* ボタンの高さを50pxに設定 */
+    }
+
+    @keyframes slideInFromLeftDiagonal {
+        0% {
+            transform: translateX(-100%) skewX(-40deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) skewX(0deg);
+            opacity: 1;
+        }
+    }
+
+    #recruit.slide-in:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../src/img/採用情報/採用背景.jpg'); /* 背景画像を設定 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        animation: slideInFromLeftDiagonal 2s; /* 左から斜めにスライドインのアニメーションを設定 */
+        z-index: -1; /* 疑似要素を背面に移動 */
+    }
+
+    /* お問い合わせ//////////////////////////////////////////////////////////////////////// */
+    #contact {
+        margin: 10%; /* お問い合わせの上にマージン */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 50%; /* セクションの幅を設定（必要に応じて調整） */
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .contact-button {
+        padding-top: 3%;
+        display: inline-block;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        padding: 20px 80px; /* パディングを適用 */
+        text-decoration: none; /* テキストの下線を削除 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* 背景色とテキスト色の変更を滑らかにする */
+        border-radius: 30px;
+        border: 2px solid  rgb(37, 146, 37);
+
+    }
+
+    #contact p {
+        padding-bottom: 5%;
+    }
+
+    .contact-button:hover {
+        background-color: white; /* ホバー時の背景色を白に設定 */
+        color: green; /* ホバー時のテキスト色を緑に設定 */
+    }
+
+    #contact h2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #contact h2::before,
+    #contact h2::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 160px; /* ラインの長さを調整 */
+        height: 1px; /* ラインの太さを調整 */
+        background-color: black; /* ラインの色を調整 */
+    }
+
+    #contact h2::before {
+        left: -190px; /* ラインとテキストの間隔を調整 */
+    }
+
+    #contact h2::after {
+        right: -190px; /* ラインとテキストの間隔を調整 */
+    }
+}
+@media screen and (min-width:1701px) {
+    #notification-logo {
+        position: fixed;
+        bottom: 40px;
+        right: 20px;
+        width: 250px;
+        height: 250px;
+        z-index: 1000;
+        animation: bounce 2s infinite;
+    }
+    #notification-logo p {
+        padding-left: 80px;
+        color: red;
+        font-weight: bold;
+        font-size: 20px;
+        
+    }
+    
+    #notification-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-30px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
+    }
+    /* ロゴのスタイルとアニメーション */
+
+    .sp{
+        display: none;
+    }
+
+    section:target {
+        margin-top: -220px; /* パディングと同じ値だが負の値 */
+    }
+
+    .background {
+        position: fixed; /* positionをstatic以外に設定 */
+        z-index: 100; /* z-indexを大きな値に設定 */
+        background-color: rgba(0, 0, 0, 0.4); /* 背景色を薄い黒に設定 */
+        top: 0; /* 画面の上端から配置 */
+        left: 0; /* 画面の左端から配置 */
+        width: 100%; /* 画面全体の幅に設定 */
+        height: 100%; /* 画面全体の高さに設定 */
+        pointer-events: none; 
+    }
+
+    /* メインコンテンツ */
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+
+    /* ヘッダー */
+    /* ヘッダー全体のスタイル */
+    /* header start///////////////////////////////////////////////////////////////////////////////////////////// */
+
+    header {
+        position: relative;
+        height: 100vh; /* ビューポートの高さに合わせる */
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .nav-contact{
+        color:black;
+    }
+
+    /* セクションのタイトル */
+    h2 {
+        font-size: 65px;
+        padding-bottom: 1%;
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+    h3 {
+        font-size: 60px;
+        font-weight: 500; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+
+
+    @keyframes slideInLeftFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-1500px) skewX(-40deg);;
+            filter: brightness(0%); /* アニメーションの開始時にビデオの明るさを50%に設定 */
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0)  skewX(0deg);;
+            filter: brightness(100%); /* アニメーションの終了時にビデオの明るさを100%に設定 */
+        }
+    }
+
+    #background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        animation: slideInLeftFadeIn 1s; /* 左からスライドインとフェードインのアニメーションを設定 */
+        animation-delay: 1s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+        z-index: -1; /* 緑の線がビデオの上に表示されるようにする */
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInFromdown {
+        0% {
+            transform: translateY(50%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .site-title {
+        /* 以前のスタイル設定 */
+        animation: slideInFromdown 2s; /* 上からスライドインのアニメーションを設定 */
+        animation-delay: 2s; /* アニメーション開始までの遅延を設定 */
+        animation-fill-mode: backwards; /* アニメーションが開始する前のスタイルを制御 */
+    }
+
+
+    .header-overlay {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        width: calc(100% - 80px); /* 全体の幅から60px（左右30pxずつ）を引く */
+        margin-left: 40px; /* 左側のマージンを30pxに設定 */
+        height: 130px; /* 長方形の高さ */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* 中央に寄せる */
+        /* 影をもっとつける */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        background: white; /* 白い半透明のオーバーレイ */
+        /* 角を丸くする */
+        border-radius: 10px;
+        z-index:999; /* 他の要素よりも前面に表示されるようにz-indexを高く設定 */
+        /* transition: background-color 0.1s ease, box-shadow 0.1s ease; */
+        animation: fadeIn 1.6s; /* フェードインのアニメーションを設定 */
+    }
+
+    .main-business {
+        width: 80%; /* 幅を75%に設定 */
+        max-width: 1300px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-recruit {
+        width: 50%; /* 幅を75%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .main-company {
+        width: 85%; /* 幅を80%に設定 */
+        max-width: 1200px; /* 最大幅を1200pxに設定 */
+        margin: 0 auto; /* 中央揃え */
+        /* その他のスタイル */
+    }
+
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 要素を垂直方向の中央に配置 */
+        justify-content: space-between; /* 要素間に均等なスペースを設定 */
+        width: 100%; /* コンテナの幅を100%に設定 */
+    }
+
+
+    .business-info-list {
+        display: flex; /* 横並びにする */
+        list-style-type: none; /* リストマーカーを削除 */
+        padding: 0; /* デフォルトのパディングを削除 */
+        margin: 0; /* デフォルトのマージンを削除 */
+        justify-content: center; /* 中央揃えにする */
+    }
+
+    .business-info-list li {
+        margin: 0 20px; /* 項目間のスペースを設定 */
+    }
+
+    .business-info-list a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color: #333; /* リンクの色を設定 */
+        font-size: 18px;
+        /* 必要に応じて他のスタイルを追加 */
+    }
+
+    .company-info-item a {
+        text-decoration: none; /* リンクの下線を削除 */
+        color:white ;
+    }
+    .business-info-container {
+        display: flex; /* コンテナ内の要素を横並びにする */
+        align-items: center; /* 中央揃えにする */
+    }
+
+    .business-info-image {
+        margin-right: 20px; /* 画像とリストの間にスペースを設ける */
+        margin-top: 10px; /* 画像とリストの間にスペースを設ける */
+        width: auto; /* 画像の幅を設定 */
+        height: 110px; /* 画像の高さを設定 */
+    }
+
+    .business-info-item {
+        display: flex; /* アイテムを横に並べる */
+        align-items: center; /* アイテムを垂直方向の中央に揃える */
+    }
+
+    .business-info-icon {
+        width: 20px; /* アイコンの幅を24ピクセルに設定 */
+        height: 20px; /* アイコンの高さを24ピクセルに設定 */
+        margin-right: 8px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        margin-bottom: 5px; /* アイコンとテキストの間に8ピクセルのスペースを設ける */
+        vertical-align: middle; /* アイコンをテキストの中央に揃える */
+    }
+
+    .business-info-image-container {
+        position: relative; /* ポジショニングコンテキストを作成 */
+        display: inline-block; /* 必要に応じてサイズ調整 */
+    }
+
+    .business-info-text {
+        position: absolute; /* 絶対位置指定 */
+        font-weight: 200;
+        top: 50%; /* 上から50%の位置 */
+        left: 50%; /* 左から50%の位置 */
+        transform: translate(-50%, -50%); /* 中央に配置するための調整 */
+        color: white; /* 文字色を白に設定 */
+        font-size: 25px; /* 文字サイズを20pxに設定 */
+        /* 必要に応じてフォントのスタイルを追加 */
+    }
+
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            background-color: transparent;
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    .main-nav a {
+        color: black; /* 文字色を黒にする */
+        text-decoration: none; /* 下線を削除する */
+        font-size: 20px;
+    }
+
+
+    .header-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    .company-name {
+        margin-left: 20px; /* ロゴとの間隔を調整 */
+        font-family: 'Anton', sans-serif;
+        font-size: 30px; /* フォントサイズを大きく */
+        font-weight: bold; /* フォントを太く */
+        text-transform: uppercase; /* 文字をすべて大文字に */
+        color:black;
+        line-height: 1.5; /* 行間を調整 */
+        /* 必要に応じて他のスタイルを追加 */
+    }
+    .site-title h1{
+        font-size: 80px
+    }
+
+
+    .main-nav {
+        display: flex;
+
+    }
+
+    .main-nav ul{
+        display: flex;
+        gap: 20px;
+    }
+
+    #contact{
+        padding: 10px 30px;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: #fff; /* 文字色を白に設定 */
+        border: 2px solid  rgb(37, 146, 37);
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    #contact:hover {
+        background-color: #fff; /* ホバー時のボタンの色を白に設定 */
+        color:  rgb(37, 146, 37); /* ホバー時の文字色を緑に設定 */
+    }
+    /* header end///////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* ////////NEWS  start////////////////////// */
+    #news {
+        margin: 3% 3%; /* 上部にマージンを追加 */
+        position: relative; /* 線の位置を調整するため */
+    }
+
+    #news h2 {
+        position: relative; /* 追加 */
+    }
+
+    #news h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 3px; /* 線の位置を調整 */
+        height: 1px; /* 線の高さを1pxに設定 */
+        background-color:  #b8b4b4; /* 線の色を設定 */
+    }
+
+    #news ul {
+        list-style: none; /* リストマーカーを削除 */
+        padding-left: 0; /* リストの左パディングを削除 */
+        margin-top: 1%;
+        font-size: clamp(25px, 2vw, 35px); /* 最小16px、最大32pxの範囲でビューポート幅に応じてフォントサイズを調整 */
+    }
+
+    #news li {
+        margin-bottom: 10px; /* リスト項目間のマージンを設定 */
+        margin: 0rem 2rem;
+        height: 130px;
+    }
+
+    #news a {
+        padding-top: 1.5%;
+        display: flex; /* フレックスボックスを使用して項目を横並びに */
+        text-decoration: none; /* リンクの下線を削除 */
+        align-items: center; /* 項目を縦方向に中央に配置 */
+        color: #333; /* リンクの色を設定 */
+        transition: background-color 0.3s ease; /* 背景色の変化を0.5秒でゆっくりと行う */
+        
+    }
+    #news li:hover {
+        background-color: #ebe8e8; /* ホバー時の背景色を設定 */
+        border-radius: 7px; /* 背景の角を丸くする */
+    }
+
+    #news .date{
+        width: 15%; /* 日付とニュースの種類の幅を15%に設定 */
+        margin-right: 10px; /* 項目間のマージンを10pxに設定 */
+    }
+
+    #news .type {
+        width: 20%; /* ニュースの種類の幅を100pxに設定 */
+        text-align: center;
+        margin-right: 7%;
+        border-radius: 10px; /* 背景の角を丸くする */
+    }
+
+    #news .title {
+        width: 70%; /* ニュースのタイトルの幅を70%に設定 */
+    }
+
+    #news .type.recruitment {
+        background-color: rgb(184, 233, 184); /* 採用情報の背景色を緑に設定 */
+    }
+
+    #news .type.company {
+        background-color: rgb(201, 201, 247); /* 企業情報の背景色を青に設定 */
+    }
+
+    #news .type.event {
+        background-color: rgb(250, 211, 139); /* イベント情報の背景色をオレンジに設定 */
+    }
+    /* ////////NEWS  end////////////////////// */
+
+
+    /* ///////business start////////// */
+    /* 事業情報セクションのスタイル */
+    #business {
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: center; /* 横方向の中央揃え */
+        flex-direction: column; /* 子要素を縦方向に配置 */
+        text-align: center;
+        padding: 3% 8%; /* 両サイドのパディングを設定 */
+        background-color: #f5f5f5; /* 薄い灰色の背景色を設定 */
+        box-sizing: border-box; /* paddingとborderを要素の幅と高さに含める */
+        margin-top: 10%;
+    }
+    .business-container {
+        display: flex;
+        flex-wrap: wrap; /* アイテムがコンテナを超えたら折り返す */
+        justify-content: center; /* 横方向の中央揃え */
+    }
+
+    
+    .business-item a{
+        color: inherit; 
+        text-decoration: none;
+    }
+    .business-container h3{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+        
+    }
+
+    .business-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-size: cover; /* 背景画像を要素に合わせて調整 */
+        height: 200px; /* 高さを設定 */
+        color: white;
+        font-size: 25px;
+        border: 1px solid white; /* 白い線で囲む */
+        /* 既存のスタイル設定 */
+        transition: transform 0.3s ease; /* アニメーション効果を追加 */
+        font-weight: 300; /* 数値を小さくすると、文字が細くなります。 */
+    }
+
+    .business-item:hover {
+        transform: scale(1.02); /* 1.1倍に拡大 */
+    }
+    /* 上段のアイテム */
+    #home-engineer, #electric-safety {
+        width: 50%; /* 幅を50%に設定 */
+        height: clamp(350px, 20vh, 500px); 
+    }
+
+    /* アイテムの順序を指定 */
+    #home-engineer {
+        background-image: url('../../src/img/事業情報/ホームエンジニア.jpg');
+        order: 2; /* 中央に配置 */
+    }
+
+    #electric-safety {
+        background-image: url('/src/img/事業情報/電気安全調査.jpg');
+        order: 1; /* 左に配置 */
+    }
+
+    #ev-charger {
+        background-image: url('/src/img/事業情報/EV充電器.jpg');
+        order: 4; /* 中央に配置 */
+    }
+
+    #gas-engineer {
+        background-image: url('/src/img/事業情報/ガスエンジニア/ガスエンジニア.jpg');
+        order: 3; /* 左に配置 */
+    }
+
+    #gas-engineer, #ev-charger {
+        width: 50%; /* 幅を50%に設定 */
+        height: clamp(350px, 20vh, 400px); 
+    }
+
+    /* ////企業情報//////////////////////////////////////////////////////////// */
+    #company-info {
+        margin-top: 1%; /* 上にマージンを追加 */
+        text-align: center; /* 中央に寄せる */
+    }
+
+    .company-info-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* 中央に寄せる */
+        gap: 1rem; /* 項目間の間隔 */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        max-width: 80%; /* コンテナの最大幅を設定 */
+    }
+
+    .company-info-item {
+        flex-basis: calc(50% - 1rem); /* 項目の幅を50%に設定し、間隔を考慮 */
+        box-sizing: border-box;
+        background-position: center; /* 画像を右中央に配置 */
+        background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+        background-size: cover; /* 画像を要素の幅に合わせる */
+        position: relative; /* 子要素の位置を制御するために必要 */
+        overflow: hidden; /* 子要素が項目の外に出ないようにする */
+        transform: rotate(0deg); /* 要素を-10度回転させる */
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%); /* 左上端の角を切る */
+    }
+
+    .company-info-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* 背景を薄い白に設定 */
+        transform: skewX(-15deg);
+        transition: transform 0.3s ease;
+    }
+
+    .company-info-item:hover::before {
+        transform: skewX(-15deg) translateX(100%);
+    }
+
+    .company-info-item h2 {
+        position: absolute; /* 絶対位置を指定 */
+        bottom: 0; /* 下に配置 */
+        left: 0; /* 左から配置 */
+        width: 100%; /* 全幅に広げる */
+        text-align: center; /* テキストを中央に配置 */
+        color: white; /* テキスト色を白に設定 */
+        background-color: rgba(128, 128, 128, 0.4); /* 背景に薄い灰色を追加 */
+        
+    }
+
+    #access, #ceo-message, #management-member, #corporate-philosophy {
+        height: clamp(300px, 30vh, 600px);
+    }
+
+    #management-member, #corporate-philosophy {
+        /* 既存のスタイル設定 */
+        transform: translateX(-10%); /* 要素を左に10%ずらす */
+        /* 既存のスタイル設定 */
+    }
+
+    /* アイテムの順序を指定 */
+    #access {
+        background-image: url('../../src/img/会社情報/会社概要・アクセス.jpg');
+    }
+
+    #ceo-message {
+        background-image: url('/浜田さん/CEO/jpg/1.jpg');
+    }
+
+    #management-member {
+        background-image: url('../../src/img/会社情報/経営メンバー.jpg');
+        
+    }
+
+    #corporate-philosophy {
+        background-image: url('../../src/img/会社情報/企業理念.png');
+    }
+
+
+    /* 採用情報////////////////////////////////////////////////////////////////////////// */
+    #recruit {
+        margin-top: 14%; /* 上にマージンを追加 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        text-align: center; /* テキストを中央に配置 */
+        min-height: 700px; /* 最小高さを設定して、背景画像が切れないようにする */
+        color: white;
+        position: relative;
+        transition: transform 0.3s ease; /* トランジション効果を追加 */
+    }
+    #recruit:hover {
+        transform: scale(1.05); /* ホバー時に画像を少し拡大 */
+    }
+
+    #recruit h2 {
+        padding-top: 3%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit h3 {
+        font-size: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    #recruit p {
+        font-size: 40px;
+        padding-top: 1%;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 2); /* テキストに影を追加 */
+    }
+
+    .recruit-container {
+        display: flex; /* 項目を横並びにする */
+        justify-content: space-around; /* 項目間のスペースを均等に分配 */
+        padding-top: 5%;
+        margin: auto; /* 自動マージンを設定して中央に配置 */
+        width:  50%; /* コンテナの幅を80%に設定 */
+    }
+
+    .recruit-item {
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .recruit-item a {
+        /* 既存のスタイル設定 */
+        display: flex; /* Flexboxを使用 */
+        justify-content: center; /* 横方向の中央に配置 */
+        align-items: center; /* 縦方向の中央に配置 */
+        font-size: 40px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        /* 既存のスタイル設定 */
+    }
+
+    .recruit-item a:hover  {
+        /* 既存のスタイル設定 */
+        background-color: white;
+        color: rgb(37, 146, 37);;
+    }
+
+    .recruit-button {
+        display: inline-block; /* ボタンのスタイルを適用 */
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        text-decoration: none; /* 下線を削除 */
+        /* 既存のスタイル設定 */
+        width: 400px; /* ボタンの幅を150pxに設定 */
+        height: 100px; /* ボタンの高さを50pxに設定 */
+    }
+
+    @keyframes slideInFromLeftDiagonal {
+        0% {
+            transform: translateX(-100%) skewX(-40deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0) skewX(0deg);
+            opacity: 1;
+        }
+    }
+
+    #recruit.slide-in:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../src/img/採用情報/採用背景.jpg'); /* 背景画像を設定 */
+        background-size: cover; /* 背景画像を要素の幅に合わせる */
+        background-position: center; /* 背景画像を中央に配置 */
+        animation: slideInFromLeftDiagonal 2s; /* 左から斜めにスライドインのアニメーションを設定 */
+        z-index: -1; /* 疑似要素を背面に移動 */
+    }
+
+    /* お問い合わせ//////////////////////////////////////////////////////////////////////// */
+    #contact {
+        margin: 10%; /* お問い合わせの上にマージン */
+        margin-left: auto; /* 左側に自動マージンを追加 */
+        margin-right: auto; /* 右側に自動マージンを追加 */
+        width: 50%; /* セクションの幅を設定（必要に応じて調整） */
+        text-align: center; /* テキストを中央に配置 */
+    }
+
+    .contact-button {
+        padding-top: 3%;
+        display: inline-block;
+        background-color: rgb(37, 146, 37); /* 背景色を緑に設定 */
+        color: white; /* テキスト色を白に設定 */
+        padding: 20px 80px; /* パディングを適用 */
+        text-decoration: none; /* テキストの下線を削除 */
+        transition: background-color 0.3s ease, color 0.3s ease; /* 背景色とテキスト色の変更を滑らかにする */
+        border-radius: 30px;
+        border: 2px solid  rgb(37, 146, 37);
+
+    }
+
+    #contact p {
+        padding-bottom: 5%;
+    }
+
+    .contact-button:hover {
+        background-color: white; /* ホバー時の背景色を白に設定 */
+        color: green; /* ホバー時のテキスト色を緑に設定 */
+    }
+
+    #contact h2 {
+        position: relative;
+        display: inline-block;
+    }
+
+    #contact h2::before,
+    #contact h2::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 160px; /* ラインの長さを調整 */
+        height: 1px; /* ラインの太さを調整 */
+        background-color: black; /* ラインの色を調整 */
+    }
+
+    #contact h2::before {
+        left: -190px; /* ラインとテキストの間隔を調整 */
+    }
+
+    #contact h2::after {
+        right: -190px; /* ラインとテキストの間隔を調整 */
+    }
+}
+
